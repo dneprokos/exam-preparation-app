@@ -17,8 +17,8 @@ We borrow the toolchain and patterns from Mosh Hamedani's
 We deliberately **do not** adopt everything from that repo:
 
 - It is a different app (storefront/e-commerce) with React Query, a form library, and auth — none of which exist here.
-- We skip its provider-heavy `renderWithProviders` wrapper at first; this app has no router-wrapped components that need testing (App.tsx manages views via state) and no global context providers around components.
-- We keep MSW only for the data-loading path (`useData` fetches JSON from `public/data/`), not as a blanket requirement.
+- We skip its provider-heavy `renderWithProviders` wrapper at first; this app has no router-wrapped components that need testing (`CertificationApp` manages views via state; certification selection is hash-based) and no global context providers around components.
+- We keep MSW only for the data-loading path (`useData` fetches JSON from `public/data/<certId>/`), not as a blanket requirement.
 
 What we keep: the test runner config, the custom render helper pattern, `user-event` for interactions, `jest-dom` matchers, and the "test behavior, not implementation" philosophy.
 
@@ -39,7 +39,7 @@ The component layer is mostly **presentational with props in / callbacks out**, 
 | `components/TrendChart.tsx` | Pure component | Render with sample attempts. |
 | `pages/*` | Composed | Lighter coverage; integration-style smoke tests. |
 | `hooks/useExam.ts` | Stateful hook | State machine — test with `renderHook` (medium ROI). |
-| `hooks/useData.ts` | Stateful hook | Fetches JSON — needs MSW or fetch mock. |
+| `hooks/useData.ts` | Stateful hook | Fetches `data/<certId>/…` JSON — needs a fetch mock (done with `vi.stubGlobal`, no MSW). |
 | `utils/storage.ts` | localStorage wrapper | Test against jsdom localStorage. |
 
 Things that complicate testing and how we handle them:
@@ -47,7 +47,7 @@ Things that complicate testing and how we handle them:
 - `crypto.randomUUID()` in `computeResult` → stub `crypto` or assert on shape, not exact id.
 - `Math.random()` in `shuffle`/`selectQuestions` → spy on `Math.random` or assert set membership/length, not order.
 - `new Date()` in `computeResult` → assert `date` is an ISO string, or fake timers if exact value needed.
-- `useData` module-level singleton with a listener array → reset module state between tests (`vi.resetModules`) and mock `fetch` with MSW.
+- `useData` module-level per-cert cache (`Map<certId, …>`) with a listener array → use a distinct certId per test (or `vi.resetModules`) and mock `fetch` (implemented with `vi.stubGlobal`).
 
 ---
 
@@ -179,7 +179,7 @@ Render with RTL, assert on accessible text/roles, drive with `user-event`.
 
 ## Phase 3 — Stateful hooks & storage
 
-- `utils/storage.test.ts` — round-trip read/write for `tae_attempts`, `tae_in_progress`, `tae_settings`; tolerates missing/corrupt JSON (returns defaults, no throw).
+- `utils/storage.test.ts` — round-trip read/write via `certStorage('tae')` for `tae_attempts`, `tae_in_progress`, plus `tae_settings`; prefixes are isolated; tolerates missing/corrupt JSON (returns defaults, no throw).
 - `useSettings.test.ts` — `renderHook`; defaults, update persists to localStorage, theme toggle.
 - `useExam.test.ts` — `renderHook`; the state machine:
   - start → builds question list, initial index 0.
@@ -187,14 +187,16 @@ Render with RTL, assert on accessible text/roles, drive with `user-event`.
   - persists to `tae_in_progress` on change; resumes from it.
   - review → submit produces an `Attempt` and clears in-progress.
   - exit clears state.
-- `useData.test.ts` — MSW handlers serving `index.json` + `chapter-{1..8}.json`; assert merged result; reset singleton via `vi.resetModules()` between tests.
+- `useData.test.ts` — **done** (mocked `fetch` rather than MSW): per-cert URLs `data/<certId>/index.json` + `chapter-{n}.json`, merged result, no refetch on remount, certs cached separately, non-ok response surfaces an error. Distinct certId per test instead of `vi.resetModules()`.
+- `useHashRoute.test.ts` — **done** (added with multi-certification): initial/empty hash, `navigate`, external hash change, listener cleanup.
 
 ---
 
 ## Phase 4 — Page / integration smoke tests (optional, lighter)
 
-- `HomePage`, `SettingsPage`, `HistoryPage` render without crashing given mocked data/settings.
+- `HomePage`, `SettingsPage`, `HistoryPage` render without crashing given mocked data/settings. (`HistoryPage` is partly covered via `App.test.tsx`; `CertificationSelectPage` and `WorkInProgressPage` have their own tests.)
 - One end-to-end-ish flow at component level: start exam → answer a question → open review → submit → see results. Keeps router/state wiring honest without a full browser.
+- `App.test.tsx` — **done**: shell flow with mocked `fetch` (landing lists three certifications, TAE home, work-in-progress pages and back, "All certifications", unknown hash, legacy `tae_attempts` shown in History, resume at `#/istqb-tae` vs badge at bare root). The start → answer → review → submit flow is still open.
 
 > Note: full browser E2E (Playwright) is out of scope here — the repo already has a `playwright-e2e-init` path for that. This plan stays at the jsdom component level.
 

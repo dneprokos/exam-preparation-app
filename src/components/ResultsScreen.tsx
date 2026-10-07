@@ -7,10 +7,11 @@ interface Props {
   questions: Question[];
   answers: AttemptAnswer[];
   indexData: IndexData;
+  passPercent: number;
   onGoHome: () => void;
 }
 
-export function ResultsScreen({ result, questions, answers, indexData, onGoHome }: Props) {
+export function ResultsScreen({ result, questions, answers, indexData, passPercent, onGoHome }: Props) {
   const answerMap = new Map(answers.map(a => [a.questionId, a.selected]));
   const pct = Math.round(result.percent);
   const mins = Math.floor(result.durationSeconds / 60);
@@ -44,7 +45,7 @@ export function ResultsScreen({ result, questions, answers, indexData, onGoHome 
                     <div className="text-sm">{ch?.title ?? `Chapter ${b.chapterId}`}</div>
                     <div className="mt-1 w-full bg-gray-100 dark:bg-gray-700 rounded-full h-1.5">
                       <div
-                        className={`h-1.5 rounded-full ${bPct >= 65 ? 'bg-green-500' : 'bg-red-400'}`}
+                        className={`h-1.5 rounded-full ${bPct >= passPercent ? 'bg-green-500' : 'bg-red-400'}`}
                         style={{ width: `${bPct}%` }}
                       />
                     </div>

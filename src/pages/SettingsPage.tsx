@@ -14,7 +14,7 @@ export function SettingsPage({ settings, onUpdate }: Props) {
         <div className="px-4 py-3 flex items-center justify-between">
           <div>
             <div className="font-medium text-sm">Pass threshold</div>
-            <div className="text-xs text-gray-500">{settings.passPercent}% (ISTQB standard is 65%)</div>
+            <div className="text-xs text-gray-500">{settings.passPercent}% (default is 65%)</div>
           </div>
           <input
             type="range"

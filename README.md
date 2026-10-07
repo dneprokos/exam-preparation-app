@@ -1,12 +1,12 @@
-# ISTQB Advanced TAE Preparation App
+# Exam Preparation App
 
-A browser-based practice tool for the ISTQB Advanced Level Test Automation Engineer (CTAL-TAE) certification exam.
+A browser-based, multi-certification practice tool. Currently available: **ISTQB Advanced Level Test Automation Engineer (CTAL-TAE)**. **ISTQB GEN AI** and **Claude Certified Developer – Foundations (CCDV-F)** are listed but marked work in progress.
 
 **Live app:** https://dneprokos.github.io/exam-preparation-app/
 
 ## Overview
 
-Covers all 8 exam chapters with a combined question bank of 40+ questions per chapter. Supports timed full-exam simulation (40 questions, 90 minutes, 65% pass threshold) and per-chapter practice sessions. Progress is saved in the browser and persists across sessions.
+The landing page lists the certifications; pick one to open its practice app. The ISTQB CTAL-TAE bank covers all 8 exam chapters. Supports timed full-exam simulation (40 questions, 90 minutes, 65% pass threshold) and per-chapter practice sessions. Progress is saved in the browser and persists across sessions.
 
 **Key features:**
 - Full exam mode and per-chapter practice mode
@@ -41,7 +41,7 @@ Open `http://localhost:5173` in a browser. The app loads entirely client-side �
 
 ### Starting an exam
 
-1. Open the app. The home screen lists all 8 chapters with their question counts and point weights.
+1. Open the app and choose **ISTQB CTAL-TAE Preparation** on the landing page (use **All certifications** in the header to come back). The home screen lists all 8 chapters with their question counts and point weights.
 2. Click **Start Full Exam** to begin a timed 40-question simulation drawn randomly from all chapters.
 3. Click any chapter card to start an untimed practice session for that chapter only.
 
@@ -76,26 +76,39 @@ Click **Settings** to configure:
 ## Project Structure
 
 ```
-public/data/          # Question bank (JSON — edit here to add/update questions)
-  index.json          # Chapter metadata and exam configuration
-  chapter-{1..8}.json # Question arrays per chapter
+public/data/
+  istqb-tae/            # Question bank for one certification (JSON — edit here)
+    index.json          # Chapter metadata and exam configuration
+    chapter-{1..8}.json # Question arrays per chapter
 src/
-  hooks/              # useData (question loading), useExam (state machine), useSettings
-  utils/              # exam logic (scoring, shuffling), localStorage helpers
+  certifications/     # registry.ts — list of certifications (single source of truth)
+  hooks/              # useData (per-cert question loading), useExam (state machine), useSettings, useHashRoute
+  utils/              # exam logic (scoring, shuffling), localStorage helpers (certStorage)
   components/         # QuestionCard, TimerDisplay, ReviewScreen, ResultsScreen, etc.
-  pages/              # HomePage, ExamPage, HistoryPage, SettingsPage
+  pages/              # CertificationSelectPage, WorkInProgressPage, CertificationApp,
+                      # HomePage, ExamPage, HistoryPage, SettingsPage
   types.ts            # Shared TypeScript interfaces
 ```
 
+Certification selection is hash-based (`#/` = landing, `#/istqb-tae` = ISTQB CTAL-TAE); there is no router library.
+
 ## Editing the Question Bank
 
-All questions live in `public/data/chapter-{n}.json`. After editing, validate the data:
+Questions live in `public/data/<certId>/chapter-{n}.json` (for example `public/data/istqb-tae/chapter-3.json`). After editing, validate the data:
 
 ```bash
 npm run validate
 ```
 
-Validation checks for duplicate IDs, correct option references, and consistent point values within each chapter (required for fair random selection).
+Validation runs for every certification folder under `public/data/` and checks for duplicate IDs (per certification), correct option references, and consistent point values within each chapter (required for fair random selection).
+
+## Adding a certification
+
+1. Add an entry to `src/certifications/registry.ts` with `status: 'wip'` (unique `id` and `storagePrefix`).
+2. Create `public/data/<id>/index.json` and `chapter-{n}.json` files (same schema as `istqb-tae`).
+3. Run `npm run validate`, then flip `status` to `'available'`.
+
+No component, hook or storage change is needed.
 
 ## Building for Production
 

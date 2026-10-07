@@ -1,7 +1,7 @@
 import { useState, useEffect, useCallback, useRef } from 'react';
 import type { Question, AttemptAnswer, Attempt, IndexData, AppSettings } from '../types';
 import { shuffle, selectQuestions, computeResult } from '../utils/exam';
-import { getInProgress, saveInProgress, clearInProgress, saveAttempt } from '../utils/storage';
+import type { CertStorage } from '../utils/storage';
 
 export type ExamView = 'question' | 'review' | 'results';
 
@@ -20,8 +20,10 @@ export interface ExamState {
 export function useExam(
   indexData: IndexData | null,
   questionsByChapter: Map<number, Question[]>,
-  settings: AppSettings
+  settings: AppSettings,
+  storage: CertStorage
 ) {
+  const { getInProgress, saveInProgress, clearInProgress, saveAttempt } = storage;
   const [examState, setExamState] = useState<ExamState | null>(null);
   const timerRef = useRef<ReturnType<typeof setInterval> | null>(null);
   const startTimeRef = useRef<number>(0);
@@ -74,7 +76,7 @@ export function useExam(
         return updated;
       });
     }, 1000);
-  }, [stopTimer, indexData, settings.passPercent]);
+  }, [stopTimer, indexData, settings.passPercent, saveInProgress, saveAttempt, clearInProgress]);
 
   // Cleanup timer on unmount
   useEffect(() => () => stopTimer(), [stopTimer]);
@@ -132,7 +134,7 @@ export function useExam(
     });
     startTimeRef.current = Date.now();
     startTimer(durationSeconds);
-  }, [indexData, buildQuestions, stopTimer, startTimer]);
+  }, [indexData, buildQuestions, stopTimer, startTimer, saveInProgress]);
 
   const startSectionPractice = useCallback((
     chapterId: number,
@@ -167,7 +169,7 @@ export function useExam(
       startTimeRef.current = Date.now();
       startTimer(remainingSeconds);
     }
-  }, [buildQuestions, stopTimer, startTimer]);
+  }, [buildQuestions, stopTimer, startTimer, saveInProgress]);
 
   const answerQuestion = useCallback((questionId: string, selected: string[]) => {
     setExamState(prev => {
@@ -188,7 +190,7 @@ export function useExam(
       });
       return updated;
     });
-  }, []);
+  }, [saveInProgress]);
 
   const toggleFlag = useCallback((questionId: string) => {
     setExamState(prev => {
@@ -208,7 +210,7 @@ export function useExam(
       });
       return updated;
     });
-  }, []);
+  }, [saveInProgress]);
 
   const goToIndex = useCallback((i: number) => {
     setExamState(prev => prev ? { ...prev, currentIndex: i } : prev);
@@ -261,13 +263,13 @@ export function useExam(
       clearInProgress();
       return { ...prev, view: 'results', result };
     });
-  }, [stopTimer, indexData, settings.passPercent]);
+  }, [stopTimer, indexData, settings.passPercent, saveAttempt, clearInProgress]);
 
   const exitExam = useCallback(() => {
     stopTimer();
     clearInProgress();
     setExamState(null);
-  }, [stopTimer]);
+  }, [stopTimer, clearInProgress]);
 
   // Resume in-progress on mount
   useEffect(() => {
@@ -295,7 +297,7 @@ export function useExam(
       startTimeRef.current = Date.now();
       startTimer(saved.remainingSeconds);
     }
-  }, [indexData, questionsByChapter, examState, startTimer]);
+  }, [indexData, questionsByChapter, examState, startTimer, getInProgress, clearInProgress]);
 
   return {
     examState,

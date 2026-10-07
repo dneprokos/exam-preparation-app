@@ -1,15 +1,17 @@
 import { useState } from 'react';
 import type { IndexData } from '../types';
-import { getAttempts, clearAttempts, exportAttempts } from '../utils/storage';
+import type { CertStorage } from '../utils/storage';
 import { getWeakChapters } from '../utils/exam';
 import { TrendChart } from '../components/TrendChart';
 
 interface Props {
   indexData: IndexData | null;
   passPercent: number;
+  storage: CertStorage;
 }
 
-export function HistoryPage({ indexData, passPercent }: Props) {
+export function HistoryPage({ indexData, passPercent, storage }: Props) {
+  const { getAttempts, clearAttempts, exportAttempts } = storage;
   const [attempts, setAttempts] = useState(() => getAttempts());
 
   function handleClear() {

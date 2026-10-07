@@ -1,11 +1,12 @@
 import { describe, it, expect, beforeEach } from 'vitest';
-import {
-  getAttempts, saveAttempt, clearAttempts,
-  getInProgress, saveInProgress, clearInProgress,
-  getSettings, saveSettings,
-} from './storage';
+import { certStorage, getSettings, saveSettings } from './storage';
 import { makeAttempt } from '../test/factories';
 import type { InProgressAttempt, AppSettings } from '../types';
+
+const {
+  getAttempts, saveAttempt, clearAttempts,
+  getInProgress, saveInProgress, clearInProgress,
+} = certStorage('tae');
 
 beforeEach(() => {
   localStorage.clear();
@@ -107,5 +108,32 @@ describe('settings', () => {
     localStorage.setItem('tae_settings', '///bad');
     const s = getSettings();
     expect(s.passPercent).toBe(65);
+  });
+});
+
+describe('certStorage namespacing', () => {
+  it('uses the legacy tae_* keys for prefix "tae"', () => {
+    certStorage('tae').saveAttempt(makeAttempt({ id: 'x' }));
+    expect(localStorage.getItem('tae_attempts')).not.toBeNull();
+  });
+
+  it('different prefixes do not see each other attempts', () => {
+    const a = certStorage('tae');
+    const b = certStorage('genai');
+    a.saveAttempt(makeAttempt({ id: 'tae-1' }));
+    expect(b.getAttempts()).toEqual([]);
+    b.saveAttempt(makeAttempt({ id: 'genai-1' }));
+    expect(a.getAttempts().map(x => x.id)).toEqual(['tae-1']);
+    expect(b.getAttempts().map(x => x.id)).toEqual(['genai-1']);
+  });
+
+  it('different prefixes do not see the other in-progress data', () => {
+    const state: InProgressAttempt = {
+      mode: 'full', questionIds: ['q1'], answers: [], flagged: [],
+      remainingSeconds: 10, startedAt: '2024-01-01T00:00:00.000Z',
+    };
+    certStorage('tae').saveInProgress(state);
+    expect(certStorage('genai').getInProgress()).toBeNull();
+    expect(certStorage('tae').getInProgress()).toEqual(state);
   });
 });
