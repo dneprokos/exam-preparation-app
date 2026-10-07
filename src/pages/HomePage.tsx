@@ -1,9 +1,12 @@
 import { useState } from 'react';
 import type { IndexData, Question } from '../types';
-import { getAttempts } from '../utils/storage';
+import type { Certification } from '../certifications/registry';
+import type { CertStorage } from '../utils/storage';
 import { getWeakChapters } from '../utils/exam';
 
 interface Props {
+  cert: Certification;
+  storage: CertStorage;
   indexData: IndexData;
   passPercent: number;
   questionsByChapter: Map<number, Question[]>;
@@ -11,19 +14,20 @@ interface Props {
   onStartSection: (chapterId: number, count: number, timedMinutes: number | null) => void;
 }
 
-export function HomePage({ indexData, passPercent, questionsByChapter, onStartFullExam, onStartSection }: Props) {
+export function HomePage({ cert, storage, indexData, passPercent, questionsByChapter, onStartFullExam, onStartSection }: Props) {
   const [mode, setMode] = useState<'full' | 'section' | null>(null);
-  const weakChapters = getWeakChapters(getAttempts(), indexData.chapters, passPercent);
-  const [selectedChapter, setSelectedChapter] = useState<number>(1);
+  const weakChapters = getWeakChapters(storage.getAttempts(), indexData.chapters, passPercent);
+  const firstChapterId = indexData.chapters[0]?.id ?? 1;
+  const [selectedChapter, setSelectedChapter] = useState<number>(firstChapterId);
   const maxQuestions = questionsByChapter.get(selectedChapter)?.length ?? 1;
-  const [questionCount, setQuestionCount] = useState(() => Math.min(5, questionsByChapter.get(1)?.length ?? 5));
+  const [questionCount, setQuestionCount] = useState(() => Math.min(5, questionsByChapter.get(firstChapterId)?.length ?? 5));
   const [timed, setTimed] = useState(false);
   const [timerMinutes, setTimerMinutes] = useState(10);
 
   return (
     <div className="space-y-8">
       <div className="text-center">
-        <h1 className="text-3xl font-bold mb-2">ISTQB CTAL-TAE Preparation</h1>
+        <h1 className="text-3xl font-bold mb-2">{cert.title}</h1>
         <p className="text-gray-500 dark:text-gray-400">
           {indexData.exam.totalQuestions} questions · {indexData.exam.totalPoints} points · {indexData.exam.durationMinutes} min · {indexData.exam.passPercent}% to pass
         </p>
@@ -52,7 +56,7 @@ export function HomePage({ indexData, passPercent, questionsByChapter, onStartFu
         <div className="bg-white dark:bg-gray-800 rounded-xl border border-gray-200 dark:border-gray-700 p-6 space-y-4">
           <h2 className="text-xl font-semibold">Full Exam</h2>
           <p className="text-gray-600 dark:text-gray-400 text-sm">
-            {indexData.exam.totalQuestions} questions drawn from all 8 chapters · {indexData.exam.durationMinutes} min countdown · auto-submits when time expires
+            {indexData.exam.totalQuestions} questions drawn from all {indexData.chapters.length} chapters · {indexData.exam.durationMinutes} min countdown · auto-submits when time expires
           </p>
           <div className="space-y-1 text-sm">
             {indexData.chapters.map(ch => (

@@ -9,6 +9,7 @@ import { ResultsScreen } from '../components/ResultsScreen';
 interface Props {
   examState: ExamState;
   indexData: IndexData;
+  passPercent: number;
   onAnswer: (questionId: string, selected: string[]) => void;
   onToggleFlag: (questionId: string) => void;
   onGoToIndex: (i: number) => void;
@@ -22,7 +23,7 @@ interface Props {
 }
 
 export function ExamPage({
-  examState, indexData, onAnswer, onToggleFlag, onGoToIndex,
+  examState, indexData, passPercent, onAnswer, onToggleFlag, onGoToIndex,
   onNext, onPrev, onEnterReview, onBackToQuestion, onSubmit, onExit, onGoHome,
 }: Props) {
   if (examState.view === 'results' && examState.result) {
@@ -32,6 +33,7 @@ export function ExamPage({
         questions={examState.questions}
         answers={examState.answers}
         indexData={indexData}
+        passPercent={passPercent}
         onGoHome={onGoHome}
       />
     );

@@ -18,7 +18,7 @@ description: >
 
 Run a live, one-question-at-a-time practice drill. You write each question
 yourself, freshly, from the syllabus — never copy or lightly reword a
-question that's already in `public/data/`. Those files are only a style
+question that's already in `public/data/istqb-tae/`. Those files are only a style
 reference (tone, difficulty, option format), not a source to draw from.
 
 ## Step 1 — Get parameters
@@ -53,7 +53,7 @@ Repeat until the queue is empty or the user says stop:
 
 **a. Pull the source material.** From the syllabus text already loaded in
 Step 2, use the section you're drawing on. Optionally glance at that
-chapter's `public/data/chapter-{n}.json` for tone/format only (question
+chapter's `public/data/istqb-tae/chapter-{n}.json` for tone/format only (question
 phrasing style, option count, scenario framing) — never for content to reuse.
 
 **b. Write one question.** 4 options (`a`–`d`). Mostly single-choice, with an

@@ -2,7 +2,7 @@
 name: update-questions-db
 description: >
   Adds new questions to the ISTQB TAE preparation app's question database
-  (public/data/chapter-*.json files). Use this skill whenever the user wants
+  (public/data/istqb-tae/chapter-*.json files). Use this skill whenever the user wants
   to add questions, import questions, update the question bank, load new Q&A
   pairs, or provides quiz questions (pasted text or a .txt file path).
   Trigger phrases include: "add questions", "update question database",
@@ -14,14 +14,14 @@ description: >
 
 # Update Questions Database
 
-You are importing questions into the ISTQB TAE preparation app's question bank. The database lives in `public/data/chapter-{1..8}.json` — one JSON array per chapter. Your job: parse the input, route each question to the right chapter, build valid question objects, and append them without touching what's already there.
+You are importing questions into the ISTQB TAE preparation app's question bank. The database lives in `public/data/istqb-tae/chapter-{1..8}.json` — one JSON array per chapter. Your job: parse the input, route each question to the right chapter, build valid question objects, and append them without touching what's already there.
 
 ## File map
 
 | File | Purpose |
 |------|---------|
-| `public/data/chapter-{1-8}.json` | Question arrays — **only files you write** |
-| `public/data/index.json` | Exam config — **never modify** |
+| `public/data/istqb-tae/chapter-{1-8}.json` | Question arrays — **only files you write** |
+| `public/data/istqb-tae/index.json` | Exam config — **never modify** |
 | `docs/` | Source PDFs/txt — **read only, never write** |
 | `scripts/validate-questions.js` | Validator — run after every write |
 
@@ -143,7 +143,7 @@ Read the target chapter file first to find the existing `points` value (the vali
 ## Step 4 — Assign IDs
 
 For each target chapter:
-1. Read `public/data/chapter-{N}.json`
+1. Read `public/data/istqb-tae/chapter-{N}.json`
 2. Find the highest number in existing `"ch{N}-q{NNN}"` IDs using a pattern match
 3. New questions in that chapter get the next sequential numbers
 
@@ -164,7 +164,7 @@ If similarity is very high (essentially the same question), skip it and note it 
 ## Step 6 — Append and write
 
 For each chapter that received new questions:
-1. Read existing array from `public/data/chapter-{N}.json`
+1. Read existing array from `public/data/istqb-tae/chapter-{N}.json`
 2. Push all new question objects to the **end** of the array
 3. Write back with **2-space JSON indentation**
 4. Never touch existing entries
@@ -213,6 +213,6 @@ If validator failed: show `❌ FAILED` with the exact error message.
 
 - `docs/` is **read-only**. Never write, delete, or modify files there.
 - **Append only** — never delete or modify existing question objects.
-- `public/data/index.json` is config — **never modify it**.
+- `public/data/istqb-tae/index.json` is config — **never modify it**.
 - No `--overwrite` or `--force` flags anywhere.
 - Always confirm with user before writing when chapter is ambiguous.

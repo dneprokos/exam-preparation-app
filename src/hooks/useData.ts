@@ -1,52 +1,83 @@
 import { useState, useEffect } from 'react';
 import type { IndexData, Question } from '../types';
 
-let _indexData: IndexData | null = null;
-let _questionsByChapter: Map<number, Question[]> = new Map();
-let _loaded = false;
-let _loading = false;
-const _listeners: Array<() => void> = [];
+interface CacheEntry {
+  indexData: IndexData | null;
+  questionsByChapter: Map<number, Question[]>;
+  loaded: boolean;
+  loading: boolean;
+  error: string | null;
+  listeners: Array<() => void>;
+}
 
-async function loadData() {
-  if (_loaded || _loading) return;
-  _loading = true;
+const cache = new Map<string, CacheEntry>();
+
+function getEntry(certId: string): CacheEntry {
+  let entry = cache.get(certId);
+  if (!entry) {
+    entry = {
+      indexData: null,
+      questionsByChapter: new Map(),
+      loaded: false,
+      loading: false,
+      error: null,
+      listeners: [],
+    };
+    cache.set(certId, entry);
+  }
+  return entry;
+}
+
+async function fetchJson<T>(url: string): Promise<T> {
+  const r = await fetch(url);
+  if (!r.ok) throw new Error(`Failed to load ${url} (HTTP ${r.status})`);
+  return await r.json() as T;
+}
+
+async function loadData(certId: string) {
+  const entry = getEntry(certId);
+  if (entry.loaded || entry.loading) return;
+  entry.loading = true;
+  entry.error = null;
   try {
-    const base = import.meta.env.BASE_URL;
-    const idx = await fetch(`${base}data/index.json`).then(r => r.json()) as IndexData;
-    _indexData = idx;
+    const base = `${import.meta.env.BASE_URL}data/${certId}`;
+    const idx = await fetchJson<IndexData>(`${base}/index.json`);
     const entries = await Promise.all(
       idx.chapters.map(ch =>
-        fetch(`${base}data/chapter-${ch.id}.json`)
-          .then(r => r.json() as Promise<Question[]>)
+        fetchJson<Question[]>(`${base}/chapter-${ch.id}.json`)
           .then(qs => [ch.id, qs] as [number, Question[]])
       )
     );
-    _questionsByChapter = new Map(entries);
-    _loaded = true;
+    entry.indexData = idx;
+    entry.questionsByChapter = new Map(entries);
+    entry.loaded = true;
+  } catch (e) {
+    entry.error = e instanceof Error ? e.message : String(e);
   } finally {
-    _loading = false;
-    _listeners.forEach(fn => fn());
+    entry.loading = false;
+    entry.listeners.slice().forEach(fn => fn());
   }
 }
 
-export function useData() {
+export function useData(certId: string) {
   const [, forceUpdate] = useState(0);
-  const [error, setError] = useState<string | null>(null);
 
   useEffect(() => {
+    const entry = getEntry(certId);
     const notify = () => forceUpdate(n => n + 1);
-    _listeners.push(notify);
-    loadData().catch(e => setError(String(e)));
+    entry.listeners.push(notify);
+    void loadData(certId);
     return () => {
-      const i = _listeners.indexOf(notify);
-      if (i >= 0) _listeners.splice(i, 1);
+      const i = entry.listeners.indexOf(notify);
+      if (i >= 0) entry.listeners.splice(i, 1);
     };
-  }, []);
+  }, [certId]);
 
+  const entry = getEntry(certId);
   return {
-    indexData: _indexData,
-    questionsByChapter: _questionsByChapter,
-    loading: !_loaded,
-    error,
+    indexData: entry.indexData,
+    questionsByChapter: entry.questionsByChapter,
+    loading: !entry.loaded && !entry.error,
+    error: entry.error,
   };
 }
