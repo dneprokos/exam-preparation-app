@@ -2,7 +2,7 @@
 
 A browser-based practice tool for the ISTQB Advanced Level Test Automation Engineer (CTAL-TAE) certification exam.
 
-**Live app:** https://dneprokos.github.io/istqb-advanced-tae-preparation-app/
+**Live app:** https://dneprokos.github.io/exam-preparation-app/
 
 ## Overview
 
