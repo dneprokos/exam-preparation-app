@@ -1,0 +1,332 @@
+[
+  {
+    "id": "ch4-q001",
+    "chapter": 4,
+    "section": "4.1.1",
+    "type": "single",
+    "points": 1,
+    "text": "Which of the following components of an LLM-powered testing application is responsible for combining user input with structured and semantically similar data to prepare a prompt for the LLM?",
+    "options": [
+      {
+        "id": "a",
+        "text": "Back-end"
+      },
+      {
+        "id": "b",
+        "text": "Front-end"
+      },
+      {
+        "id": "c",
+        "text": "Authentication component"
+      },
+      {
+        "id": "d",
+        "text": "Post-processing component"
+      }
+    ],
+    "correct": [
+      "a"
+    ],
+    "selectCount": 1,
+    "image": null,
+    "explanation": "The back-end orchestrates the application: it combines user input with retrieved structured and semantically similar data to build the prompt for the LLM. The front-end is the user interface, authentication controls access, post-processing handles the LLM output.",
+    "reference": "Syllabus 4.1.1"
+  },
+  {
+    "id": "ch4-q002",
+    "chapter": 4,
+    "section": "4.1.2",
+    "type": "single",
+    "points": 1,
+    "text": "You are a tester working on a banking application that includes features such as user login, account management, and secure transactions. The system documentation, including API specifications and security requirements, is stored in a vector database, while historical test cases are stored in a relational database. Your task is to generate test cases using a Retrieval-Augmented Generation (RAG) framework to ensure alignment with the latest specifications and requirements. Which of the following options represents the MOST appropriate use of the RAG framework in this scenario?",
+    "options": [
+      {
+        "id": "a",
+        "text": "Submit a query specifying one function to be tested. The RAG framework will retrieve relevant specifications and requirements from the vector database, combine them with historical test cases, and automatically generate accurate and context-aware test cases through the LLM."
+      },
+      {
+        "id": "b",
+        "text": "Submit a query specifying all functions to be tested. The RAG framework will retrieve relevant specifications and requirements from the vector database, combine them with historical test cases, and automatically generate accurate and context-aware test cases through the LLM."
+      },
+      {
+        "id": "c",
+        "text": "Use the RAG framework to retrieve historical test cases from the relational database and security requirements from the vector database. Manually review the retrieved information before refining the query for the LLM to generate targeted test cases."
+      },
+      {
+        "id": "d",
+        "text": "Rely on the LLM’s internal training data to generate test cases while using the RAG framework or reference retrieval without directly integrating retrieved information into the generation process."
+      }
+    ],
+    "correct": [
+      "a"
+    ],
+    "selectCount": 1,
+    "image": null,
+    "explanation": "RAG works best with a focused query (one function), retrieving relevant specifications from the vector database and combining them with historical test cases to ground the LLM. Querying all functions at once dilutes retrieval and the context window, manual review defeats the automation, and ignoring retrieved data defeats RAG.",
+    "reference": "Syllabus 4.1.2"
+  },
+  {
+    "id": "ch4-q003",
+    "chapter": 4,
+    "section": "4.1.3",
+    "type": "single",
+    "points": 1,
+    "text": "Which of the following options BEST describes the enhancements that autonomous and semi-autonomous LLM-powered agents bring to automating test processes?",
+    "options": [
+      {
+        "id": "a",
+        "text": "They can enhance both efficiency and quality in automating test processes through a balanced use of single-agent and multi-agent systems."
+      },
+      {
+        "id": "b",
+        "text": "They can enhance quality in automating test processes by adding complex verification checks although at the expense of efficiency."
+      },
+      {
+        "id": "c",
+        "text": "They can enhance both efficiency and quality in automating test processes by leveraging their ability to operate with varying levels of human interaction."
+      },
+      {
+        "id": "d",
+        "text": "They can enhance both efficiency and quality in automating test processes while eliminating the need for verification within these test processes."
+      }
+    ],
+    "correct": [
+      "c"
+    ],
+    "selectCount": 1,
+    "image": null,
+    "explanation": "Agents can work autonomously or semi-autonomously with varying levels of human interaction, improving efficiency and quality. They do not eliminate the need for verification, and the benefit is not tied to a specific mix of single- and multi-agent systems.",
+    "reference": "Syllabus 4.1.3"
+  },
+  {
+    "id": "ch4-q004",
+    "chapter": 4,
+    "section": "4.2.1",
+    "type": "single",
+    "points": 1,
+    "text": "Which of the following statements about fine-tuning language models for specific test tasks is INCORRECT?",
+    "options": [
+      {
+        "id": "a",
+        "text": "Fine-tuning involves training a pre-trained model on task-specific data to enhance its performance and domain knowledge."
+      },
+      {
+        "id": "b",
+        "text": "Fine-tuning equips a language model with new capabilities by replacing its general knowledge with task-specific reasoning, ensuring the absence of overfitting."
+      },
+      {
+        "id": "c",
+        "text": "Fine-tuning modifies a pre-trained model’s parameters using a targeted dataset to adapt it for a specific domain or task."
+      },
+      {
+        "id": "d",
+        "text": "Fine-tuning requires high-quality, task-specific datasets to avoid biased or inaccurate results."
+      }
+    ],
+    "correct": [
+      "b"
+    ],
+    "selectCount": 1,
+    "image": null,
+    "explanation": "Fine-tuning adapts a pre-trained model with task-specific data; it does not replace general knowledge and cannot guarantee the absence of overfitting. The other statements correctly describe fine-tuning and the need for high-quality data.",
+    "reference": "Syllabus 4.2.1"
+  },
+  {
+    "id": "ch4-q005",
+    "chapter": 4,
+    "section": "4.2.2",
+    "type": "single",
+    "points": 1,
+    "text": "Which of the following BEST describes the primary focus of Large Language Model Operations (LLMOps) when deploying and managing LLMs for test tasks?",
+    "options": [
+      {
+        "id": "a",
+        "text": "Preventing reliance on Generative AI in test processes."
+      },
+      {
+        "id": "b",
+        "text": "Managing LLMs effectively across their lifecycle, including privacy, security, and cost considerations."
+      },
+      {
+        "id": "c",
+        "text": "Limiting LLM usage to chatbot-based testing solutions to reduce complexity."
+      },
+      {
+        "id": "d",
+        "text": "Fully automating all test tasks without requiring human oversight."
+      }
+    ],
+    "correct": [
+      "b"
+    ],
+    "selectCount": 1,
+    "image": null,
+    "explanation": "LLMOps covers managing LLMs across their lifecycle (deployment, monitoring, maintenance) including privacy, security and cost. It does not aim to prevent GenAI use, limit it to chatbots, or remove human oversight.",
+    "reference": "Syllabus 4.2.2"
+  },
+  {
+    "id": "ch4-q006",
+    "chapter": 4,
+    "section": "4.1.2",
+    "type": "single",
+    "points": 1,
+    "text": "What is the main purpose of Retrieval-Augmented Generation (RAG) when applied to an LLM assistant used by a testing team?",
+    "options": [
+      {
+        "id": "a",
+        "text": "To replace all human test analysts with an autonomous AI agent."
+      },
+      {
+        "id": "b",
+        "text": "To retrain the foundational weights of the base LLM from scratch daily."
+      },
+      {
+        "id": "c",
+        "text": "To ground the LLM's responses using an external, up-to-date knowledge base or vector database (such as company requirements and test specifications) to reduce hallucinations."
+      },
+      {
+        "id": "d",
+        "text": "To compress the LLM context window to zero tokens."
+      }
+    ],
+    "correct": [
+      "c"
+    ],
+    "selectCount": 1,
+    "image": null,
+    "explanation": "RAG retrieves relevant domain documents (e.g., project specs, bug history) from an external vector store and injects them into the prompt context, anchoring the LLM's answer in factual company data.",
+    "reference": "Syllabus 4.1.2"
+  },
+  {
+    "id": "ch4-q007",
+    "chapter": 4,
+    "section": "4.1.2",
+    "type": "single",
+    "points": 1,
+    "text": "What is the primary role of retrieval in a RAG-based test assistant?",
+    "options": [
+      {
+        "id": "a",
+        "text": "Supply relevant external documents to ground generation"
+      },
+      {
+        "id": "b",
+        "text": "Update base-model weights on every request"
+      },
+      {
+        "id": "c",
+        "text": "Guarantee every generated answer is correct"
+      },
+      {
+        "id": "d",
+        "text": "Remove the need for access controls"
+      }
+    ],
+    "correct": [
+      "a"
+    ],
+    "selectCount": 1,
+    "image": null,
+    "explanation": "RAG supplies retrieved context at inference time without retraining the base model.",
+    "reference": "Syllabus 4.1.2"
+  },
+  {
+    "id": "ch4-q008",
+    "chapter": 4,
+    "section": "4.1.3",
+    "type": "single",
+    "points": 1,
+    "text": "A semi-autonomous testing agent proposes changes but waits for a tester to approve execution. What distinguishes this workflow?",
+    "options": [
+      {
+        "id": "a",
+        "text": "Human oversight at a decision point"
+      },
+      {
+        "id": "b",
+        "text": "No automation"
+      },
+      {
+        "id": "c",
+        "text": "Guaranteed defect detection"
+      },
+      {
+        "id": "d",
+        "text": "Full autonomy without controls"
+      }
+    ],
+    "correct": [
+      "a"
+    ],
+    "selectCount": 1,
+    "image": null,
+    "explanation": "Semi-autonomous agents combine automated steps with human interaction.",
+    "reference": "Syllabus 4.1.3"
+  },
+  {
+    "id": "ch4-q009",
+    "chapter": 4,
+    "section": "4.2.1",
+    "type": "single",
+    "points": 1,
+    "text": "A fine-tuned model memorizes a narrow set of test cases and performs poorly on new features. What is the likely issue?",
+    "options": [
+      {
+        "id": "a",
+        "text": "Overfitting"
+      },
+      {
+        "id": "b",
+        "text": "Successful generalization"
+      },
+      {
+        "id": "c",
+        "text": "Improved retrieval"
+      },
+      {
+        "id": "d",
+        "text": "Lower latency"
+      }
+    ],
+    "correct": [
+      "a"
+    ],
+    "selectCount": 1,
+    "image": null,
+    "explanation": "Overfitting means the model fits training examples but generalizes poorly.",
+    "reference": "Syllabus 4.2.1"
+  },
+  {
+    "id": "ch4-q010",
+    "chapter": 4,
+    "section": "4.2.2",
+    "type": "single",
+    "points": 1,
+    "text": "Which activity belongs to LLMOps for a production testing assistant?",
+    "options": [
+      {
+        "id": "a",
+        "text": "Monitor quality, privacy, security, and operating costs"
+      },
+      {
+        "id": "b",
+        "text": "Only change the logo"
+      },
+      {
+        "id": "c",
+        "text": "Disable model evaluation"
+      },
+      {
+        "id": "d",
+        "text": "Store credentials in prompts"
+      }
+    ],
+    "correct": [
+      "a"
+    ],
+    "selectCount": 1,
+    "image": null,
+    "explanation": "LLMOps addresses lifecycle operation and governance of LLM systems.",
+    "reference": "Syllabus 4.2.2"
+  }
+]

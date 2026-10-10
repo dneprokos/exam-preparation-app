@@ -19,6 +19,8 @@ function jsonResponse(body: unknown, ok = true, status = 200) {
 const fetchMock = vi.fn((url: string) => {
   if (url === '/data/istqb-tae/index.json') return Promise.resolve(jsonResponse(index));
   if (url === '/data/istqb-tae/chapter-1.json') return Promise.resolve(jsonResponse(questions));
+  if (url === '/data/istqb-genai/index.json') return Promise.resolve(jsonResponse(index));
+  if (url === '/data/istqb-genai/chapter-1.json') return Promise.resolve(jsonResponse(questions));
   return Promise.resolve(jsonResponse(null, false, 404));
 });
 
@@ -51,7 +53,7 @@ describe('App', () => {
     renderWithUser(<App />);
     expect(screen.getByRole('heading', { name: 'Choose a certification' })).toBeInTheDocument();
     expect(screen.getByRole('button', { name: TAE_TITLE })).toBeInTheDocument();
-    expect(screen.getByRole('button', { name: /ISTQB GEN AI/ })).toBeInTheDocument();
+    expect(screen.getByRole('button', { name: /ISTQB CT-GenAI/ })).toBeInTheDocument();
     expect(screen.getByRole('button', { name: /Claude Certified Developer/ })).toBeInTheDocument();
     expect(fetchMock).not.toHaveBeenCalled();
   });
@@ -64,8 +66,14 @@ describe('App', () => {
     expect(window.location.hash).toBe('#/istqb-tae');
   });
 
+  it('opens the GenAI home page when GenAI is chosen', async () => {
+    const { user } = renderWithUser(<App />);
+    await user.click(screen.getByRole('button', { name: /ISTQB CT-GenAI/ }));
+    expect(await screen.findByRole('heading', { level: 1, name: 'ISTQB CT-GenAI Preparation' })).toBeInTheDocument();
+    expect(window.location.hash).toBe('#/istqb-genai');
+  });
+
   it.each([
-    [/ISTQB GEN AI/, 'ISTQB GEN AI'],
     [/Claude Certified Developer/, 'Claude Certified Developer – Foundations (CCDV-F)'],
   ])('wip cert %s shows Work in progress and back returns to the landing', async (name, title) => {
     const { user } = renderWithUser(<App />);

@@ -70,11 +70,15 @@ function validateCert(certId) {
     );
 
     const pointValues = [...new Set(questions.map(q => q.points))];
-    check(
-      'all questions have same point value (random selection guarantee)',
-      pointValues.length === 1,
-      pointValues.length > 1 ? `multiple point values: ${pointValues.join(', ')}` : ''
-    );
+    if (chapter.mixedPoints) {
+      check('mixedPoints chapter declares more than one point value', pointValues.length > 1, `found ${pointValues.join(', ')}`);
+    } else {
+      check(
+        'all questions have same point value (random selection guarantee)',
+        pointValues.length === 1,
+        pointValues.length > 1 ? `multiple point values: ${pointValues.join(', ')}` : ''
+      );
+    }
 
     for (const q of questions) {
       const optionIds = new Set(q.options.map(o => o.id));

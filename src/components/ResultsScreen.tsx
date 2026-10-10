@@ -93,7 +93,7 @@ export function ResultsScreen({ result, questions, answers, indexData, passPerce
                       </span>
                     </div>
                   )}
-                  <div className="text-gray-500 italic">{q.explanation}</div>
+                  {q.explanation && <div className="text-gray-500 italic">{q.explanation}</div>}
                 </div>
               </div>
             );

@@ -20,11 +20,11 @@ export const CERTIFICATIONS: Certification[] = [
   },
   {
     id: 'istqb-genai',
-    title: 'ISTQB GEN AI',
-    shortTitle: 'ISTQB GenAI',
+    title: 'ISTQB CT-GenAI Preparation',
+    shortTitle: 'ISTQB GenAI Prep',
     provider: 'ISTQB',
-    description: 'Practice questions for the ISTQB Generative AI certification.',
-    status: 'wip',
+    description: 'Practice questions for the ISTQB Certified Tester Testing with Generative AI (CT-GenAI) exam.',
+    status: 'available',
     storagePrefix: 'genai',
   },
   {

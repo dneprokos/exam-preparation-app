@@ -1,0 +1,42 @@
+{
+  "chapters": [
+    {
+      "id": 1,
+      "title": "Introduction to Generative AI for Software Testing",
+      "examQuestions": 5,
+      "points": 5
+    },
+    {
+      "id": 2,
+      "title": "Prompt Engineering for Effective Software Testing",
+      "examQuestions": 18,
+      "points": 22,
+      "mixedPoints": true
+    },
+    {
+      "id": 3,
+      "title": "Managing Risks of Generative AI in Software Testing",
+      "examQuestions": 8,
+      "points": 9,
+      "mixedPoints": true
+    },
+    {
+      "id": 4,
+      "title": "LLM-Powered Test Infrastructure for Software Testing",
+      "examQuestions": 5,
+      "points": 5
+    },
+    {
+      "id": 5,
+      "title": "Deploying and Integrating Generative AI in Test Organizations",
+      "examQuestions": 4,
+      "points": 4
+    }
+  ],
+  "exam": {
+    "totalQuestions": 40,
+    "totalPoints": 45,
+    "durationMinutes": 60,
+    "passPercent": 65
+  }
+}

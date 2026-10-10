@@ -1,0 +1,469 @@
+[
+  {
+    "id": "ch1-q001",
+    "chapter": 1,
+    "section": "1.1.1",
+    "type": "single",
+    "points": 1,
+    "text": "Match each type of AI technology (1-4) with its CORRECT description (A-D):\n1. Symbolic AI\n2. Classical machine learning\n3. Deep learning\n4. Generative AI\nA. Uses neural networks to automatically learn features from data.\nB. Uses rule-based systems to mimic human decision-making.\nC. Uses deep learning to create new data by learning from its training data.\nD. Uses a data-driven approach that requires feature selection.",
+    "options": [
+      {
+        "id": "a",
+        "text": "1D, 2B, 3A, 4C"
+      },
+      {
+        "id": "b",
+        "text": "1D, 2C, 3B, 4A"
+      },
+      {
+        "id": "c",
+        "text": "1C, 2B, 3D, 4A"
+      },
+      {
+        "id": "d",
+        "text": "1B, 2D, 3A, 4C"
+      }
+    ],
+    "correct": [
+      "d"
+    ],
+    "selectCount": 1,
+    "image": null,
+    "explanation": "Symbolic AI is rule-based (B). Classical ML is data-driven and needs manual feature selection (D). Deep learning uses neural networks that learn features automatically (A). Generative AI uses deep learning to create new data from what it learned in training (C).",
+    "reference": "Syllabus 1.1.1"
+  },
+  {
+    "id": "ch1-q002",
+    "chapter": 1,
+    "section": "1.1.2",
+    "type": "single",
+    "points": 1,
+    "text": "Consider the realm of Large Language Models (LLMs). Which of the following options BEST explains why context window limitations affect LLM’s text processing capabilities?",
+    "options": [
+      {
+        "id": "a",
+        "text": "Because context windows restrict temporal processing sequences, preventing LLMs from maintaining chronological consistency across extended text analysis."
+      },
+      {
+        "id": "b",
+        "text": "Because context windows prevent cross-referencing capabilities, limiting LLMs’ ability to connect information across different document sources simultaneously."
+      },
+      {
+        "id": "c",
+        "text": "Because context windows force LLMs to discard earlier information, which may contain relevant details needed for understanding later content."
+      },
+      {
+        "id": "d",
+        "text": "Because context windows constrain parsing granularity levels, restricting LLMs from adjusting between character-level and document-level analysis approaches."
+      }
+    ],
+    "correct": [
+      "c"
+    ],
+    "selectCount": 1,
+    "image": null,
+    "explanation": "An LLM can only process a limited number of tokens at once. When input or conversation exceeds the context window, earlier content is dropped or ignored, so details needed later may be lost. The other options describe invented constraints (temporal sequencing, cross-referencing, parsing granularity).",
+    "reference": "Syllabus 1.1.2"
+  },
+  {
+    "id": "ch1-q003",
+    "chapter": 1,
+    "section": "1.1.2",
+    "type": "single",
+    "points": 1,
+    "text": "Which of the following statements BEST describes tokenization in processing text for LLMs?",
+    "options": [
+      {
+        "id": "a",
+        "text": "Tokenization converts tokens into high-dimensional vectors to capture their meaning."
+      },
+      {
+        "id": "b",
+        "text": "Tokenization creates the building blocks used to understand and generate text."
+      },
+      {
+        "id": "c",
+        "text": "Tokenization generates contextually appropriate responses using neural networks."
+      },
+      {
+        "id": "d",
+        "text": "Tokenization predicts the next token in a sequence based on learned relationships."
+      }
+    ],
+    "correct": [
+      "b"
+    ],
+    "selectCount": 1,
+    "image": null,
+    "explanation": "Tokenization splits text into tokens, the basic units the LLM works with to understand and generate text. Converting tokens to vectors is embedding; producing responses and predicting the next token are what the model does after tokenization.",
+    "reference": "Syllabus 1.1.2"
+  },
+  {
+    "id": "ch1-q004",
+    "chapter": 1,
+    "section": "1.1.3",
+    "type": "single",
+    "points": 1,
+    "text": "In the context of software testing, which of the following statements (i-v) about foundation, instruction-tuned, and reasoning LLMs are CORRECT?\n\ni. Foundation LLMs excel at generating test cases from high-level requirements without structured input.\n\nii. Reasoning LLMs excel at creating test scripts that strictly follow predefined organizational templates.\n\niii. Instruction-tuned LLMs excel at autonomously prioritizing test execution based on real-time user feedback.\n\niv. Reasoning LLMs excel at synthesizing data from defect reports to detect trends and prioritize test efforts.\n\nv. Instruction-tuned LLMs excel at generating test cases that adhere to Gherkin language syntax.",
+    "options": [
+      {
+        "id": "a",
+        "text": "i, ii, and iii"
+      },
+      {
+        "id": "b",
+        "text": "ii, iii, and iv"
+      },
+      {
+        "id": "c",
+        "text": "i, ii, and v"
+      },
+      {
+        "id": "d",
+        "text": "iv, and v"
+      }
+    ],
+    "correct": [
+      "d"
+    ],
+    "selectCount": 1,
+    "image": null,
+    "explanation": "Only iv and v are correct: reasoning LLMs suit multi-step analysis such as synthesizing defect reports into trends, and instruction-tuned LLMs follow instructions and formats such as Gherkin. Foundation LLMs need structured prompting rather than excelling with unstructured input (i), reasoning LLMs are not specialised in strict template following (ii), and no LLM autonomously prioritizes execution from real-time user feedback by itself (iii).",
+    "reference": "Syllabus 1.1.3"
+  },
+  {
+    "id": "ch1-q005",
+    "chapter": 1,
+    "section": "1.1.4",
+    "type": "single",
+    "points": 1,
+    "text": "Which of the following statements BEST describes the relation between multimodal LLMs and vision-language models?",
+    "options": [
+      {
+        "id": "a",
+        "text": "Multimodal LLMs are a subset of vision-language models designed to handle diverse inputs."
+      },
+      {
+        "id": "b",
+        "text": "Vision-language models are a subset of multimodal LLMs focusing on visual and textual data."
+      },
+      {
+        "id": "c",
+        "text": "Vision-language models are unrelated to multimodal LLMs and focus only on the user interface."
+      },
+      {
+        "id": "d",
+        "text": "Multimodal LLMs and vision-language models are interchangeable terms."
+      }
+    ],
+    "correct": [
+      "b"
+    ],
+    "selectCount": 1,
+    "image": null,
+    "explanation": "Multimodal LLMs handle several input types (text, images, audio, ...). Vision-language models are the subset that combines visual and textual data, so VLMs are a subset of multimodal LLMs, not the reverse, and the terms are not interchangeable.",
+    "reference": "Syllabus 1.1.4"
+  },
+  {
+    "id": "ch1-q006",
+    "chapter": 1,
+    "section": "1.2.1",
+    "type": "multiple",
+    "points": 1,
+    "text": "Which TWO of the following options represent key capabilities of LLMs in test tasks?",
+    "options": [
+      {
+        "id": "a",
+        "text": "Identifying ambiguities and inconsistencies in requirements."
+      },
+      {
+        "id": "b",
+        "text": "Generating complete application code for deployment."
+      },
+      {
+        "id": "c",
+        "text": "Automating the execution of all test scripts without human intervention."
+      },
+      {
+        "id": "d",
+        "text": "Performing exploratory testing on software applications."
+      },
+      {
+        "id": "e",
+        "text": "Creating diverse test data with various combinations and boundary values."
+      }
+    ],
+    "correct": [
+      "a",
+      "e"
+    ],
+    "selectCount": 2,
+    "image": null,
+    "explanation": "LLMs are good at spotting ambiguities and inconsistencies in requirements and at generating varied test data including boundary values. They do not replace humans for generating deployable application code, executing all scripts unattended, or performing exploratory testing.",
+    "reference": "Syllabus 1.2.1"
+  },
+  {
+    "id": "ch1-q007",
+    "chapter": 1,
+    "section": "1.2.2",
+    "type": "single",
+    "points": 1,
+    "text": "Which of the following statements BEST explains the difference between AI chatbots and LLM-powered testing applications in the context of software testing?",
+    "options": [
+      {
+        "id": "a",
+        "text": "AI chatbots are more suited for specific test tasks, while LLM-powered testing applications focus on ad hoc interactions."
+      },
+      {
+        "id": "b",
+        "text": "Both AI chatbots and LLM-powered testing applications are designed to perform identical tasks without any configuration differences."
+      },
+      {
+        "id": "c",
+        "text": "LLM-powered testing applications rely on conversational prompts, while AI chatbots require integration into test tools and test processes."
+      },
+      {
+        "id": "d",
+        "text": "AI chatbots offer conversational interfaces for ad hoc test tasks, while LLM-powered testing applications provide customized solutions for specific test tasks."
+      }
+    ],
+    "correct": [
+      "d"
+    ],
+    "selectCount": 1,
+    "image": null,
+    "explanation": "AI chatbots offer a conversational interface for ad hoc test tasks. LLM-powered testing applications are customised, integrated solutions built for specific test tasks (often with fixed prompts and workflow integration). Options a and c swap or distort the roles.",
+    "reference": "Syllabus 1.2.2"
+  },
+  {
+    "id": "ch1-q008",
+    "chapter": 1,
+    "section": "1.1.1",
+    "type": "single",
+    "points": 1,
+    "text": "How does Generative AI primarily differ from traditional Machine Learning (ML) or Symbolic AI in a testing context?",
+    "options": [
+      {
+        "id": "a",
+        "text": "Traditional ML can generate new test artifacts, whereas GenAI only executes deterministic check scripts."
+      },
+      {
+        "id": "b",
+        "text": "Symbolic AI relies on pre-programmed rules, while GenAI models can synthesize new text, test cases, and scripts based on learned patterns and probabilistic weights."
+      },
+      {
+        "id": "c",
+        "text": "Traditional ML requires zero training data, while GenAI requires explicit logical rules."
+      },
+      {
+        "id": "d",
+        "text": "GenAI guarantees 100% deterministic output for identical inputs every time."
+      }
+    ],
+    "correct": [
+      "b"
+    ],
+    "selectCount": 1,
+    "image": null,
+    "explanation": "Generative AI uses neural network architectures to produce novel content (like test charters or scripts) probabilistically, contrasting with rule-based symbolic AI or predictive/classification ML models.",
+    "reference": "Syllabus 1.1.1"
+  },
+  {
+    "id": "ch1-q009",
+    "chapter": 1,
+    "section": "1.1.2",
+    "type": "single",
+    "points": 1,
+    "text": "A tester sends a requirements document longer than the model’s context window. What is the most appropriate response?",
+    "options": [
+      {
+        "id": "a",
+        "text": "Assume the model can recall omitted text"
+      },
+      {
+        "id": "b",
+        "text": "Split or retrieve relevant sections and preserve necessary context"
+      },
+      {
+        "id": "c",
+        "text": "Increase temperature to enlarge the context window"
+      },
+      {
+        "id": "d",
+        "text": "Fine-tune on a single prompt"
+      }
+    ],
+    "correct": [
+      "b"
+    ],
+    "selectCount": 1,
+    "image": null,
+    "explanation": "Context windows limit the amount of text processed at once; chunking and retrieval can supply relevant context.",
+    "reference": "Syllabus 1.1.2"
+  },
+  {
+    "id": "ch1-q010",
+    "chapter": 1,
+    "section": "1.1.2",
+    "type": "single",
+    "points": 1,
+    "text": "Which operation converts text into smaller units before it is processed by an LLM?",
+    "options": [
+      {
+        "id": "a",
+        "text": "Embedding retrieval"
+      },
+      {
+        "id": "b",
+        "text": "Tokenization"
+      },
+      {
+        "id": "c",
+        "text": "Fine-tuning"
+      },
+      {
+        "id": "d",
+        "text": "Data poisoning"
+      }
+    ],
+    "correct": [
+      "b"
+    ],
+    "selectCount": 1,
+    "image": null,
+    "explanation": "Tokenization divides text into tokens used by the language model.",
+    "reference": "Syllabus 1.1.2"
+  },
+  {
+    "id": "ch1-q011",
+    "chapter": 1,
+    "section": "1.1.3",
+    "type": "single",
+    "points": 1,
+    "text": "A QA team needs an LLM to consistently follow a detailed output template. Which model category is particularly suitable?",
+    "options": [
+      {
+        "id": "a",
+        "text": "A symbolic expert system"
+      },
+      {
+        "id": "b",
+        "text": "An instruction-tuned LLM"
+      },
+      {
+        "id": "c",
+        "text": "A relational database"
+      },
+      {
+        "id": "d",
+        "text": "A clustering algorithm"
+      }
+    ],
+    "correct": [
+      "b"
+    ],
+    "selectCount": 1,
+    "image": null,
+    "explanation": "Instruction-tuned models are optimized to follow explicit user instructions and formats.",
+    "reference": "Syllabus 1.1.3"
+  },
+  {
+    "id": "ch1-q012",
+    "chapter": 1,
+    "section": "1.1.4",
+    "type": "single",
+    "points": 1,
+    "text": "A tester wants to compare a screenshot against a written UI requirement. What capability is most directly relevant?",
+    "options": [
+      {
+        "id": "a",
+        "text": "A text-only classifier"
+      },
+      {
+        "id": "b",
+        "text": "A vision-language model"
+      },
+      {
+        "id": "c",
+        "text": "A database index"
+      },
+      {
+        "id": "d",
+        "text": "A random seed"
+      }
+    ],
+    "correct": [
+      "b"
+    ],
+    "selectCount": 1,
+    "image": null,
+    "explanation": "Vision-language models can process image and text inputs together.",
+    "reference": "Syllabus 1.1.4"
+  },
+  {
+    "id": "ch1-q013",
+    "chapter": 1,
+    "section": "1.2.1",
+    "type": "single",
+    "points": 1,
+    "text": "What is a reasonable use of GenAI during requirements analysis?",
+    "options": [
+      {
+        "id": "a",
+        "text": "Guarantee requirements are defect-free"
+      },
+      {
+        "id": "b",
+        "text": "Identify potential ambiguity for human review"
+      },
+      {
+        "id": "c",
+        "text": "Replace stakeholder approval"
+      },
+      {
+        "id": "d",
+        "text": "Automatically prove system correctness"
+      }
+    ],
+    "correct": [
+      "b"
+    ],
+    "selectCount": 1,
+    "image": null,
+    "explanation": "LLMs can flag possible ambiguities; testers still validate findings.",
+    "reference": "Syllabus 1.2.1"
+  },
+  {
+    "id": "ch1-q014",
+    "chapter": 1,
+    "section": "1.2.2",
+    "type": "single",
+    "points": 1,
+    "text": "A team needs repeatable integration of AI-generated test cases into its test management workflow. Which approach fits best?",
+    "options": [
+      {
+        "id": "a",
+        "text": "Only informal chatbot conversations"
+      },
+      {
+        "id": "b",
+        "text": "An LLM-powered testing application integrated with existing tools"
+      },
+      {
+        "id": "c",
+        "text": "Manual copy-paste without review"
+      },
+      {
+        "id": "d",
+        "text": "Removing all test management tools"
+      }
+    ],
+    "correct": [
+      "b"
+    ],
+    "selectCount": 1,
+    "image": null,
+    "explanation": "An integrated application can support a defined repeatable workflow.",
+    "reference": "Syllabus 1.2.2"
+  }
+]
