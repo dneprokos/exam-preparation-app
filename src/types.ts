@@ -22,7 +22,8 @@ export interface ChapterMeta {
   id: number;
   title: string;
   examQuestions: number;
-  points: number;
+  points: number;       // nominal (expected) points for the chapter's exam questions
+  mixedPoints?: boolean; // chapter pool mixes 1- and 2-point (K3) questions
 }
 
 export interface ExamConfig {

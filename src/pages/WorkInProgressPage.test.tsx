@@ -4,7 +4,7 @@ import { renderWithUser } from '../test/renderWithUser';
 import { WorkInProgressPage } from './WorkInProgressPage';
 import { getCertification } from '../certifications/registry';
 
-const cert = getCertification('istqb-genai')!;
+const cert = getCertification('ccdv-f')!;
 
 describe('WorkInProgressPage', () => {
   it('shows the certification title and the work in progress message', () => {

@@ -1,0 +1,761 @@
+[
+  {
+    "id": "ch2-q001",
+    "chapter": 2,
+    "section": "2.1.1",
+    "type": "single",
+    "points": 1,
+    "text": "A tester is examining a structured prompt used to obtain LLM assistance for performance test analysis. One of the components of this prompt reads: “Test reports from performance testing tools, system monitoring logs during peak usage periods, and application performance benchmarks from previous releases”. In which component of the six-part prompt structure would this description MOST LIKELY appear?",
+    "options": [
+      {
+        "id": "a",
+        "text": "Context"
+      },
+      {
+        "id": "b",
+        "text": "Input data"
+      },
+      {
+        "id": "c",
+        "text": "Constraints"
+      },
+      {
+        "id": "d",
+        "text": "Output format"
+      }
+    ],
+    "correct": [
+      "b"
+    ],
+    "selectCount": 1,
+    "image": null,
+    "explanation": "Test reports, monitoring logs and benchmarks are the data the LLM must analyse, so they belong in Input data. Context describes the situation, Constraints limit the response, Output format defines its shape.",
+    "reference": "Syllabus 2.1.1"
+  },
+  {
+    "id": "ch2-q002",
+    "chapter": 2,
+    "section": "2.1.1",
+    "type": "single",
+    "points": 1,
+    "text": "A tester wants an LLM to analyze a requirements specification for potential defects. In the structured prompt the tester is using, one line reads: “The potential defects must be provided in a markdown table with the following columns: ID, requirement reference, defect type, description, severity”. In which component of the six-part prompt structure would this line MOST LIKELY appear?",
+    "options": [
+      {
+        "id": "a",
+        "text": "Instructions"
+      },
+      {
+        "id": "b",
+        "text": "Constraints"
+      },
+      {
+        "id": "c",
+        "text": "Output format"
+      },
+      {
+        "id": "d",
+        "text": "Context"
+      }
+    ],
+    "correct": [
+      "c"
+    ],
+    "selectCount": 1,
+    "image": null,
+    "explanation": "A required markdown table with specified columns defines the shape of the response, which is the Output format component.",
+    "reference": "Syllabus 2.1.1"
+  },
+  {
+    "id": "ch2-q003",
+    "chapter": 2,
+    "section": "2.1.2",
+    "type": "single",
+    "points": 1,
+    "text": "Which of the following BEST differentiates prompt chaining, few-shot prompting, and meta prompting techniques?",
+    "options": [
+      {
+        "id": "a",
+        "text": "Prompt chaining focuses on providing examples, few-shot prompting breaks tasks into subtasks, and meta prompting refines prompts manually."
+      },
+      {
+        "id": "b",
+        "text": "Few-shot prompting provides guidance with examples, prompt chaining breaks tasks into multiple prompts, and meta prompting allows the model to iteratively refine its own prompts."
+      },
+      {
+        "id": "c",
+        "text": "Meta prompting emphasizes breaking down tasks into steps, prompt chaining uses examples, and few-shot prompting focuses on manual optimization of prompts."
+      },
+      {
+        "id": "d",
+        "text": "Prompt chaining provides guidance without examples, few-shot provides guidance with examples, and meta prompting relies on tester-defined prompts."
+      }
+    ],
+    "correct": [
+      "b"
+    ],
+    "selectCount": 1,
+    "image": null,
+    "explanation": "Few-shot prompting guides the model with examples; prompt chaining splits a task into a sequence of prompts, each using the previous output; meta prompting has the LLM help create or refine prompts. The other options mix up these definitions.",
+    "reference": "Syllabus 2.1.2"
+  },
+  {
+    "id": "ch2-q004",
+    "chapter": 2,
+    "section": "2.1.3",
+    "type": "single",
+    "points": 1,
+    "text": "What is the primary function of a system prompt in interactions with LLMs?",
+    "options": [
+      {
+        "id": "a",
+        "text": "To provide a framework for the LLM behavior for the entire conversation."
+      },
+      {
+        "id": "b",
+        "text": "To provide specific questions or instructions from the user to the LLM."
+      },
+      {
+        "id": "c",
+        "text": "To adjust dynamically with each user interaction and set the conversation's context."
+      },
+      {
+        "id": "d",
+        "text": "To include visible input from the user and set rules for the conversation."
+      }
+    ],
+    "correct": [
+      "a"
+    ],
+    "selectCount": 1,
+    "image": null,
+    "explanation": "The system prompt sets the overall framework (role, rules, tone, constraints) for the LLM for the whole conversation. User prompts carry the specific, changing requests and are visible to the user.",
+    "reference": "Syllabus 2.1.3"
+  },
+  {
+    "id": "ch2-q005",
+    "chapter": 2,
+    "section": "2.2.1",
+    "type": "single",
+    "points": 2,
+    "text": "You are tasked with applying the following test approach to a set of stable requirements for a new project: generate test conditions, prioritize them based on risk level, and identify potential coverage gaps. The requirements have already been thoroughly reviewed for defects. Which of the following sequences of steps (i-v) should you follow to effectively apply Generative AI to implement this test approach using a prompt chaining technique to implement this test approach?\n\ni. Submit the requirements to the LLM and prompt it to produce test conditions based on those requirements.\n\nii. Provide the test conditions to the LLM, ensuring it understands the context for prioritization, and prompt it to prioritize those test conditions accordingly.\n\niii. Provide the prioritized test conditions to the LLM and prompt it to analyze them to determine whether all aspects of the requirements are addressed in the test conditions.\n\niv. Submit the requirements to the LLM and prompt it to produce prioritized test conditions that address all aspects of the requirements.\n\nv. Submit the requirements to the LLM and prompt it to detect inconsistencies and ambiguities in those requirements.",
+    "options": [
+      {
+        "id": "a",
+        "text": "i, ii, and iii"
+      },
+      {
+        "id": "b",
+        "text": "iv, and ii"
+      },
+      {
+        "id": "c",
+        "text": "i, iii, and v"
+      },
+      {
+        "id": "d",
+        "text": "v, and iv"
+      }
+    ],
+    "correct": [
+      "a"
+    ],
+    "selectCount": 1,
+    "image": null,
+    "explanation": "Prompt chaining breaks the work into sequential steps whose outputs feed the next: generate test conditions (i), prioritize them (ii), then check coverage gaps (iii). iv does everything in one prompt, which is not chaining. v is unnecessary because the requirements were already reviewed.",
+    "reference": "Syllabus 2.2.1"
+  },
+  {
+    "id": "ch2-q006",
+    "chapter": 2,
+    "section": "2.2.2",
+    "type": "single",
+    "points": 2,
+    "text": "Consider applying the few-shot structured prompting technique to generate Gherkin-style test cases (i.e., scenario-based) for the following user story and acceptance criterion:\n\n- User story: “As a user, I want to reset my password so that I can regain access to my account if I forget it.”\n\n- Acceptance criterion: “When a user submits a registered email address then they receive a password reset email.” You can rely on predefined examples that include user stories, acceptance criteria, and Gherkin-style test cases. Your task is to create a prompt to guide the LLM in generating accurate test cases aligned with the acceptance criterion for the user story above. Which one of the following prompts is BEST suited to this task?",
+    "options": [
+      {
+        "id": "a",
+        "text": "Prompt A Role: Act as a test analyst. Context: You are testing a password reset functionality. Instruction: Generate Gherkin-style test cases for the user story and acceptance criterion. using the following predefined examples as a guide: << predefined examples >>. Input Data: <<< user story >>> and <<< acceptance criterion >>>. Constraints: Rely on best practices to create test cases. Output Format: Generate test cases with expected results."
+      },
+      {
+        "id": "b",
+        "text": "Prompt B Role: Act as a test analyst specializing in Gherkin-style test cases. Context: You are testing a password reset functionality. Instruction: Generate Gherkin-style test cases for the user story and acceptance criterion, using the following predefined examples as a guide: << predefined examples >>. Input Data: <<< user story >>> and <<< acceptance criterion >>>. Constraints: Use \"Given-When-Then\" syntax and ensure alignment with the acceptance criterion. Output Format: Respect the given Gherkin-style test case format."
+      },
+      {
+        "id": "c",
+        "text": "Prompt C Role: Act as a test analyst. Context: You are testing a password reset functionality. Instruction: Generate Gherkin-style test cases for the user story and acceptance criterion. Rely on best practices to create test cases. Input Data: <<< user story >>> and <<< acceptance criterion >>>. Constraints: Use \"Given-When-Then\" syntax and ensure alignment with the acceptance criterion. Output Format: Respect the given Gherkin-style test case format."
+      },
+      {
+        "id": "d",
+        "text": "Prompt D Role: Act as a test analyst. Context: You are testing a password reset functionality. Instruction: Generate at least two Gherkin-style test cases for the user story and acceptance criterion. Focus on edge cases. Input Data: <<< user story >>> and <<< acceptance criterion >>>. Constraints: Ensure all test cases follow \"Given-When-Then\" syntax. Output Format: Respect the given Gherkin-style test case format."
+      }
+    ],
+    "correct": [
+      "b"
+    ],
+    "selectCount": 1,
+    "image": null,
+    "explanation": "Prompt B is the only one that keeps the predefined examples (few-shot) and also tightens the role, requires Given-When-Then syntax and alignment with the acceptance criterion, and fixes the Gherkin output format. A lacks Given-When-Then and has vague constraints, C omits the examples (not few-shot), D omits the examples and adds an unrequested edge-case focus.",
+    "reference": "Syllabus 2.2.2"
+  },
+  {
+    "id": "ch2-q007",
+    "chapter": 2,
+    "section": "2.2.3",
+    "type": "single",
+    "points": 2,
+    "text": "You are tasked with applying structured prompting to analyze regression test results. Here is an initial draft of the prompt:\n\nRole: Act as a test analyst.\n\nContext: Analyze raw regression test results from a recent test execution cycle.\n\nInstruction: Identify discrepancies in the test results.\n\nInput Data: Use the attached file containing raw test results.\n\nConstraints: Use the known anomalies list for cross-checking.\n\nOutput Format: Provide a list of discrepancies using a table format. You are asked to improve this prompt. Which of the following improvements would BEST align the prompt with structured prompt engineering best practices for comprehensive regression test report analysis?",
+    "options": [
+      {
+        "id": "a",
+        "text": "Add a step to cluster similar issues and cross-check findings against the known anomalies list."
+      },
+      {
+        "id": "b",
+        "text": "Specify that the role is a regression test analyst specializing in actionable insights."
+      },
+      {
+        "id": "c",
+        "text": "Expand the instruction to include separating expected results and actual results, clustering issues, and highlighting discrepancies."
+      },
+      {
+        "id": "d",
+        "text": "Include references to regression testing principles such as \"Given-When-Then\" in the constraints."
+      }
+    ],
+    "correct": [
+      "c"
+    ],
+    "selectCount": 1,
+    "image": null,
+    "explanation": "The instruction is the weak part: it only says \"identify discrepancies\". Expanding it to separate expected from actual results, cluster issues and highlight discrepancies gives the LLM concrete steps for a comprehensive analysis. Cross-checking is already in the constraints, and a more specific role or Given-When-Then references add little.",
+    "reference": "Syllabus 2.2.3"
+  },
+  {
+    "id": "ch2-q008",
+    "chapter": 2,
+    "section": "2.2.4",
+    "type": "single",
+    "points": 2,
+    "text": "You are using an LLM to assist in preparing actionable test metrics from raw data. The metrics include test progress, defect trends, and coverage, which are graphically displayed and explained with text. Your goal is to improve the test process to ensure the generated metrics are accurate, actionable, and easily interpretable by stakeholders. Here is an initial draft of a prompt used to instruct the AI:\n\nRole: Act as a test manager.\n\nContext: You are provided with raw data from test tools.\n\nInstruction: Generate test progress metrics, defect trend metrics, and coverage metrics from the raw data.\n\nInput Data: Use the attached file containing raw test results.\n\nConstraints: Ensure that the output is concise and understandable.\n\nOutput Format: Display metrics on a dashboard. You are asked to improve this prompt. Which of the following improvements would BEST enhance the LLM’s ability to produce accurate and actionable metrics?",
+    "options": [
+      {
+        "id": "a",
+        "text": "Specify that the role is a test manager focusing on actionable insights and decision support, ensuring comprehensive analysis of test data."
+      },
+      {
+        "id": "b",
+        "text": "Add an instruction to include potential risks identified from the trends in the generated metrics, along with their impact assessment and priority levels."
+      },
+      {
+        "id": "c",
+        "text": "Expand the output format to include a plain-language summary that interprets the metrics and outlines next steps for stakeholders."
+      },
+      {
+        "id": "d",
+        "text": "Emphasize constraints that the output is also easily interpretable by stakeholders, using clear language and avoiding technical jargon throughout the response."
+      }
+    ],
+    "correct": [
+      "c"
+    ],
+    "selectCount": 1,
+    "image": null,
+    "explanation": "Metrics are only actionable if stakeholders can interpret them and know what to do. Extending the output format with a plain-language summary and next steps does this directly. The other options add roles, risk analysis or restate an existing constraint without improving how results are presented.",
+    "reference": "Syllabus 2.2.4"
+  },
+  {
+    "id": "ch2-q009",
+    "chapter": 2,
+    "section": "2.2.5",
+    "type": "single",
+    "points": 2,
+    "text": "Your goal is to create test cases for an AI-based system that suffers from the test oracle problem, preventing you from determining expected results. You can only count on a few existing test cases with known expected results. Through appropriate analysis, you have identified a set of well-defined transformation rules that specify how changes to inputs affect expected results. These rules can be applied to all existing test cases. You have decided to rely on Generative AI, providing a given LLM with the following information: the existing test cases with their inputs and expected results, a clear description of the transformation rules, and guidelines for generating additional test cases by precisely applying these rules to the relevant existing test cases. With the specified information, the chosen LLM can directly generate additional test cases in line with your expectations. Which of the following prompting techniques is BEST suited to achieve your goal in this scenario?",
+    "options": [
+      {
+        "id": "a",
+        "text": "Few-shot prompting"
+      },
+      {
+        "id": "b",
+        "text": "Prompt chaining"
+      },
+      {
+        "id": "c",
+        "text": "Meta prompting"
+      },
+      {
+        "id": "d",
+        "text": "Zero-shot prompting"
+      }
+    ],
+    "correct": [
+      "a"
+    ],
+    "selectCount": 1,
+    "image": null,
+    "explanation": "The LLM is given existing test cases with expected results and rules to apply, so it can generate new cases by following those examples: few-shot prompting. Zero-shot gives no examples, prompt chaining is for multi-step tasks, and meta prompting is about generating or refining prompts.",
+    "reference": "Syllabus 2.2.5"
+  },
+  {
+    "id": "ch2-q010",
+    "chapter": 2,
+    "section": "2.3.1",
+    "type": "single",
+    "points": 1,
+    "text": "You are leveraging Generative AI to assist in testing an entertainment software application. The Generative AI model generates test cases for user interaction scenarios, test scripts for API interactions, and synthetic test data to address edge cases. To effectively evaluate the Generative AI model’s performance and to refine prompts, which combination of metrics and actions BEST ensures comprehensive assessment and improvement?",
+    "options": [
+      {
+        "id": "a",
+        "text": "Evaluate the diversity of test cases to ensure varied input scenarios and use test execution success rate to validate the functionality of generated API test scripts."
+      },
+      {
+        "id": "b",
+        "text": "Apply accuracy and completeness metrics to validate test cases against entertainment software requirements and rely on time efficiency to compare AI-generated test scripts with manual test efforts."
+      },
+      {
+        "id": "c",
+        "text": "Focus on precision to ensure generated test data meets entertainment software compliance standards, while contextual fit and test execution success rate assesses the alignment and usability of test scripts."
+      },
+      {
+        "id": "d",
+        "text": "Prioritize relevance and contextual fit for all outputs to maintain consistency with entertainment software requirements and include diversity metrics to expand edge case coverage."
+      }
+    ],
+    "correct": [
+      "a"
+    ],
+    "selectCount": 1,
+    "image": null,
+    "explanation": "Diversity of generated test cases and the execution success rate of generated API scripts evaluate the kinds of output produced (scenarios, scripts) in a way that can guide prompt refinement. The other combinations mismatch metrics and artifacts (e.g., precision for test data compliance, time efficiency for comparison with manual work).",
+    "reference": "Syllabus 2.3.1"
+  },
+  {
+    "id": "ch2-q011",
+    "chapter": 2,
+    "section": "2.3.2",
+    "type": "single",
+    "points": 1,
+    "text": "Which of the following techniques for evaluating and iteratively refining prompts is BEST suited for determining why an LLM consistently generates test cases with wrong expected results that contradict the input requirements, thereby providing insights to optimize the prompt and prevent similar errors?",
+    "options": [
+      {
+        "id": "a",
+        "text": "Output analysis"
+      },
+      {
+        "id": "b",
+        "text": "A/B testing of prompts"
+      },
+      {
+        "id": "c",
+        "text": "Adjusting prompt length and specificity"
+      },
+      {
+        "id": "d",
+        "text": "Integrating user feedback"
+      }
+    ],
+    "correct": [
+      "a"
+    ],
+    "selectCount": 1,
+    "image": null,
+    "explanation": "Output analysis examines the generated results in detail to find patterns in errors (e.g., why expected results contradict requirements) and gives insight for fixing the prompt. A/B testing compares prompts; length/specificity tuning and user feedback do not explain the cause of a consistent error.",
+    "reference": "Syllabus 2.3.2"
+  },
+  {
+    "id": "ch2-q012",
+    "chapter": 2,
+    "section": "2.1.2",
+    "type": "single",
+    "points": 1,
+    "text": "Which prompt engineering technique explicitly provides the Large Language Model (LLM) with a few input-output examples before asking it to perform a task on a new input?",
+    "options": [
+      {
+        "id": "a",
+        "text": "Zero-shot prompting"
+      },
+      {
+        "id": "b",
+        "text": "Chain-of-thought (CoT) prompting"
+      },
+      {
+        "id": "c",
+        "text": "Few-shot prompting"
+      },
+      {
+        "id": "d",
+        "text": "Retrieval-Augmented Generation (RAG)"
+      }
+    ],
+    "correct": [
+      "c"
+    ],
+    "selectCount": 1,
+    "image": null,
+    "explanation": "Few-shot prompting supplies a small number of demonstration examples inside the prompt context to guide the model's format and logic. Chain-of-thought encourages step-by-step reasoning, while zero-shot provides no prior examples.",
+    "reference": "Syllabus 2.1.2"
+  },
+  {
+    "id": "ch2-q013",
+    "chapter": 2,
+    "section": "2.1.1",
+    "type": "single",
+    "points": 1,
+    "text": "In a structured prompt, where should the instruction “Return a JSON array with id, steps, and expectedResult” appear?",
+    "options": [
+      {
+        "id": "a",
+        "text": "Role"
+      },
+      {
+        "id": "b",
+        "text": "Output format"
+      },
+      {
+        "id": "c",
+        "text": "Input data"
+      },
+      {
+        "id": "d",
+        "text": "Background context"
+      }
+    ],
+    "correct": [
+      "b"
+    ],
+    "selectCount": 1,
+    "image": null,
+    "explanation": "Output format defines the expected structure of the response.",
+    "reference": "Syllabus 2.1.1"
+  },
+  {
+    "id": "ch2-q014",
+    "chapter": 2,
+    "section": "2.1.1",
+    "type": "single",
+    "points": 1,
+    "text": "A tester includes API specifications and acceptance criteria in a structured prompt. Which component best describes those artifacts?",
+    "options": [
+      {
+        "id": "a",
+        "text": "Input data"
+      },
+      {
+        "id": "b",
+        "text": "Role"
+      },
+      {
+        "id": "c",
+        "text": "Output format"
+      },
+      {
+        "id": "d",
+        "text": "Temperature"
+      }
+    ],
+    "correct": [
+      "a"
+    ],
+    "selectCount": 1,
+    "image": null,
+    "explanation": "Specifications and acceptance criteria supplied for analysis are input data.",
+    "reference": "Syllabus 2.1.1"
+  },
+  {
+    "id": "ch2-q015",
+    "chapter": 2,
+    "section": "2.1.2",
+    "type": "single",
+    "points": 1,
+    "text": "A tester asks an LLM to draft test conditions, then feeds them into a second prompt to prioritize risk. Which technique is this?",
+    "options": [
+      {
+        "id": "a",
+        "text": "Few-shot prompting"
+      },
+      {
+        "id": "b",
+        "text": "Prompt chaining"
+      },
+      {
+        "id": "c",
+        "text": "Data poisoning"
+      },
+      {
+        "id": "d",
+        "text": "Fine-tuning"
+      }
+    ],
+    "correct": [
+      "b"
+    ],
+    "selectCount": 1,
+    "image": null,
+    "explanation": "Prompt chaining uses outputs of one prompt as inputs to subsequent prompts.",
+    "reference": "Syllabus 2.1.2"
+  },
+  {
+    "id": "ch2-q016",
+    "chapter": 2,
+    "section": "2.1.3",
+    "type": "single",
+    "points": 1,
+    "text": "Which prompt typically defines overarching behavior and constraints across a conversation?",
+    "options": [
+      {
+        "id": "a",
+        "text": "System prompt"
+      },
+      {
+        "id": "b",
+        "text": "A single example answer"
+      },
+      {
+        "id": "c",
+        "text": "Retrieved search snippet"
+      },
+      {
+        "id": "d",
+        "text": "Random seed"
+      }
+    ],
+    "correct": [
+      "a"
+    ],
+    "selectCount": 1,
+    "image": null,
+    "explanation": "A system prompt establishes high-level behavioral instructions.",
+    "reference": "Syllabus 2.1.3"
+  },
+  {
+    "id": "ch2-q017",
+    "chapter": 2,
+    "section": "2.2.1",
+    "type": "single",
+    "points": 1,
+    "text": "An LLM identifies a contradiction between two acceptance criteria. What should the tester do next?",
+    "options": [
+      {
+        "id": "a",
+        "text": "Delete one criterion automatically"
+      },
+      {
+        "id": "b",
+        "text": "Confirm the inconsistency with relevant stakeholders"
+      },
+      {
+        "id": "c",
+        "text": "Treat the LLM output as final"
+      },
+      {
+        "id": "d",
+        "text": "Ignore the issue"
+      }
+    ],
+    "correct": [
+      "b"
+    ],
+    "selectCount": 1,
+    "image": null,
+    "explanation": "Potential defects identified by an LLM require review and clarification.",
+    "reference": "Syllabus 2.2.1"
+  },
+  {
+    "id": "ch2-q018",
+    "chapter": 2,
+    "section": "2.2.2",
+    "type": "single",
+    "points": 1,
+    "text": "A tester needs generated boundary-value test cases for an age field. Which prompt is best?",
+    "options": [
+      {
+        "id": "a",
+        "text": "Test the app"
+      },
+      {
+        "id": "b",
+        "text": "Generate tests for valid ages 18–65 including just below, at, and just above each boundary"
+      },
+      {
+        "id": "c",
+        "text": "Be creative about ages"
+      },
+      {
+        "id": "d",
+        "text": "Generate only happy-path cases"
+      }
+    ],
+    "correct": [
+      "b"
+    ],
+    "selectCount": 1,
+    "image": null,
+    "explanation": "Explicit boundary values and constraints help guide targeted test generation.",
+    "reference": "Syllabus 2.2.2"
+  },
+  {
+    "id": "ch2-q019",
+    "chapter": 2,
+    "section": "2.2.3",
+    "type": "single",
+    "points": 1,
+    "text": "An LLM summarizes failures from a regression run. What evidence should support its defect conclusions?",
+    "options": [
+      {
+        "id": "a",
+        "text": "Only the model’s confidence"
+      },
+      {
+        "id": "b",
+        "text": "Actual results, expected results, and relevant logs"
+      },
+      {
+        "id": "c",
+        "text": "The model name"
+      },
+      {
+        "id": "d",
+        "text": "A random sample of unrelated data"
+      }
+    ],
+    "correct": [
+      "b"
+    ],
+    "selectCount": 1,
+    "image": null,
+    "explanation": "Grounding conclusions in execution evidence improves reliability.",
+    "reference": "Syllabus 2.2.3"
+  },
+  {
+    "id": "ch2-q020",
+    "chapter": 2,
+    "section": "2.2.4",
+    "type": "single",
+    "points": 1,
+    "text": "An LLM produces a dashboard summary of defect trends. What improves its usefulness for stakeholders?",
+    "options": [
+      {
+        "id": "a",
+        "text": "Only raw counts with no context"
+      },
+      {
+        "id": "b",
+        "text": "Plain-language interpretation and suggested follow-up actions"
+      },
+      {
+        "id": "c",
+        "text": "Omit all assumptions and limitations"
+      },
+      {
+        "id": "d",
+        "text": "Use unexplained technical jargon"
+      }
+    ],
+    "correct": [
+      "b"
+    ],
+    "selectCount": 1,
+    "image": null,
+    "explanation": "Metrics are more actionable when interpreted and linked to next steps.",
+    "reference": "Syllabus 2.2.4"
+  },
+  {
+    "id": "ch2-q021",
+    "chapter": 2,
+    "section": "2.2.5",
+    "type": "single",
+    "points": 1,
+    "text": "A tester has three approved examples of test cases in a required format. Which prompting technique uses them most directly?",
+    "options": [
+      {
+        "id": "a",
+        "text": "Few-shot prompting"
+      },
+      {
+        "id": "b",
+        "text": "Zero-shot prompting"
+      },
+      {
+        "id": "c",
+        "text": "Temperature tuning"
+      },
+      {
+        "id": "d",
+        "text": "Data poisoning"
+      }
+    ],
+    "correct": [
+      "a"
+    ],
+    "selectCount": 1,
+    "image": null,
+    "explanation": "Few-shot prompting supplies examples to guide the response.",
+    "reference": "Syllabus 2.2.5"
+  },
+  {
+    "id": "ch2-q022",
+    "chapter": 2,
+    "section": "2.3.1",
+    "type": "single",
+    "points": 1,
+    "text": "To assess whether generated test cases cover varied edge cases, which quality dimension is especially relevant?",
+    "options": [
+      {
+        "id": "a",
+        "text": "Diversity"
+      },
+      {
+        "id": "b",
+        "text": "Network latency"
+      },
+      {
+        "id": "c",
+        "text": "Model parameter count"
+      },
+      {
+        "id": "d",
+        "text": "Screen resolution"
+      }
+    ],
+    "correct": [
+      "a"
+    ],
+    "selectCount": 1,
+    "image": null,
+    "explanation": "Diversity measures the variety of generated test scenarios.",
+    "reference": "Syllabus 2.3.1"
+  },
+  {
+    "id": "ch2-q023",
+    "chapter": 2,
+    "section": "2.3.2",
+    "type": "single",
+    "points": 1,
+    "text": "Two prompt versions generate test cases for the same requirements. How can a tester compare them systematically?",
+    "options": [
+      {
+        "id": "a",
+        "text": "A/B testing with predefined evaluation criteria"
+      },
+      {
+        "id": "b",
+        "text": "Select the longer prompt automatically"
+      },
+      {
+        "id": "c",
+        "text": "Choose randomly"
+      },
+      {
+        "id": "d",
+        "text": "Change both prompts after every output"
+      }
+    ],
+    "correct": [
+      "a"
+    ],
+    "selectCount": 1,
+    "image": null,
+    "explanation": "A/B comparisons use controlled criteria to assess prompt variants.",
+    "reference": "Syllabus 2.3.2"
+  }
+]

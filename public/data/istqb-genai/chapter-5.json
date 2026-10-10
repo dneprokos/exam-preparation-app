@@ -1,0 +1,365 @@
+[
+  {
+    "id": "ch5-q001",
+    "chapter": 5,
+    "section": "5.1.1",
+    "type": "single",
+    "points": 1,
+    "text": "Which of the following statements about shadow AI is CORRECT?",
+    "options": [
+      {
+        "id": "a",
+        "text": "Shadow AI enforces compliance with organizational data policies and general AI regulations."
+      },
+      {
+        "id": "b",
+        "text": "Shadow AI eliminates the need for clear licensing agreements in AI tools."
+      },
+      {
+        "id": "c",
+        "text": "Shadow AI reduces the risk of intellectual property disputes."
+      },
+      {
+        "id": "d",
+        "text": "Shadow AI may lead to unauthorized accesses to sensitive information."
+      }
+    ],
+    "correct": [
+      "d"
+    ],
+    "selectCount": 1,
+    "image": null,
+    "explanation": "Shadow AI is the use of AI tools without organizational approval or oversight. It can lead to unauthorized access to or leakage of sensitive information, violates data and licensing policies, and increases IP risks.",
+    "reference": "Syllabus 5.1.1"
+  },
+  {
+    "id": "ch5-q002",
+    "chapter": 5,
+    "section": "5.1.2",
+    "type": "single",
+    "points": 1,
+    "text": "What is a key aspect to consider when defining a Generative AI strategy for software testing?",
+    "options": [
+      {
+        "id": "a",
+        "text": "Prepare training programs designed to ensure that team members obtain certifications specific to each LLM they use."
+      },
+      {
+        "id": "b",
+        "text": "Select LLMs that can be integrated appropriately with existing test environments and test tools."
+      },
+      {
+        "id": "c",
+        "text": "Ensure that as much input data as possible is available to increase the likelihood of obtaining effective LLM outputs."
+      },
+      {
+        "id": "d",
+        "text": "Collect standard supervised machine learning metrics to evaluate the effectiveness of LLM outputs."
+      }
+    ],
+    "correct": [
+      "b"
+    ],
+    "selectCount": 1,
+    "image": null,
+    "explanation": "A GenAI strategy should select LLMs that integrate with existing test environments and tools. Per-LLM certifications, maximal input data and standard supervised ML metrics are not key aspects.",
+    "reference": "Syllabus 5.1.2"
+  },
+  {
+    "id": "ch5-q003",
+    "chapter": 5,
+    "section": "5.1.3",
+    "type": "single",
+    "points": 1,
+    "text": "Which of the following statements BEST describes one of the key criteria to select an appropriate LLM for specific test tasks within a test organization?",
+    "options": [
+      {
+        "id": "a",
+        "text": "A key selection criterion involves evaluating the LLM’s performance for the test tasks against the publicly available benchmarks for LLMs in code generation."
+      },
+      {
+        "id": "b",
+        "text": "A key selection criterion involves evaluating recurring costs such as those associated with the computational resources required to run the LLM."
+      },
+      {
+        "id": "c",
+        "text": "A key selection criterion involves evaluating the LLM against the publicly available community benchmarks to ensure full compatibility with them."
+      },
+      {
+        "id": "d",
+        "text": "A key selection criterion involves evaluating recurring costs such as those associated with a proof of concept aimed at demonstrating the suitability of an LLM for the test tasks."
+      }
+    ],
+    "correct": [
+      "b"
+    ],
+    "selectCount": 1,
+    "image": null,
+    "explanation": "Recurring costs (such as the compute resources needed to run the LLM) are a key selection criterion. Public benchmarks can inform but do not prove fit for specific test tasks, and proof-of-concept costs are not recurring costs.",
+    "reference": "Syllabus 5.1.3"
+  },
+  {
+    "id": "ch5-q004",
+    "chapter": 5,
+    "section": "5.1.4",
+    "type": "single",
+    "points": 1,
+    "text": "What are the key phases in the adoption of Generative AI in a test organization?",
+    "options": [
+      {
+        "id": "a",
+        "text": "Discovery, initiation and usage definition, utilization and iteration"
+      },
+      {
+        "id": "b",
+        "text": "Awareness, usage prioritization, performance monitoring"
+      },
+      {
+        "id": "c",
+        "text": "Planning, experimentation, evaluation and refinement"
+      },
+      {
+        "id": "d",
+        "text": "Training, testing, implementation, and scaling"
+      }
+    ],
+    "correct": [
+      "a"
+    ],
+    "selectCount": 1,
+    "image": null,
+    "explanation": "The syllabus phases are discovery, initiation and usage definition, and utilization and iteration. The other options are generic or invented sequences.",
+    "reference": "Syllabus 5.1.4"
+  },
+  {
+    "id": "ch5-q005",
+    "chapter": 5,
+    "section": "5.2.1",
+    "type": "single",
+    "points": 1,
+    "text": "Which of the following options BEST refers to an example of knowledge and/or skills required for testers to work effectively with LLMs in test processes?",
+    "options": [
+      {
+        "id": "a",
+        "text": "Mastering techniques specifically aimed at preventing LLMs from hallucinating and incurring reasoning errors when performing specific test tasks."
+      },
+      {
+        "id": "b",
+        "text": "Selecting and implementing suitable test automation approaches, such as keyword-driven test automation, for automating test processes."
+      },
+      {
+        "id": "c",
+        "text": "Choosing the most appropriate LLM based on criteria such as its capability to be adapted or customized to perform specific test tasks."
+      },
+      {
+        "id": "d",
+        "text": "Ensuring the validation and test data used in the development of the LLMS are of the highest quality."
+      }
+    ],
+    "correct": [
+      "c"
+    ],
+    "selectCount": 1,
+    "image": null,
+    "explanation": "Choosing the right LLM based on criteria such as adaptability to specific test tasks is a skill testers need. Preventing hallucinations is a general risk mitigation, keyword-driven automation is not LLM-specific, and quality of LLM development data is not a tester skill.",
+    "reference": "Syllabus 5.2.1"
+  },
+  {
+    "id": "ch5-q006",
+    "chapter": 5,
+    "section": "5.2.2",
+    "type": "single",
+    "points": 1,
+    "text": "What is the BEST approach for cultivating skills within test teams to specifically support the adoption of Generative AI?",
+    "options": [
+      {
+        "id": "a",
+        "text": "Rely mainly on external expert courses with hands-on practice, aiming to integrate AI into all daily test tasks at once."
+      },
+      {
+        "id": "b",
+        "text": "Encourage independent experimentation with various LLMs without following a structured process."
+      },
+      {
+        "id": "c",
+        "text": "Adopt a hands-on, gradual learning process supported by guided exercises, peer learning, and knowledge-sharing communities."
+      },
+      {
+        "id": "d",
+        "text": "Rely mainly on theoretical courses from external experts, aiming to gradually integrate AI into daily test tasks in line with actual learning."
+      }
+    ],
+    "correct": [
+      "c"
+    ],
+    "selectCount": 1,
+    "image": null,
+    "explanation": "Skills are best built gradually with hands-on practice, guided exercises, peer learning and knowledge-sharing communities. Unstructured experimentation, all-at-once adoption and theory-only courses are less effective.",
+    "reference": "Syllabus 5.2.2"
+  },
+  {
+    "id": "ch5-q007",
+    "chapter": 5,
+    "section": "5.2.3",
+    "type": "single",
+    "points": 1,
+    "text": "Which of the following answers BEST describes how the roles and responsibilities of testers and test managers within a test organization are impacted by the adoption of Generative AI for software testing?",
+    "options": [
+      {
+        "id": "a",
+        "text": "Testers shift their focus from manually designing test cases to guiding and verifying AI-generated testware."
+      },
+      {
+        "id": "b",
+        "text": "Test managers shift their focus from managing test projects to understanding the inner working of Generative AI technologies."
+      },
+      {
+        "id": "c",
+        "text": "Testers shift their focus from manually designing test cases to overseeing AI-based test processes."
+      },
+      {
+        "id": "d",
+        "text": "Test managers shift their focus from relying on people to relying solely on Generative AI to boost productivity in test tasks."
+      }
+    ],
+    "correct": [
+      "a"
+    ],
+    "selectCount": 1,
+    "image": null,
+    "explanation": "Testers shift from manually designing test cases to guiding and verifying AI-generated testware, which keeps human responsibility for quality. \"Overseeing AI-based processes\" overstates the shift, and test managers still manage projects and do not rely solely on GenAI.",
+    "reference": "Syllabus 5.2.3"
+  },
+  {
+    "id": "ch5-q008",
+    "chapter": 5,
+    "section": "5.1.1",
+    "type": "single",
+    "points": 1,
+    "text": "When an organization begins adopting Generative AI tools across testing teams without official IT approval or security review (known as \"Shadow AI\"), what is the most appropriate first governance step?",
+    "options": [
+      {
+        "id": "a",
+        "text": "Ban all computers in the testing department immediately."
+      },
+      {
+        "id": "b",
+        "text": "Identify the usage, assess the associated security and compliance risks, and establish a clear GenAI adoption roadmap and policy."
+      },
+      {
+        "id": "c",
+        "text": "Assume the AI output is always bug-free and scale it to production deployment."
+      },
+      {
+        "id": "d",
+        "text": "Dismiss all human testers to cut costs."
+      }
+    ],
+    "correct": [
+      "b"
+    ],
+    "selectCount": 1,
+    "image": null,
+    "explanation": "Governance requires discovering \"Shadow AI,\" evaluating risks (privacy, reliability), and implementing a structured change management and enablement roadmap.",
+    "reference": "Syllabus 5.1.1"
+  },
+  {
+    "id": "ch5-q009",
+    "chapter": 5,
+    "section": "5.1.3",
+    "type": "single",
+    "points": 1,
+    "text": "A team compares candidate LLMs for an internal testing assistant. Which evaluation is most relevant?",
+    "options": [
+      {
+        "id": "a",
+        "text": "Task performance, integration, privacy and recurring cost"
+      },
+      {
+        "id": "b",
+        "text": "Brand popularity alone"
+      },
+      {
+        "id": "c",
+        "text": "The longest model name"
+      },
+      {
+        "id": "d",
+        "text": "Number of marketing videos"
+      }
+    ],
+    "correct": [
+      "a"
+    ],
+    "selectCount": 1,
+    "image": null,
+    "explanation": "Model selection should reflect the actual task, constraints, integration, and cost.",
+    "reference": "Syllabus 5.1.3"
+  },
+  {
+    "id": "ch5-q010",
+    "chapter": 5,
+    "section": "5.1.4",
+    "type": "single",
+    "points": 1,
+    "text": "Which sequence best represents the syllabus adoption roadmap?",
+    "options": [
+      {
+        "id": "a",
+        "text": "Discovery; initiation and usage definition; utilization and iteration"
+      },
+      {
+        "id": "b",
+        "text": "Deployment; deletion; replacement"
+      },
+      {
+        "id": "c",
+        "text": "Training; ignoring feedback; shutdown"
+      },
+      {
+        "id": "d",
+        "text": "Purchase; production; no evaluation"
+      }
+    ],
+    "correct": [
+      "a"
+    ],
+    "selectCount": 1,
+    "image": null,
+    "explanation": "The syllabus describes discovery, initiation and usage definition, and utilization and iteration.",
+    "reference": "Syllabus 5.1.4"
+  },
+  {
+    "id": "ch5-q011",
+    "chapter": 5,
+    "section": "5.2.2",
+    "type": "single",
+    "points": 1,
+    "text": "What is a sustainable way to build GenAI capability in a testing team?",
+    "options": [
+      {
+        "id": "a",
+        "text": "Combine training, practical experimentation and shared learning"
+      },
+      {
+        "id": "b",
+        "text": "Give everyone unrestricted access without guidance"
+      },
+      {
+        "id": "c",
+        "text": "Measure success only by prompts written"
+      },
+      {
+        "id": "d",
+        "text": "Avoid peer review"
+      }
+    ],
+    "correct": [
+      "a"
+    ],
+    "selectCount": 1,
+    "image": null,
+    "explanation": "Capability building requires skills development and practical organizational learning.",
+    "reference": "Syllabus 5.2.2"
+  }
+]

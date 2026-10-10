@@ -1,0 +1,568 @@
+[
+  {
+    "id": "ch3-q001",
+    "chapter": 3,
+    "section": "3.1.1",
+    "type": "single",
+    "points": 1,
+    "text": "What is a hallucination in the context of LLM outputs?",
+    "options": [
+      {
+        "id": "a",
+        "text": "A logical error where the LLM fails to follow a multi-step reasoning process accurately."
+      },
+      {
+        "id": "b",
+        "text": "A bias in the LLM output caused by the training data favoring certain perspectives."
+      },
+      {
+        "id": "c",
+        "text": "A generation of irrelevant or factually incorrect output by the LLM for a given task."
+      },
+      {
+        "id": "d",
+        "text": "A limitation of the LLM to understand non-English perspectives in test generation tasks."
+      }
+    ],
+    "correct": [
+      "c"
+    ],
+    "selectCount": 1,
+    "image": null,
+    "explanation": "A hallucination is LLM output that is irrelevant, fabricated or factually incorrect for the task. Reasoning errors and biases are separate risks.",
+    "reference": "Syllabus 3.1.1"
+  },
+  {
+    "id": "ch3-q002",
+    "chapter": 3,
+    "section": "3.1.2",
+    "type": "single",
+    "points": 2,
+    "text": "You are using Generative AI to create test cases for an e-commerce (e-shop) application. The following features have been explicitly mentioned in the project briefing: • cart management • discount code application • order confirmation email generation Based on these details, which of the following AI-generated test cases MOST LIKELY represents a hallucination?",
+    "options": [
+      {
+        "id": "a",
+        "text": "Verify that a user can add multiple items to their cart and proceed to checkout."
+      },
+      {
+        "id": "b",
+        "text": "Verify that a user cannot apply an expired discount code during checkout."
+      },
+      {
+        "id": "c",
+        "text": "Verify that a user receives a confirmation email after successfully placing an order."
+      },
+      {
+        "id": "d",
+        "text": "Verify that a user can create a wishlist to save favorite items for later."
+      }
+    ],
+    "correct": [
+      "d"
+    ],
+    "selectCount": 1,
+    "image": null,
+    "explanation": "The briefing mentions cart management, discount codes and confirmation emails. A wishlist feature is not mentioned anywhere, so that test case is invented content, i.e. a hallucination.",
+    "reference": "Syllabus 3.1.2"
+  },
+  {
+    "id": "ch3-q003",
+    "chapter": 3,
+    "section": "3.1.3",
+    "type": "single",
+    "points": 1,
+    "text": "Which of the following options refers to a benefit that is MOST directly associated with using clear and structured input data formats when working with LLMs for test tasks?",
+    "options": [
+      {
+        "id": "a",
+        "text": "Helps reduce the effort to fine-tune the LLMs for test tasks."
+      },
+      {
+        "id": "b",
+        "text": "Helps LLMs generate less ambiguous outputs for test tasks."
+      },
+      {
+        "id": "c",
+        "text": "Helps LLMs generate more context-relevant outputs for test tasks."
+      },
+      {
+        "id": "d",
+        "text": "Helps LLMs generate more creative outputs for test tasks."
+      }
+    ],
+    "correct": [
+      "b"
+    ],
+    "selectCount": 1,
+    "image": null,
+    "explanation": "Clear, structured input formats reduce ambiguity in the prompt and therefore make the output less ambiguous. They do not remove the need for fine-tuning, and they are not primarily about context relevance or creativity.",
+    "reference": "Syllabus 3.1.3"
+  },
+  {
+    "id": "ch3-q004",
+    "chapter": 3,
+    "section": "3.1.4",
+    "type": "single",
+    "points": 1,
+    "text": "Which strategy can help reduce variability in LLM outputs by narrowing the probability distribution during inference?",
+    "options": [
+      {
+        "id": "a",
+        "text": "Increasing the learning rate."
+      },
+      {
+        "id": "b",
+        "text": "Lowering the temperature setting."
+      },
+      {
+        "id": "c",
+        "text": "Increasing the random seed."
+      },
+      {
+        "id": "d",
+        "text": "Lowering the random seed."
+      }
+    ],
+    "correct": [
+      "b"
+    ],
+    "selectCount": 1,
+    "image": null,
+    "explanation": "Lowering the temperature sharpens the probability distribution over next tokens, making outputs more deterministic. Learning rate affects training, not inference, and changing the seed only changes which random sequence is used.",
+    "reference": "Syllabus 3.1.4"
+  },
+  {
+    "id": "ch3-q005",
+    "chapter": 3,
+    "section": "3.2.1",
+    "type": "single",
+    "points": 1,
+    "text": "Which of the following statements about data privacy concerns related to using Generative AI for software testing is INCORRECT?",
+    "options": [
+      {
+        "id": "a",
+        "text": "Generative AI can unintentionally expose sensitive data through its outputs."
+      },
+      {
+        "id": "b",
+        "text": "Generative AI tools may store and process sensitive data without explicit user consent, leading to misuse."
+      },
+      {
+        "id": "c",
+        "text": "Using Generative AI tools without adhering to data protection regulations, such as General Data Protection Regulation (GDPR), can lead to legal disputes."
+      },
+      {
+        "id": "d",
+        "text": "An LLM is likely to expose real sensitive data if it hallucinates while generating synthetic test data, regardless of the data it was trained on."
+      }
+    ],
+    "correct": [
+      "d"
+    ],
+    "selectCount": 1,
+    "image": null,
+    "explanation": "Hallucinated synthetic data is fabricated, so it does not reveal real sensitive data unless that data was in the training set. The other statements are true privacy concerns: unintended exposure, storage/processing without consent, and regulation violations such as GDPR.",
+    "reference": "Syllabus 3.2.1"
+  },
+  {
+    "id": "ch3-q006",
+    "chapter": 3,
+    "section": "3.2.2",
+    "type": "single",
+    "points": 1,
+    "text": "An attacker injects falsified test results into the training dataset of an LLM intended to recommend optimal test coverage strategies. What type of attack vector does this description BEST refer to?",
+    "options": [
+      {
+        "id": "a",
+        "text": "Malicious code generation"
+      },
+      {
+        "id": "b",
+        "text": "Context Manipulation"
+      },
+      {
+        "id": "c",
+        "text": "Request manipulation"
+      },
+      {
+        "id": "d",
+        "text": "Data poisoning"
+      }
+    ],
+    "correct": [
+      "d"
+    ],
+    "selectCount": 1,
+    "image": null,
+    "explanation": "Injecting falsified results into the training data to corrupt the model is data poisoning. Context manipulation and request manipulation attack the prompt/context at inference time, and malicious code generation induces vulnerable code.",
+    "reference": "Syllabus 3.2.2"
+  },
+  {
+    "id": "ch3-q007",
+    "chapter": 3,
+    "section": "3.2.2",
+    "type": "single",
+    "points": 1,
+    "text": "Match each type of attack vector against an LLM (1-4) with the corresponding example (A-D):\n1. Context Manipulation\n2. Request manipulation\n3. Data poisoning\n4. Malicious code generation\nA. An attacker maliciously modifies the data associated with traceability links between requirements and test cases into the dataset used for fine-tuning an LLM, compromising its accuracy in generating test cases from requirements.\nB. An attacker maliciously crafts and provides deceptive prompts that induce an LLM, fine-tuned to assist testers in automated test script generation, to produce vulnerable test scripts with hidden security flaws.\nC. An attacker maliciously provides large specially crafted prompts that induce an LLM, fine-tuned to assist testers in generating test cases, to accidentally reveal confidential API keys inherited from past test projects.\nD. An attacker maliciously submits carefully modified reference screenshots into a visual testing framework that uses an LLM for comparative visual analysis, to trick the LLM into systematically ignoring genuine UI issues during regression testing.",
+    "options": [
+      {
+        "id": "a",
+        "text": "1C, 2D, 3A, 4B"
+      },
+      {
+        "id": "b",
+        "text": "1B, 2D, 3A, 4C"
+      },
+      {
+        "id": "c",
+        "text": "1D, 2C, 3B, 4A"
+      },
+      {
+        "id": "d",
+        "text": "1C, 2B, 3D, 4A"
+      }
+    ],
+    "correct": [
+      "a"
+    ],
+    "selectCount": 1,
+    "image": null,
+    "explanation": "Correct matching: 1C, 2D, 3A, 4B. Context manipulation: large crafted prompts make the model leak confidential API keys from past context (C). Request manipulation: modified reference screenshots submitted to the visual framework trick the LLM into ignoring real UI issues (D). Data poisoning: tampered traceability links in the fine-tuning dataset compromise the model (A). Malicious code generation: deceptive prompts induce vulnerable test scripts (B).",
+    "reference": "Syllabus 3.2.2"
+  },
+  {
+    "id": "ch3-q008",
+    "chapter": 3,
+    "section": "3.2.3",
+    "type": "single",
+    "points": 1,
+    "text": "Which of the following strategies BEST addresses data privacy risks in the context of Generative AI-powered software testing?",
+    "options": [
+      {
+        "id": "a",
+        "text": "Using multiple LLMs to evaluate and compare test results for improved accuracy."
+      },
+      {
+        "id": "b",
+        "text": "Replacing sensitive test data with an anonymized version of the same."
+      },
+      {
+        "id": "c",
+        "text": "Allowing unrestricted access to sensitive test data to improve Generative AI model training."
+      },
+      {
+        "id": "d",
+        "text": "Disabling encryption of sensitive test data to streamline data storage and transmission processes."
+      }
+    ],
+    "correct": [
+      "b"
+    ],
+    "selectCount": 1,
+    "image": null,
+    "explanation": "Anonymizing sensitive test data directly reduces privacy risk. Comparing LLMs improves accuracy, not privacy, and unrestricted access or disabling encryption increase risk.",
+    "reference": "Syllabus 3.2.3"
+  },
+  {
+    "id": "ch3-q009",
+    "chapter": 3,
+    "section": "3.3.1",
+    "type": "single",
+    "points": 1,
+    "text": "Which of the following options about the impact of LLM usage on energy consumption and CO₂ emission is CORRECT?",
+    "options": [
+      {
+        "id": "a",
+        "text": "Image generation tasks consume substantially more energy than text generation tasks, but produce fewer CO₂ emissions."
+      },
+      {
+        "id": "b",
+        "text": "Generative AI-powered searches consume significantly less energy than traditional web searches due to their optimized algorithms."
+      },
+      {
+        "id": "c",
+        "text": "Image generation tasks consume substantially more energy than text generation tasks due to their higher computational complexity."
+      },
+      {
+        "id": "d",
+        "text": "Text generation tasks consume very little energy, allowing them to be performed by millions of users without significant energy consumption."
+      }
+    ],
+    "correct": [
+      "c"
+    ],
+    "selectCount": 1,
+    "image": null,
+    "explanation": "Image generation needs considerably more computation, hence more energy, than text generation. More energy also means more CO₂, not fewer emissions. GenAI searches use more energy than traditional searches, and text generation at scale is not negligible.",
+    "reference": "Syllabus 3.3.1"
+  },
+  {
+    "id": "ch3-q010",
+    "chapter": 3,
+    "section": "3.4.1",
+    "type": "multiple",
+    "points": 1,
+    "text": "Which TWO of the following standards, or parts of them, are MOST relevant to the use of Generative AI in software testing?",
+    "options": [
+      {
+        "id": "a",
+        "text": "ISO/IEC 25010:2023"
+      },
+      {
+        "id": "b",
+        "text": "ISO/IEC 23053:2022"
+      },
+      {
+        "id": "c",
+        "text": "ISO/IEC/IEEE 29119-2:2021"
+      },
+      {
+        "id": "d",
+        "text": "ISO/IEC 42001:2023"
+      },
+      {
+        "id": "e",
+        "text": "ISO/IEC/IEEE 29119-3:2021"
+      }
+    ],
+    "correct": [
+      "b",
+      "d"
+    ],
+    "selectCount": 2,
+    "image": null,
+    "explanation": "ISO/IEC 23053 (framework for AI systems using machine learning) and ISO/IEC 42001 (AI management system) address AI directly. ISO/IEC 25010 (quality models) and ISO/IEC/IEEE 29119 (software testing) are general and not specific to GenAI.",
+    "reference": "Syllabus 3.4.1"
+  },
+  {
+    "id": "ch3-q011",
+    "chapter": 3,
+    "section": "3.2.1",
+    "type": "single",
+    "points": 1,
+    "text": "A tester uses an enterprise LLM to generate test data and inadvertently pastes proprietary customer database schemas containing personally identifiable information (PII) into the public chat interface. What primary risk has occurred?",
+    "options": [
+      {
+        "id": "a",
+        "text": "Model hallucination"
+      },
+      {
+        "id": "b",
+        "text": "Data privacy and confidentiality breach (Data leakage)"
+      },
+      {
+        "id": "c",
+        "text": "Adversarial prompt injection"
+      },
+      {
+        "id": "d",
+        "text": "Energy consumption overload"
+      }
+    ],
+    "correct": [
+      "b"
+    ],
+    "selectCount": 1,
+    "image": null,
+    "explanation": "Inputting sensitive company or customer PII into public or unmanaged LLM endpoints risks exposing confidential data to third-party training sets or violating privacy regulations (e.g., GDPR).",
+    "reference": "Syllabus 3.2.1"
+  },
+  {
+    "id": "ch3-q012",
+    "chapter": 3,
+    "section": "3.1.1",
+    "type": "single",
+    "points": 1,
+    "text": "An LLM confidently cites a nonexistent requirement ID. What type of issue is this?",
+    "options": [
+      {
+        "id": "a",
+        "text": "Hallucination"
+      },
+      {
+        "id": "b",
+        "text": "Encryption"
+      },
+      {
+        "id": "c",
+        "text": "Tokenization"
+      },
+      {
+        "id": "d",
+        "text": "Retrieval"
+      }
+    ],
+    "correct": [
+      "a"
+    ],
+    "selectCount": 1,
+    "image": null,
+    "explanation": "Fabricated factual references are hallucinations.",
+    "reference": "Syllabus 3.1.1"
+  },
+  {
+    "id": "ch3-q013",
+    "chapter": 3,
+    "section": "3.1.3",
+    "type": "single",
+    "points": 1,
+    "text": "What is a practical way to reduce unsupported claims in AI-generated test cases?",
+    "options": [
+      {
+        "id": "a",
+        "text": "Provide authoritative requirements and review outputs against them"
+      },
+      {
+        "id": "b",
+        "text": "Increase randomness as much as possible"
+      },
+      {
+        "id": "c",
+        "text": "Remove all input context"
+      },
+      {
+        "id": "d",
+        "text": "Skip validation when answers sound confident"
+      }
+    ],
+    "correct": [
+      "a"
+    ],
+    "selectCount": 1,
+    "image": null,
+    "explanation": "Grounding and validation help reduce unsupported outputs.",
+    "reference": "Syllabus 3.1.3"
+  },
+  {
+    "id": "ch3-q014",
+    "chapter": 3,
+    "section": "3.1.4",
+    "type": "single",
+    "points": 1,
+    "text": "A tester wants more repeatable output from the same prompt. Which change generally helps?",
+    "options": [
+      {
+        "id": "a",
+        "text": "Lower the temperature"
+      },
+      {
+        "id": "b",
+        "text": "Increase temperature"
+      },
+      {
+        "id": "c",
+        "text": "Remove constraints"
+      },
+      {
+        "id": "d",
+        "text": "Use a different random prompt each run"
+      }
+    ],
+    "correct": [
+      "a"
+    ],
+    "selectCount": 1,
+    "image": null,
+    "explanation": "Lower temperatures typically reduce sampling variability, although full determinism is not guaranteed.",
+    "reference": "Syllabus 3.1.4"
+  },
+  {
+    "id": "ch3-q015",
+    "chapter": 3,
+    "section": "3.2.2",
+    "type": "single",
+    "points": 1,
+    "text": "An attacker places instructions in a retrieved document to make an assistant disclose secrets. What risk does this illustrate?",
+    "options": [
+      {
+        "id": "a",
+        "text": "Prompt injection through untrusted content"
+      },
+      {
+        "id": "b",
+        "text": "Tokenization"
+      },
+      {
+        "id": "c",
+        "text": "Boundary value analysis"
+      },
+      {
+        "id": "d",
+        "text": "Fine-tuning"
+      }
+    ],
+    "correct": [
+      "a"
+    ],
+    "selectCount": 1,
+    "image": null,
+    "explanation": "Untrusted retrieved content can carry malicious instructions.",
+    "reference": "Syllabus 3.2.2"
+  },
+  {
+    "id": "ch3-q016",
+    "chapter": 3,
+    "section": "3.2.3",
+    "type": "single",
+    "points": 1,
+    "text": "Before sending production-like customer records to an external model, what should a tester do?",
+    "options": [
+      {
+        "id": "a",
+        "text": "Anonymize or mask sensitive data and follow approved data-handling rules"
+      },
+      {
+        "id": "b",
+        "text": "Disable audit logs"
+      },
+      {
+        "id": "c",
+        "text": "Publish the records publicly"
+      },
+      {
+        "id": "d",
+        "text": "Assume all endpoints are private"
+      }
+    ],
+    "correct": [
+      "a"
+    ],
+    "selectCount": 1,
+    "image": null,
+    "explanation": "Data minimization, anonymization and approved handling reduce privacy risk.",
+    "reference": "Syllabus 3.2.3"
+  },
+  {
+    "id": "ch3-q017",
+    "chapter": 3,
+    "section": "3.4.1",
+    "type": "single",
+    "points": 1,
+    "text": "Which standard defines requirements for an AI management system?",
+    "options": [
+      {
+        "id": "a",
+        "text": "ISO/IEC 42001"
+      },
+      {
+        "id": "b",
+        "text": "ISO 8601"
+      },
+      {
+        "id": "c",
+        "text": "HTTP/2"
+      },
+      {
+        "id": "d",
+        "text": "SQL:2016"
+      }
+    ],
+    "correct": [
+      "a"
+    ],
+    "selectCount": 1,
+    "image": null,
+    "explanation": "ISO/IEC 42001 specifies requirements for AI management systems.",
+    "reference": "Syllabus 3.4.1"
+  }
+]
