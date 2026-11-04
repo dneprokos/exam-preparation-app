@@ -328,5 +328,170 @@
     "image": null,
     "explanation": "LLMOps addresses lifecycle operation and governance of LLM systems.",
     "reference": "Syllabus 4.2.2"
+  },
+  {
+    "id": "ch4-q011",
+    "chapter": 4,
+    "section": "4.1.1",
+    "type": "single",
+    "points": 1,
+    "text": "Which part of the architecture in an LLM-powered test infrastructure is responsible for integrating multiple data sources?",
+    "options": [
+      {
+        "id": "a",
+        "text": "The front-end"
+      },
+      {
+        "id": "b",
+        "text": "The LLM itself"
+      },
+      {
+        "id": "c",
+        "text": "The back-end"
+      },
+      {
+        "id": "d",
+        "text": "The data controller"
+      }
+    ],
+    "correct": [
+      "c"
+    ],
+    "selectCount": 1,
+    "image": null,
+    "explanation": "The back-end integrates multiple data sources.",
+    "reference": "Syllabus 4.1.1 (ASTQB sample exam Q29)"
+  },
+  {
+    "id": "ch4-q012",
+    "chapter": 4,
+    "section": "4.1.2",
+    "type": "single",
+    "points": 1,
+    "text": "What are the two steps in RAG processing?",
+    "options": [
+      {
+        "id": "a",
+        "text": "Input / Retrieval"
+      },
+      {
+        "id": "b",
+        "text": "Processing / Output"
+      },
+      {
+        "id": "c",
+        "text": "Access / Processing"
+      },
+      {
+        "id": "d",
+        "text": "Retrieval / Generation"
+      }
+    ],
+    "correct": [
+      "d"
+    ],
+    "selectCount": 1,
+    "image": null,
+    "explanation": "Retrieval-Augmented Generation first retrieves relevant information, then generates a response using it.",
+    "reference": "Syllabus 4.1.2 (ASTQB sample exam Q30)"
+  },
+  {
+    "id": "ch4-q013",
+    "chapter": 4,
+    "section": "4.1.3",
+    "type": "single",
+    "points": 1,
+    "text": "What does \"orchestration\" mean regarding LLM-powered agents?",
+    "options": [
+      {
+        "id": "a",
+        "text": "It is when several agents work together in a coordinated manner to more efficiently solve complex problems"
+      },
+      {
+        "id": "b",
+        "text": "It is when more than three LLM-powered agents work independently to generate outputs that are then reviewed by another agent for accuracy and post-processing"
+      },
+      {
+        "id": "c",
+        "text": "It is when RAG is an integral part of an LLM-powered test infrastructure"
+      },
+      {
+        "id": "d",
+        "text": "It is a term for background processing that uses a combination of autonomous and semi-autonomous agents"
+      }
+    ],
+    "correct": [
+      "a"
+    ],
+    "selectCount": 1,
+    "image": null,
+    "explanation": "Orchestration is the coordinated collaboration of several agents to solve complex problems more efficiently. B, C and D are fictional definitions.",
+    "reference": "Syllabus 4.1.3 (ASTQB sample exam Q31)"
+  },
+  {
+    "id": "ch4-q014",
+    "chapter": 4,
+    "section": "4.2.1",
+    "type": "single",
+    "points": 1,
+    "text": "How can overfitting compromise your model during fine-tuning?",
+    "options": [
+      {
+        "id": "a",
+        "text": "It can make the LLM too generalized to be applicable and efficient"
+      },
+      {
+        "id": "b",
+        "text": "It can introduce hallucinations and biases"
+      },
+      {
+        "id": "c",
+        "text": "It can make the model unable or inaccurate when processing data that is new to it"
+      },
+      {
+        "id": "d",
+        "text": "It can create a lack of transparency regarding LLM decision-making"
+      }
+    ],
+    "correct": [
+      "c"
+    ],
+    "selectCount": 1,
+    "image": null,
+    "explanation": "Overfitting makes the model too specific to its training data, so it performs poorly on data it has not seen before.",
+    "reference": "Syllabus 4.2.1 (ASTQB sample exam Q32)"
+  },
+  {
+    "id": "ch4-q015",
+    "chapter": 4,
+    "section": "4.2.2",
+    "type": "single",
+    "points": 1,
+    "text": "Which of the following LLM deployment types is most concerned with data privacy?",
+    "options": [
+      {
+        "id": "a",
+        "text": "Chatbots"
+      },
+      {
+        "id": "b",
+        "text": "Commercial testing tools with AI components"
+      },
+      {
+        "id": "c",
+        "text": "In-house developed commercial test tools with AI components"
+      },
+      {
+        "id": "d",
+        "text": "Data privacy is a critical concern for all of these deployment types"
+      }
+    ],
+    "correct": [
+      "d"
+    ],
+    "selectCount": 1,
+    "image": null,
+    "explanation": "Data privacy depends more on the data being handled than on the deployment type, so it is a critical concern for all of them.",
+    "reference": "Syllabus 4.2.2 (ASTQB sample exam Q33)"
   }
 ]

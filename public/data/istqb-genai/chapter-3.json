@@ -564,5 +564,335 @@
     "image": null,
     "explanation": "ISO/IEC 42001 specifies requirements for AI management systems.",
     "reference": "Syllabus 3.4.1"
+  },
+  {
+    "id": "ch3-q018",
+    "chapter": 3,
+    "section": "3.1.1",
+    "type": "single",
+    "points": 1,
+    "text": "Which of the following is a result of a reasoning error?",
+    "options": [
+      {
+        "id": "a",
+        "text": "An output that favors certain types of information, approaches, or assumptions"
+      },
+      {
+        "id": "b",
+        "text": "An output that is based on misinterpretations of logical structures"
+      },
+      {
+        "id": "c",
+        "text": "An output that appears plausible but is factually incorrect or irrelevant"
+      },
+      {
+        "id": "d",
+        "text": "An output that is only partially complete"
+      }
+    ],
+    "correct": [
+      "b"
+    ],
+    "selectCount": 1,
+    "image": null,
+    "explanation": "Reasoning errors stem from misinterpreting logical structures. A describes bias; C describes a hallucination.",
+    "reference": "Syllabus 3.1.1 (ASTQB sample exam Q19)"
+  },
+  {
+    "id": "ch3-q019",
+    "chapter": 3,
+    "section": "3.1.2",
+    "type": "single",
+    "points": 2,
+    "text": "You are using GenAI to develop a test plan. You have fed it the requirements, high-level project plan, schedules, and tester profiles. Despite your instructions, when you ask it to generate the test schedule, it creates a new team member and puts them on the schedule to make the testing effort fit the project timeline. What is the problem, and what should you do about it?",
+    "options": [
+      {
+        "id": "a",
+        "text": "This is likely a bias problem. You should give it a wider variety of requirements for similar systems so it generates a larger scope of tests."
+      },
+      {
+        "id": "b",
+        "text": "This is likely a hallucination. You should instruct the AI model that this is incorrect so it learns."
+      },
+      {
+        "id": "c",
+        "text": "This is likely a reasoning error. You should run the test cases against the test objects to verify if the expected results are valid."
+      },
+      {
+        "id": "d",
+        "text": "This is likely a temperature problem. You should lower the temperature to allow a more specific focus."
+      }
+    ],
+    "correct": [
+      "b"
+    ],
+    "selectCount": 1,
+    "image": null,
+    "explanation": "Inventing a team member that does not exist is a hallucination. It does not really help the schedule, and the model should be told that the output is incorrect.",
+    "reference": "Syllabus 3.1.2 (ASTQB sample exam Q20)"
+  },
+  {
+    "id": "ch3-q020",
+    "chapter": 3,
+    "section": "3.1.3",
+    "type": "single",
+    "points": 1,
+    "text": "In what way does comparing results across several different models help reduce hallucinations, reasoning errors, and biases?",
+    "options": [
+      {
+        "id": "a",
+        "text": "You can combine the results into a superset of data, which will reduce the errors in the data"
+      },
+      {
+        "id": "b",
+        "text": "You can select the data that occurs with the highest frequency and know that it is the most accurate"
+      },
+      {
+        "id": "c",
+        "text": "You can compare different outputs from the same prompts to detect output errors and reliability"
+      },
+      {
+        "id": "d",
+        "text": "You can get the results faster by using multiple models concurrently"
+      }
+    ],
+    "correct": [
+      "c"
+    ],
+    "selectCount": 1,
+    "image": null,
+    "explanation": "Running the same prompts on different models lets you compare outputs, detect errors, tune the prompts and pick the most reliable results.",
+    "reference": "Syllabus 3.1.3 (ASTQB sample exam Q21)"
+  },
+  {
+    "id": "ch3-q021",
+    "chapter": 3,
+    "section": "3.1.4",
+    "type": "single",
+    "points": 1,
+    "text": "How does setting a random seed value help improve reproducibility in LLM outputs?",
+    "options": [
+      {
+        "id": "a",
+        "text": "By setting a lower seed value, the temperature setting is automatically increased, which narrows the probability distribution"
+      },
+      {
+        "id": "b",
+        "text": "By setting a higher seed value, more seeds are allowed to be used, which will promote larger output sets from the LLM, which can then be used to extract consistent data, which improves reproducibility"
+      },
+      {
+        "id": "c",
+        "text": "By setting a variable seed value, the random sequence values are increased, which results in a larger set of data, which is easier to recreate"
+      },
+      {
+        "id": "d",
+        "text": "By setting a seed value, the random number generator has the same starting point, which will ensure the same pseudo-random sequence is used, which improves reproducibility"
+      }
+    ],
+    "correct": [
+      "d"
+    ],
+    "selectCount": 1,
+    "image": null,
+    "explanation": "The seed initializes the random number generator. Starting from the same seed yields the same pseudo-random sequence, improving reproducibility of outputs.",
+    "reference": "Syllabus 3.1.4 (ASTQB sample exam Q22)"
+  },
+  {
+    "id": "ch3-q022",
+    "chapter": 3,
+    "section": "3.2.1",
+    "type": "single",
+    "points": 1,
+    "text": "If you have a GenAI tool that is processing sensitive customer data, what must you ensure?",
+    "options": [
+      {
+        "id": "a",
+        "text": "It cannot store the data in an unencrypted form because it will be readable by anyone"
+      },
+      {
+        "id": "b",
+        "text": "It cannot store the data where it might be accessed by an unauthorized user, including another GenAI tool"
+      },
+      {
+        "id": "c",
+        "text": "It cannot modify and then restore the data because it will be incorrect and might be misleading for other users"
+      },
+      {
+        "id": "d",
+        "text": "It cannot access any sensitive data for any use"
+      }
+    ],
+    "correct": [
+      "b"
+    ],
+    "selectCount": 1,
+    "image": null,
+    "explanation": "The tool presumably needs access to the data; the risk is that it stores it somewhere it could be accessed by unauthorized users, including another GenAI tool.",
+    "reference": "Syllabus 3.2.1 (ASTQB sample exam Q23)"
+  },
+  {
+    "id": "ch3-q023",
+    "chapter": 3,
+    "section": "3.2.2",
+    "type": "single",
+    "points": 1,
+    "text": "You've been working on an application that processes employee leave requests. The data you are using contains the birth date of the employee, but you have replaced all the birth dates with a default date of 1/1/89. You are using GenAI within your company's databases to build new test data. You have now discovered that the test data contains birthdates again, and they are the real dates. This is an example of what type of data privacy issue?",
+    "options": [
+      {
+        "id": "a",
+        "text": "Lack of control over data usage"
+      },
+      {
+        "id": "b",
+        "text": "Vulnerability to security attacks"
+      },
+      {
+        "id": "c",
+        "text": "Evidence of a malicious introduction of false data"
+      },
+      {
+        "id": "d",
+        "text": "Unintentional data exposure"
+      }
+    ],
+    "correct": [
+      "d"
+    ],
+    "selectCount": 1,
+    "image": null,
+    "explanation": "This is an unintentional exposure of private data (the employees' real birthdates). A is wrong because control remains within the company, though the tool clearly has access to HR data. B and C are wrong because there is no indication of anything malicious.",
+    "reference": "Syllabus 3.2.2 (ASTQB sample exam Q24)"
+  },
+  {
+    "id": "ch3-q024",
+    "chapter": 3,
+    "section": "3.2.2",
+    "type": "single",
+    "points": 1,
+    "text": "What type of attack vector is being used when the results of AI-generated data are rated incorrectly, intentionally?",
+    "options": [
+      {
+        "id": "a",
+        "text": "Context manipulation"
+      },
+      {
+        "id": "b",
+        "text": "Request manipulation"
+      },
+      {
+        "id": "c",
+        "text": "Data poisoning"
+      },
+      {
+        "id": "d",
+        "text": "Malicious code generation"
+      }
+    ],
+    "correct": [
+      "c"
+    ],
+    "selectCount": 1,
+    "image": null,
+    "explanation": "Intentionally rating AI outputs incorrectly corrupts the feedback/training data — this is data poisoning.",
+    "reference": "Syllabus 3.2.2 (ASTQB sample exam Q25)"
+  },
+  {
+    "id": "ch3-q025",
+    "chapter": 3,
+    "section": "3.2.3",
+    "type": "single",
+    "points": 1,
+    "text": "What is the purpose of data anonymization?",
+    "options": [
+      {
+        "id": "a",
+        "text": "To only use and process the data that is legally permitted and use only the smallest amount needed"
+      },
+      {
+        "id": "b",
+        "text": "To mask or replace any private information with non-identifiable data"
+      },
+      {
+        "id": "c",
+        "text": "To implement strong encryption and strictly control data access"
+      },
+      {
+        "id": "d",
+        "text": "To ensure everyone is trained in the proper handling of data and is minimizing access"
+      }
+    ],
+    "correct": [
+      "b"
+    ],
+    "selectCount": 1,
+    "image": null,
+    "explanation": "Anonymization masks or replaces private information with non-identifiable data. A describes data minimization; C describes secure storage/access control.",
+    "reference": "Syllabus 3.2.3 (ASTQB sample exam Q26)"
+  },
+  {
+    "id": "ch3-q026",
+    "chapter": 3,
+    "section": "3.3.1",
+    "type": "single",
+    "points": 1,
+    "text": "Which of the following GenAI activities takes about as much power as charging a smartphone?",
+    "options": [
+      {
+        "id": "a",
+        "text": "Generating a letter to your bank"
+      },
+      {
+        "id": "b",
+        "text": "Creating \"business\" penguin pictures for a presentation"
+      },
+      {
+        "id": "c",
+        "text": "Creating only one penguin image"
+      },
+      {
+        "id": "d",
+        "text": "Generating a financial year summary report"
+      }
+    ],
+    "correct": [
+      "c"
+    ],
+    "selectCount": 1,
+    "image": null,
+    "explanation": "Generating a single image uses roughly the same energy as charging a smartphone; text generation uses far less.",
+    "reference": "Syllabus 3.3.1 (ASTQB sample exam Q27)"
+  },
+  {
+    "id": "ch3-q027",
+    "chapter": 3,
+    "section": "3.4.1",
+    "type": "single",
+    "points": 1,
+    "text": "Which of the following establishes a legal framework addressing AI risks and classifying applications by risk level?",
+    "options": [
+      {
+        "id": "a",
+        "text": "ISO/IEC 42001:2023"
+      },
+      {
+        "id": "b",
+        "text": "ISO/IEC 23053:2022"
+      },
+      {
+        "id": "c",
+        "text": "EU AI Act"
+      },
+      {
+        "id": "d",
+        "text": "NIST AI Risk Management Framework"
+      }
+    ],
+    "correct": [
+      "c"
+    ],
+    "selectCount": 1,
+    "image": null,
+    "explanation": "The EU AI Act is a legal framework that classifies AI applications by risk level. The NIST AI RMF focuses on managing risk (fairness, transparency, security) but is not a legal framework.",
+    "reference": "Syllabus 3.4.1 (ASTQB sample exam Q28)"
   }
 ]

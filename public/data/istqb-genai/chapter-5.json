@@ -361,5 +361,236 @@
     "image": null,
     "explanation": "Capability building requires skills development and practical organizational learning.",
     "reference": "Syllabus 5.2.2"
+  },
+  {
+    "id": "ch5-q012",
+    "chapter": 5,
+    "section": "5.1.1",
+    "type": "single",
+    "points": 1,
+    "text": "How is the risk of using copyrighted data without proper authorization categorized when using shadow AI?",
+    "options": [
+      {
+        "id": "a",
+        "text": "Information security weakness"
+      },
+      {
+        "id": "b",
+        "text": "Data privacy weakness"
+      },
+      {
+        "id": "c",
+        "text": "Compliance issues"
+      },
+      {
+        "id": "d",
+        "text": "Vague intellectual property"
+      }
+    ],
+    "correct": [
+      "d"
+    ],
+    "selectCount": 1,
+    "image": null,
+    "explanation": "Shadow AI tools may have unclear licensing agreements and may use copyrighted data without proper authorization — a vague intellectual property risk.",
+    "reference": "Syllabus 5.1.1 (ASTQB sample exam Q34)"
+  },
+  {
+    "id": "ch5-q013",
+    "chapter": 5,
+    "section": "5.1.2",
+    "type": "single",
+    "points": 1,
+    "text": "Why is high-quality input data important when implementing an LLM-powered testing approach?",
+    "options": [
+      {
+        "id": "a",
+        "text": "It will be faster with good data that produces fewer errors"
+      },
+      {
+        "id": "b",
+        "text": "It will produce reliable results"
+      },
+      {
+        "id": "c",
+        "text": "It will allow the largest possible data set to be built"
+      },
+      {
+        "id": "d",
+        "text": "It will ensure access is protected and limited to only the correct users"
+      }
+    ],
+    "correct": [
+      "b"
+    ],
+    "selectCount": 1,
+    "image": null,
+    "explanation": "LLM output quality depends on input quality; high-quality input data produces reliable results.",
+    "reference": "Syllabus 5.1.2 (ASTQB sample exam Q35)"
+  },
+  {
+    "id": "ch5-q014",
+    "chapter": 5,
+    "section": "5.1.3",
+    "type": "single",
+    "points": 1,
+    "text": "You are working to convince your manager that a GenAI tool would be helpful in generating test reports. The manager feels that hiring interns to write the test reports would be faster than incorporating a new tool. You are sure the tool will write the reports faster and more accurately, freeing critical testing time. What is an important capability of the LLM that you should evaluate to be sure it will prove you right?",
+    "options": [
+      {
+        "id": "a",
+        "text": "Model performance"
+      },
+      {
+        "id": "b",
+        "text": "Fine-tuning potential"
+      },
+      {
+        "id": "c",
+        "text": "Direct cost"
+      },
+      {
+        "id": "d",
+        "text": "Community and support"
+      }
+    ],
+    "correct": [
+      "a"
+    ],
+    "selectCount": 1,
+    "image": null,
+    "explanation": "Your claim is about speed and accuracy, so you must verify the model performs efficiently and accurately on report generation tasks.",
+    "reference": "Syllabus 5.1.3 (ASTQB sample exam Q36)"
+  },
+  {
+    "id": "ch5-q015",
+    "chapter": 5,
+    "section": "5.1.4",
+    "type": "single",
+    "points": 1,
+    "text": "What is the first key phase when adopting GenAI into the test organization?",
+    "options": [
+      {
+        "id": "a",
+        "text": "Discovery"
+      },
+      {
+        "id": "b",
+        "text": "Initiation and Training"
+      },
+      {
+        "id": "c",
+        "text": "Usage Definition"
+      },
+      {
+        "id": "d",
+        "text": "Exploitation and Iteration"
+      }
+    ],
+    "correct": [
+      "a"
+    ],
+    "selectCount": 1,
+    "image": null,
+    "explanation": "Adoption starts with Discovery, followed by initiation and usage definition, then exploitation and iteration.",
+    "reference": "Syllabus 5.1.4 (ASTQB sample exam Q37)"
+  },
+  {
+    "id": "ch5-q016",
+    "chapter": 5,
+    "section": "5.2.1",
+    "type": "single",
+    "points": 1,
+    "text": "Why does a tester need to understand \"prompt engineering\" in order to work effectively with GenAI?",
+    "options": [
+      {
+        "id": "a",
+        "text": "Because they will have a better grasp of the internal layers of the neural network"
+      },
+      {
+        "id": "b",
+        "text": "Because they need to understand what user prompts will need to be tested and the relative risk of each"
+      },
+      {
+        "id": "c",
+        "text": "Because they will be asked to generate new user prompts based on the AI-designed UI"
+      },
+      {
+        "id": "d",
+        "text": "Because they will need to design and refine the input prompts to guide the LLM"
+      }
+    ],
+    "correct": [
+      "d"
+    ],
+    "selectCount": 1,
+    "image": null,
+    "explanation": "Prompt engineering is the skill of designing and refining input prompts to guide the LLM toward useful output.",
+    "reference": "Syllabus 5.2.1 (ASTQB sample exam Q38)"
+  },
+  {
+    "id": "ch5-q017",
+    "chapter": 5,
+    "section": "5.2.2",
+    "type": "single",
+    "points": 1,
+    "text": "When conducting GenAI training meetings with the testing team, what is an important learning method?",
+    "options": [
+      {
+        "id": "a",
+        "text": "Discussing challenges and their resolutions"
+      },
+      {
+        "id": "b",
+        "text": "Highlighting erroneous prompts used within the team"
+      },
+      {
+        "id": "c",
+        "text": "Processing AI outputs to better analyze manual testing gaps"
+      },
+      {
+        "id": "d",
+        "text": "Promoting the use of AI methods and nominating an \"AI champion of the week\""
+      }
+    ],
+    "correct": [
+      "a"
+    ],
+    "selectCount": 1,
+    "image": null,
+    "explanation": "A key method highlighted in the syllabus is discussing challenges and their resolutions as a team. The other options might be informative but are not the highlighted method.",
+    "reference": "Syllabus 5.2.2 (ASTQB sample exam Q39)"
+  },
+  {
+    "id": "ch5-q018",
+    "chapter": 5,
+    "section": "5.2.3",
+    "type": "single",
+    "points": 1,
+    "text": "Who is usually responsible for ensuring that test teams maintain both traditional testing competencies and AI literacy?",
+    "options": [
+      {
+        "id": "a",
+        "text": "Each tester"
+      },
+      {
+        "id": "b",
+        "text": "The senior testers"
+      },
+      {
+        "id": "c",
+        "text": "The test manager"
+      },
+      {
+        "id": "d",
+        "text": "The AI master"
+      }
+    ],
+    "correct": [
+      "c"
+    ],
+    "selectCount": 1,
+    "image": null,
+    "explanation": "The test manager usually ensures the team as a whole has these capabilities; individuals remain responsible for keeping their own skills current.",
+    "reference": "Syllabus 5.2.3 (ASTQB sample exam Q40)"
   }
 ]

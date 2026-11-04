@@ -757,5 +757,368 @@
     "image": null,
     "explanation": "A/B comparisons use controlled criteria to assess prompt variants.",
     "reference": "Syllabus 2.3.2"
+  },
+  {
+    "id": "ch2-q024",
+    "chapter": 2,
+    "section": "2.1.1",
+    "type": "single",
+    "points": 1,
+    "text": "Which of the following are the six components of an effective prompt?",
+    "options": [
+      {
+        "id": "a",
+        "text": "Prompt Chain, Persona, Instruction, Assumptions, Constraints, Output Format"
+      },
+      {
+        "id": "b",
+        "text": "Role, Bias, Context, Instruction, Input Data, Constraints, Output Data"
+      },
+      {
+        "id": "c",
+        "text": "Persona, Background, Instruction, Input Data, Output Data, Assumptions"
+      },
+      {
+        "id": "d",
+        "text": "Role, Context, Instruction, Input Data, Constraints, Output Format"
+      }
+    ],
+    "correct": [
+      "d"
+    ],
+    "selectCount": 1,
+    "image": null,
+    "explanation": "The six components of a structured prompt are Role, Context, Instruction, Input Data, Constraints and Output Format.",
+    "reference": "Syllabus 2.1.1 (ASTQB sample exam Q8)"
+  },
+  {
+    "id": "ch2-q025",
+    "chapter": 2,
+    "section": "2.1.1",
+    "type": "single",
+    "points": 1,
+    "text": "You have provided a structured prompt to a GenAI model regarding the creation of test cases. In the prompt, you have specified the exact format (fields and layout) in which you want to receive the test cases. This is an example of what component of a structured prompt?",
+    "options": [
+      {
+        "id": "a",
+        "text": "Role"
+      },
+      {
+        "id": "b",
+        "text": "Context"
+      },
+      {
+        "id": "c",
+        "text": "Instruction"
+      },
+      {
+        "id": "d",
+        "text": "Output format"
+      }
+    ],
+    "correct": [
+      "d"
+    ],
+    "selectCount": 1,
+    "image": null,
+    "explanation": "Specifying how the test cases should be presented is the Output format component.",
+    "reference": "Syllabus 2.1.1 (ASTQB sample exam Q9)"
+  },
+  {
+    "id": "ch2-q026",
+    "chapter": 2,
+    "section": "2.1.2",
+    "type": "single",
+    "points": 1,
+    "text": "If you have a test process with complex tasks and you will need to check intermediate results before proceeding, which prompting technique is the most appropriate?",
+    "options": [
+      {
+        "id": "a",
+        "text": "Prompt chaining"
+      },
+      {
+        "id": "b",
+        "text": "Few-shot prompting"
+      },
+      {
+        "id": "c",
+        "text": "Zero-shot prompting"
+      },
+      {
+        "id": "d",
+        "text": "Meta prompting"
+      }
+    ],
+    "correct": [
+      "a"
+    ],
+    "selectCount": 1,
+    "image": null,
+    "explanation": "Prompt chaining breaks the task into steps and lets each subsequent prompt be tuned based on the (verified) results of the preceding step.",
+    "reference": "Syllabus 2.1.2 (ASTQB sample exam Q10)"
+  },
+  {
+    "id": "ch2-q027",
+    "chapter": 2,
+    "section": "2.1.3",
+    "type": "single",
+    "points": 1,
+    "text": "Which of the following is true regarding a user prompt for an LLM?",
+    "options": [
+      {
+        "id": "a",
+        "text": "It is set once at the start of the conversation"
+      },
+      {
+        "id": "b",
+        "text": "It is usually set by the developer"
+      },
+      {
+        "id": "c",
+        "text": "It usually changes with each interaction"
+      },
+      {
+        "id": "d",
+        "text": "It is user-independent, so the response will be consistent regardless of how the user words the prompt"
+      }
+    ],
+    "correct": [
+      "c"
+    ],
+    "selectCount": 1,
+    "image": null,
+    "explanation": "The user prompt is the interaction with the system and usually changes with each interaction. A and B describe system prompts.",
+    "reference": "Syllabus 2.1.3 (ASTQB sample exam Q11)"
+  },
+  {
+    "id": "ch2-q028",
+    "chapter": 2,
+    "section": "2.2.1",
+    "type": "single",
+    "points": 2,
+    "text": "You are working on a replacement of an e-commerce system. You have been given a large set of test conditions to test. There is not adequate time to test all the conditions. You have a testing-trained LLM that you can use. How can you best use it in this situation?",
+    "options": [
+      {
+        "id": "a",
+        "text": "The LLM can create an estimate for how long testing will take based on similar test conditions. This schedule can then be incorporated into the overall project schedule to allow adequate time for testing."
+      },
+      {
+        "id": "b",
+        "text": "The LLM can be fed information regarding previous defects, end-user requirements, and payment regulations to let it determine the relative risk of all the test conditions. This can then be used to prioritize the testing."
+      },
+      {
+        "id": "c",
+        "text": "The LLM can generate and execute all the test cases based on the test conditions, which will save significant time."
+      },
+      {
+        "id": "d",
+        "text": "The LLM can generate test data to cover every possible purchasing scenario. This will ensure testing will not miss any corner cases, and that will help the schedule by eliminating any testing escapes."
+      }
+    ],
+    "correct": [
+      "b"
+    ],
+    "selectCount": 1,
+    "image": null,
+    "explanation": "With insufficient time, tests must be prioritized by risk and executed in priority order, so the most important ones are run first. A does not solve the time problem. C: the LLM could generate test cases but cannot execute them, and automating them is unlikely to shorten testing. D would make testing take longer.",
+    "reference": "Syllabus 2.2.1 (ASTQB sample exam Q12)"
+  },
+  {
+    "id": "ch2-q029",
+    "chapter": 2,
+    "section": "2.2.2",
+    "type": "single",
+    "points": 2,
+    "text": "You have been given requirements in the form of wireframes of the GUI and user stories. You want to use these to create the test conditions for a set of tests. How should you use prompts to evaluate the inputs and create the test conditions?",
+    "options": [
+      {
+        "id": "a",
+        "text": "Apply multimodal prompts"
+      },
+      {
+        "id": "b",
+        "text": "Set well-defined system parameters to define the graphics to be used"
+      },
+      {
+        "id": "c",
+        "text": "Apply prompt chaining"
+      },
+      {
+        "id": "d",
+        "text": "Use meta prompting so the prompts can be continuously refined"
+      }
+    ],
+    "correct": [
+      "a"
+    ],
+    "selectCount": 1,
+    "image": null,
+    "explanation": "The inputs are both graphics and text, so multimodal prompts are needed. B is not something defined in system parameters. C: prompt chaining may be useful later, but the information must first get into the model via multimodal prompts. D is not about generating additional prompts.",
+    "reference": "Syllabus 2.2.2 (ASTQB sample exam Q13)"
+  },
+  {
+    "id": "ch2-q030",
+    "chapter": 2,
+    "section": "2.2.3",
+    "type": "single",
+    "points": 2,
+    "text": "You have been testing versions of the same software over several years. Rather than the quality improving, it seems to just stay the same, with the same high number of defects being caught during testing for each release. How could AI help with this problem?",
+    "options": [
+      {
+        "id": "a",
+        "text": "It could analyze test failures and prioritize the tests that failed last time so they are executed first for each new release."
+      },
+      {
+        "id": "b",
+        "text": "It could use meta prompting to review each test case to determine if it is an effective test. Ineffective tests could then be removed from the overall test suite."
+      },
+      {
+        "id": "c",
+        "text": "It could create large sets of test data that are used across releases of the product to ensure that data variance is not causing the repeated failures."
+      },
+      {
+        "id": "d",
+        "text": "It could conduct root cause analysis over all the defects found across releases to determine the common causes. This information could then be used to improve development and analysis processes."
+      }
+    ],
+    "correct": [
+      "d"
+    ],
+    "selectCount": 1,
+    "image": null,
+    "explanation": "The defects are being caught in testing but should not be occurring in the first place. Root cause analysis across releases reveals what is breaking and why, so development and analysis processes can be improved.",
+    "reference": "Syllabus 2.2.3 (ASTQB sample exam Q14)"
+  },
+  {
+    "id": "ch2-q031",
+    "chapter": 2,
+    "section": "2.2.4",
+    "type": "single",
+    "points": 2,
+    "text": "You are working on a critical project that is under the scrutiny of senior management. As a result, simple and clear reporting of testing progress is paramount. You are using the test reporting capabilities of your test management system, but any analysis of the issues and trends has to be done manually by you. How could AI help with this situation?",
+    "options": [
+      {
+        "id": "a",
+        "text": "AI could analyze all the open defects and verify that the prioritization is correct based on keywords in the defect report."
+      },
+      {
+        "id": "b",
+        "text": "AI could track which test cases are finding the most defects, so you could highlight those on your reports."
+      },
+      {
+        "id": "c",
+        "text": "AI could analyze the defect and test case execution information and provide trending information and root cause analysis mapped to the use cases for the software."
+      },
+      {
+        "id": "d",
+        "text": "AI would automatically email the existing dashboards to the pertinent executives to ensure they always have the latest information available."
+      }
+    ],
+    "correct": [
+      "c"
+    ],
+    "selectCount": 1,
+    "image": null,
+    "explanation": "AI can analyze large amounts of information to extract trends and root causes, giving more than just numbers; mapping findings to use cases makes the importance of failures easier to assess. A is useful but does not address the problem. B gives only part of the picture. D adds nothing, since the information is already readily available.",
+    "reference": "Syllabus 2.2.4 (ASTQB sample exam Q15)"
+  },
+  {
+    "id": "ch2-q032",
+    "chapter": 2,
+    "section": "2.2.5",
+    "type": "single",
+    "points": 2,
+    "text": "You are working on testing a new system. The requirements are high-level and lack detail. What prompting technique should you use to get started to get some ideas for how to progress with test case generation?",
+    "options": [
+      {
+        "id": "a",
+        "text": "Prompt chaining"
+      },
+      {
+        "id": "b",
+        "text": "Few-shot prompting"
+      },
+      {
+        "id": "c",
+        "text": "Meta prompting"
+      },
+      {
+        "id": "d",
+        "text": "Zero-shot prompting"
+      }
+    ],
+    "correct": [
+      "c"
+    ],
+    "selectCount": 1,
+    "image": null,
+    "explanation": "Meta prompting is a good starting point: the general description of the software and of what a test case should accomplish can be used as input, the AI responds, and together you build out the prompts and test cases.",
+    "reference": "Syllabus 2.2.5 (ASTQB sample exam Q16)"
+  },
+  {
+    "id": "ch2-q033",
+    "chapter": 2,
+    "section": "2.3.1",
+    "type": "single",
+    "points": 1,
+    "text": "You are using GenAI to create test cases for you for a heavily rules-based application. You have requested that it use decision tables to build the test cases. Which metric would be the best one to use to determine how well it has done with this request?",
+    "options": [
+      {
+        "id": "a",
+        "text": "Accuracy"
+      },
+      {
+        "id": "b",
+        "text": "Recall"
+      },
+      {
+        "id": "c",
+        "text": "Diversity"
+      },
+      {
+        "id": "d",
+        "text": "Time Efficiency"
+      }
+    ],
+    "correct": [
+      "b"
+    ],
+    "selectCount": 1,
+    "image": null,
+    "explanation": "Recall evaluates the completeness of the generated output with respect to a specific objective — here, full use of the decision tables.",
+    "reference": "Syllabus 2.3.1 (ASTQB sample exam Q17)"
+  },
+  {
+    "id": "ch2-q034",
+    "chapter": 2,
+    "section": "2.3.2",
+    "type": "single",
+    "points": 1,
+    "text": "You have been iteratively modifying your prompt for GenAI test case creation. You are still getting the same types of issues with the output, even though you keep refining the prompts and adding more information. What technique can you employ to use those issues to better evaluate and refine the prompts?",
+    "options": [
+      {
+        "id": "a",
+        "text": "Iterative prompt modification"
+      },
+      {
+        "id": "b",
+        "text": "A/B testing of prompts"
+      },
+      {
+        "id": "c",
+        "text": "Output analysis"
+      },
+      {
+        "id": "d",
+        "text": "Adjusting prompt specificity"
+      }
+    ],
+    "correct": [
+      "c"
+    ],
+    "selectCount": 1,
+    "image": null,
+    "explanation": "Output analysis examines the recurring issues to determine why they keep occurring, which then guides prompt refinement.",
+    "reference": "Syllabus 2.3.2 (ASTQB sample exam Q18)"
   }
 ]
