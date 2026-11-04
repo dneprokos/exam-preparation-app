@@ -465,5 +465,236 @@
     "image": null,
     "explanation": "An integrated application can support a defined repeatable workflow.",
     "reference": "Syllabus 1.2.2"
+  },
+  {
+    "id": "ch1-q015",
+    "chapter": 1,
+    "section": "1.1.1",
+    "type": "single",
+    "points": 1,
+    "text": "Which of the following uses deep learning techniques to create new content?",
+    "options": [
+      {
+        "id": "a",
+        "text": "Symbolic AI"
+      },
+      {
+        "id": "b",
+        "text": "Classical machine learning"
+      },
+      {
+        "id": "c",
+        "text": "Deep learning"
+      },
+      {
+        "id": "d",
+        "text": "Generative AI"
+      }
+    ],
+    "correct": [
+      "d"
+    ],
+    "selectCount": 1,
+    "image": null,
+    "explanation": "Generative AI uses deep learning techniques to create new data by learning and mimicking patterns from the training data.",
+    "reference": "Syllabus 1.1.1 (ASTQB sample exam Q1)"
+  },
+  {
+    "id": "ch1-q016",
+    "chapter": 1,
+    "section": "1.1.2",
+    "type": "single",
+    "points": 1,
+    "text": "You have used the same prompt multiple times, but you have received different responses from the LLM. Why is this happening?",
+    "options": [
+      {
+        "id": "a",
+        "text": "Because the prompt is incorrect"
+      },
+      {
+        "id": "b",
+        "text": "Because LLMs have non-deterministic behavior"
+      },
+      {
+        "id": "c",
+        "text": "Because the training data was faulty"
+      },
+      {
+        "id": "d",
+        "text": "Because LLMs are trained to always vary the response"
+      }
+    ],
+    "correct": [
+      "b"
+    ],
+    "selectCount": 1,
+    "image": null,
+    "explanation": "LLMs exhibit non-deterministic behavior due to the probabilistic nature of their inference mechanisms.",
+    "reference": "Syllabus 1.1.2 (ASTQB sample exam Q2)"
+  },
+  {
+    "id": "ch1-q017",
+    "chapter": 1,
+    "section": "1.1.2",
+    "type": "single",
+    "points": 1,
+    "text": "How is tokenization related to embeddings?",
+    "options": [
+      {
+        "id": "a",
+        "text": "Tokens are a numeric representation of how a given word is embedded into the model"
+      },
+      {
+        "id": "b",
+        "text": "Tokens represent characters, subwords, or words, and embeddings capture the semantic, syntactic, and contextual relationship of the tokens"
+      },
+      {
+        "id": "c",
+        "text": "Embeddings describe the text component in such a way that it can be tokenized for use within the model"
+      },
+      {
+        "id": "d",
+        "text": "Embeddings identify the non-deterministic behavior of a word component, which is then used to determine the positioning of its token using a vector to represent its position"
+      }
+    ],
+    "correct": [
+      "b"
+    ],
+    "selectCount": 1,
+    "image": null,
+    "explanation": "Tokenization splits text into tokens (characters, subwords or words); embeddings are vector representations that capture the semantic, syntactic and contextual relationships between those tokens.",
+    "reference": "Syllabus 1.1.2 (ASTQB sample exam Q3)"
+  },
+  {
+    "id": "ch1-q018",
+    "chapter": 1,
+    "section": "1.1.3",
+    "type": "single",
+    "points": 1,
+    "text": "You need an LLM that will help with decision-making based on a process similar to human logic. Which type of LLM should you use?",
+    "options": [
+      {
+        "id": "a",
+        "text": "Foundation LLM"
+      },
+      {
+        "id": "b",
+        "text": "Instruction-tuned LLM"
+      },
+      {
+        "id": "c",
+        "text": "Reasoning LLM"
+      },
+      {
+        "id": "d",
+        "text": "Ad-hoc LLM"
+      }
+    ],
+    "correct": [
+      "c"
+    ],
+    "selectCount": 1,
+    "image": null,
+    "explanation": "A reasoning LLM is trained specifically to emulate human-like, step-by-step reasoning responses.",
+    "reference": "Syllabus 1.1.3 (ASTQB sample exam Q4)"
+  },
+  {
+    "id": "ch1-q019",
+    "chapter": 1,
+    "section": "1.1.4",
+    "type": "single",
+    "points": 1,
+    "text": "Which of the following is an advantage of using an LLM augmented with vision-language models for developing test cases?",
+    "options": [
+      {
+        "id": "a",
+        "text": "There is no advantage because this type of model is used primarily for military applications"
+      },
+      {
+        "id": "b",
+        "text": "It can create test cases that can include text and visual cues"
+      },
+      {
+        "id": "c",
+        "text": "It can edit images much faster and more accurately than a human"
+      },
+      {
+        "id": "d",
+        "text": "It can generate executable code from wireframes and screenshots"
+      }
+    ],
+    "correct": [
+      "b"
+    ],
+    "selectCount": 1,
+    "image": null,
+    "explanation": "It can create test cases that include both textual data and visual cues, which increases overall test coverage.",
+    "reference": "Syllabus 1.1.4 (ASTQB sample exam Q5)"
+  },
+  {
+    "id": "ch1-q020",
+    "chapter": 1,
+    "section": "1.2.1",
+    "type": "single",
+    "points": 1,
+    "text": "You have created test automation that will be used to test driver's license applications. There is a huge amount of data available for this testing, but it will take too long to test with all of that data. How can an LLM help with this problem?",
+    "options": [
+      {
+        "id": "a",
+        "text": "It can create new synthetic data that will protect private information"
+      },
+      {
+        "id": "b",
+        "text": "It can take the existing data and augment that with data that is missing according to the data rules"
+      },
+      {
+        "id": "c",
+        "text": "It can take the existing data and break it into smaller sets that will contain interesting variances"
+      },
+      {
+        "id": "d",
+        "text": "It can delete data that is duplicated and replace it with new data"
+      }
+    ],
+    "correct": [
+      "c"
+    ],
+    "selectCount": 1,
+    "image": null,
+    "explanation": "The LLM can analyze the existing data and break it into smaller sets that still contain representative and interesting variances.",
+    "reference": "Syllabus 1.2.1 (ASTQB sample exam Q6)"
+  },
+  {
+    "id": "ch1-q021",
+    "chapter": 1,
+    "section": "1.2.2",
+    "type": "single",
+    "points": 1,
+    "text": "Your organization is developing a test management tool that will use AI to generate, classify, and store test cases based on requirements, general testing knowledge, and previous issues found. Which of the following interaction models would be best to use?",
+    "options": [
+      {
+        "id": "a",
+        "text": "Chatbots talking to the LLM"
+      },
+      {
+        "id": "b",
+        "text": "Chatbots talking to other chatbots that have been trained on your system"
+      },
+      {
+        "id": "c",
+        "text": "APIs of the LLM to allow the test task information to pass into and out of the LLM"
+      },
+      {
+        "id": "d",
+        "text": "APIs of the LLM to pass the test case information into the LLM to be stored there"
+      }
+    ],
+    "correct": [
+      "c"
+    ],
+    "selectCount": 1,
+    "image": null,
+    "explanation": "Using the LLM APIs allows maximum use of the LLM by passing the necessary data to and from it. D is wrong because test cases would be stored in the test management system, not in the LLM. A and B are wrong because chatbots are not the most efficient or flexible means of access.",
+    "reference": "Syllabus 1.2.2 (ASTQB sample exam Q7)"
   }
 ]
