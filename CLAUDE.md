@@ -59,7 +59,7 @@ React 19 + TypeScript + Vite + Tailwind CSS. Multi-certification app (ISTQB CTAL
 **CI:** `.github/workflows/component-tests.yml` runs lint + validate + test:coverage on every PR to `main`. Make it a required status check via GitHub branch protection.
 
 ## Project skills
-- `.claude/skills/update-questions-db` — append vetted questions to `public/data/istqb-tae/chapter-*.json`; `generate-questions` — live quiz drill from the syllabus, writes nothing.
+- `.claude/skills/update-questions-db` — append vetted questions to `public/data/istqb-tae/chapter-*.json`; `generate-questions` — live quiz drill from the syllabus, writes nothing; `genai-tutor` — CT-GenAI teach-and-quiz course, persists progress in `study/istqb-genai/progress.md`.
 - Vite `base` is `/exam-preparation-app/` (GitHub Pages) — `fetch` paths for data must respect `import.meta.env.BASE_URL`.
 
 ## Protected directories — never touch
