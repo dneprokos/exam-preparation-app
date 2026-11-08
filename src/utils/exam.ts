@@ -37,12 +37,14 @@ export function computeResult(
   const chapterMap = new Map<number, ChapterScore>();
   let earned = 0;
   let available = 0;
+  const failed: AttemptAnswer[] = [];
 
   for (const q of questions) {
     const selected = answerMap.get(q.id) ?? [];
     const pts = scoreQuestion(q, selected);
     earned += pts;
     available += q.points;
+    if (pts < q.points) failed.push({ questionId: q.id, selected });
 
     const existing = chapterMap.get(q.chapter) ?? { chapterId: q.chapter, earned: 0, available: 0 };
     chapterMap.set(q.chapter, {
@@ -65,6 +67,7 @@ export function computeResult(
     percent,
     passed: percent >= passPercent,
     chapterBreakdown: [...chapterMap.values()],
+    failed,
   };
 }
 

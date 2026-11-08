@@ -1,16 +1,22 @@
 import { useState } from 'react';
-import type { IndexData } from '../types';
+import type { IndexData, Question } from '../types';
 import type { CertStorage } from '../utils/storage';
 import { getWeakChapters } from '../utils/exam';
 import { TrendChart } from '../components/TrendChart';
+import {
+  buildHistoryFailedExport, downloadJson, failedExportFilename,
+  type ExportCertification,
+} from '../utils/failedExport';
 
 interface Props {
   indexData: IndexData | null;
   passPercent: number;
   storage: CertStorage;
+  cert: ExportCertification;
+  questionsByChapter: Map<number, Question[]>;
 }
 
-export function HistoryPage({ indexData, passPercent, storage }: Props) {
+export function HistoryPage({ indexData, passPercent, storage, cert, questionsByChapter }: Props) {
   const { getAttempts, clearAttempts, exportAttempts } = storage;
   const [attempts, setAttempts] = useState(() => getAttempts());
 
@@ -19,6 +25,18 @@ export function HistoryPage({ indexData, passPercent, storage }: Props) {
       clearAttempts();
       setAttempts([]);
     }
+  }
+
+  function handleExportFailed() {
+    const questionsById = new Map(
+      [...questionsByChapter.values()].flat().map(q => [q.id, q])
+    );
+    const data = buildHistoryFailedExport(cert, attempts, questionsById);
+    if (data.uniqueFailedQuestions === 0) {
+      alert('No failed-question details stored yet. Details are recorded for attempts completed from now on.');
+      return;
+    }
+    downloadJson(failedExportFilename(cert.id, 'history'), data);
   }
 
   if (attempts.length === 0) {
@@ -44,6 +62,12 @@ export function HistoryPage({ indexData, passPercent, storage }: Props) {
             className="px-3 py-1.5 text-sm border border-gray-300 dark:border-gray-600 rounded-lg hover:bg-gray-50 dark:hover:bg-gray-700 transition"
           >
             Export
+          </button>
+          <button
+            onClick={handleExportFailed}
+            className="px-3 py-1.5 text-sm border border-gray-300 dark:border-gray-600 rounded-lg hover:bg-gray-50 dark:hover:bg-gray-700 transition"
+          >
+            Export failed questions
           </button>
           <button
             onClick={handleClear}

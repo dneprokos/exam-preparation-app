@@ -36,8 +36,10 @@ React 19 + TypeScript + Vite + Tailwind CSS. Multi-certification app (ISTQB CTAL
 - TAE uses prefix `tae`, so its keys stay `tae_attempts` (completed `Attempt[]` history) and `tae_in_progress` (resumable `InProgressAttempt`) — existing users lose nothing.
 - `tae_settings` — `AppSettings` (passPercent, randomize flags, theme); global, legacy key kept.
 
+**Failed-question export** (`src/utils/failedExport.ts`): JSON download for later analysis with Claude. Results page button → `<certId>-failed-attempt-<date>.json` (format `exam-failed-questions`); History page button → `<certId>-failed-history-<date>.json` (format `exam-failed-history`, aggregated per question with `timesFailed`/`misses`). `Attempt.failed?` (`questionId` + `selected`, set by `computeResult`) feeds the history export; attempts saved before it existed lack it and are counted in `attemptsWithoutDetail`. Question text is resolved from the loaded bank at export time, not stored in localStorage.
+
 **Question bank** (`public/data/<certId>/`):
-- GenAI (`istqb-genai`, prefix `genai`): 5 chapters, 40 questions, 60 min, 65% pass. Chapters 2 and 3 set `mixedPoints: true` (K3 questions are 2 pts, others 1), so full-exam totals vary slightly; `points` in index is nominal. Source: `docs/ISTQB GEN AI/ISTQB_CT_GenAI_Questions_by_Syllabus.json`.
+- GenAI (`istqb-genai`, prefix `genai`): 5 chapters, 145-question bank (ch1 24, ch2 46, ch3 34, ch4 20, ch5 21), exam draws 40 questions, 60 min, 65% pass. Chapters 2 and 3 set `mixedPoints: true` (K3 questions are 2 pts, others 1), so full-exam totals vary slightly; `points` in index is nominal. Source: `docs/ISTQB GEN AI/ISTQB_CT_GenAI_Questions_by_Syllabus.json`.
 - `index.json` — chapter metadata + exam config (TAE: 40 questions, 66 points, 90 min, 65% pass)
 - `chapter-{n}.json` — arrays of `Question` objects (TAE: `chapter-1..8`)
 - All questions within a chapter must have equal `points` (required for random selection fairness)
