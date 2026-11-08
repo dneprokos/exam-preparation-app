@@ -60,6 +60,8 @@ export interface Attempt {
   percent: number;
   passed: boolean;
   chapterBreakdown: ChapterScore[];
+  /** Questions answered wrong or skipped. Absent on attempts saved before this field existed. */
+  failed?: AttemptAnswer[];
 }
 
 export interface InProgressAttempt {

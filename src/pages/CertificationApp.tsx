@@ -93,6 +93,7 @@ export function CertificationApp({ cert, settings, updateSettings, onBackToCerti
             examState={examHook.examState}
             indexData={indexData!}
             passPercent={settings.passPercent}
+            cert={{ id: cert.id, title: cert.title }}
             onAnswer={examHook.answerQuestion}
             onToggleFlag={examHook.toggleFlag}
             onGoToIndex={examHook.goToIndex}
@@ -106,7 +107,13 @@ export function CertificationApp({ cert, settings, updateSettings, onBackToCerti
           />
         )}
         {activeView === 'history' && (
-          <HistoryPage indexData={indexData} passPercent={settings.passPercent} storage={storage} />
+          <HistoryPage
+            indexData={indexData}
+            passPercent={settings.passPercent}
+            storage={storage}
+            cert={{ id: cert.id, title: cert.title }}
+            questionsByChapter={questionsByChapter}
+          />
         )}
         {activeView === 'settings' && (
           <SettingsPage settings={settings} onUpdate={updateSettings} />

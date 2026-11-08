@@ -138,4 +138,37 @@ describe('ResultsScreen', () => {
     expect(barClass(65)).toContain('bg-green-500');
     expect(barClass(80)).toContain('bg-red-400');
   });
+
+  it('shows export button with failed count when cert given and some failed', () => {
+    const answers: AttemptAnswer[] = [{ questionId: 'q1', selected: ['b'] }, { questionId: 'q2', selected: ['b'] }];
+    const result = makeAttempt({ percent: 50, passed: false });
+    render(<ResultsScreen result={result} questions={[q1, q2]} answers={answers} indexData={indexData} passPercent={65} cert={{ id: 'c', title: 'C' }} onGoHome={vi.fn()} />);
+    expect(screen.getByRole('button', { name: 'Export failed questions (1)' })).toBeTruthy();
+  });
+
+  it('hides export button when nothing failed', () => {
+    const answers: AttemptAnswer[] = [{ questionId: 'q1', selected: ['a'] }];
+    const result = makeAttempt({ percent: 100, passed: true });
+    render(<ResultsScreen result={result} questions={[q1]} answers={answers} indexData={indexData} passPercent={65} cert={{ id: 'c', title: 'C' }} onGoHome={vi.fn()} />);
+    expect(screen.queryByRole('button', { name: /Export failed/ })).toBeNull();
+  });
+
+  it('hides export button without cert', () => {
+    const result = makeAttempt({ percent: 0, passed: false });
+    render(<ResultsScreen result={result} questions={[q1]} answers={[]} indexData={indexData} passPercent={65} onGoHome={vi.fn()} />);
+    expect(screen.queryByRole('button', { name: /Export failed/ })).toBeNull();
+  });
+
+  it('export click downloads a json file', async () => {
+    URL.createObjectURL = vi.fn(() => 'blob:x');
+    URL.revokeObjectURL = vi.fn();
+    const click = vi.spyOn(HTMLAnchorElement.prototype, 'click').mockImplementation(() => {});
+    const result = makeAttempt({ percent: 0, passed: false });
+    const { user } = renderWithUser(
+      <ResultsScreen result={result} questions={[q1]} answers={[]} indexData={indexData} passPercent={65} cert={{ id: 'c', title: 'C' }} onGoHome={vi.fn()} />
+    );
+    await user.click(screen.getByRole('button', { name: /Export failed/ }));
+    expect(click).toHaveBeenCalledTimes(1);
+    click.mockRestore();
+  });
 });

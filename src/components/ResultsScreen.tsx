@@ -1,6 +1,10 @@
 import type { Attempt, Question, AttemptAnswer, IndexData } from '../types';
 import { scoreQuestion, getOptionText } from '../utils/exam';
 import { QuestionText } from './QuestionText';
+import {
+  buildAttemptFailedExport, downloadJson, failedExportFilename,
+  type ExportCertification,
+} from '../utils/failedExport';
 
 interface Props {
   result: Attempt;
@@ -8,11 +12,21 @@ interface Props {
   answers: AttemptAnswer[];
   indexData: IndexData;
   passPercent: number;
+  cert?: ExportCertification;
   onGoHome: () => void;
 }
 
-export function ResultsScreen({ result, questions, answers, indexData, passPercent, onGoHome }: Props) {
+export function ResultsScreen({ result, questions, answers, indexData, passPercent, cert, onGoHome }: Props) {
   const answerMap = new Map(answers.map(a => [a.questionId, a.selected]));
+  const failedCount = questions.filter(q => scoreQuestion(q, answerMap.get(q.id) ?? []) < q.points).length;
+
+  function handleExportFailed() {
+    if (!cert) return;
+    downloadJson(
+      failedExportFilename(cert.id, 'attempt'),
+      buildAttemptFailedExport(cert, result, questions, answers)
+    );
+  }
   const pct = Math.round(result.percent);
   const mins = Math.floor(result.durationSeconds / 60);
   const secs = result.durationSeconds % 60;
@@ -61,7 +75,17 @@ export function ResultsScreen({ result, questions, answers, indexData, passPerce
 
       {/* Per-question review */}
       <div>
-        <h3 className="text-lg font-semibold mb-3">Question Review</h3>
+        <div className="flex items-center justify-between mb-3">
+          <h3 className="text-lg font-semibold">Question Review</h3>
+          {cert && failedCount > 0 && (
+            <button
+              onClick={handleExportFailed}
+              className="px-3 py-1.5 text-sm border border-gray-300 dark:border-gray-600 rounded-lg hover:bg-gray-50 dark:hover:bg-gray-700 transition"
+            >
+              Export failed questions ({failedCount})
+            </button>
+          )}
+        </div>
         <div className="space-y-3">
           {questions.map((q, i) => {
             const selected = answerMap.get(q.id) ?? [];

@@ -1,4 +1,5 @@
 import type { IndexData } from '../types';
+import type { ExportCertification } from '../utils/failedExport';
 import type { ExamState } from '../hooks/useExam';
 import { QuestionCard } from '../components/QuestionCard';
 import { TimerDisplay } from '../components/TimerDisplay';
@@ -10,6 +11,7 @@ interface Props {
   examState: ExamState;
   indexData: IndexData;
   passPercent: number;
+  cert: ExportCertification;
   onAnswer: (questionId: string, selected: string[]) => void;
   onToggleFlag: (questionId: string) => void;
   onGoToIndex: (i: number) => void;
@@ -23,7 +25,7 @@ interface Props {
 }
 
 export function ExamPage({
-  examState, indexData, passPercent, onAnswer, onToggleFlag, onGoToIndex,
+  examState, indexData, passPercent, cert, onAnswer, onToggleFlag, onGoToIndex,
   onNext, onPrev, onEnterReview, onBackToQuestion, onSubmit, onExit, onGoHome,
 }: Props) {
   if (examState.view === 'results' && examState.result) {
@@ -34,6 +36,7 @@ export function ExamPage({
         answers={examState.answers}
         indexData={indexData}
         passPercent={passPercent}
+        cert={cert}
         onGoHome={onGoHome}
       />
     );
