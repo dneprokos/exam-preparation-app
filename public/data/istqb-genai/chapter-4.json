@@ -493,5 +493,170 @@
     "image": null,
     "explanation": "Data privacy depends more on the data being handled than on the deployment type, so it is a critical concern for all of them.",
     "reference": "Syllabus 4.2.2 (ASTQB sample exam Q33)"
+  },
+  {
+    "id": "ch4-q016",
+    "chapter": 4,
+    "section": "4.1.1",
+    "type": "single",
+    "points": 1,
+    "text": "A tester wants to find past defects that are similar in meaning to a new defect description. Which back-end component fits BEST?",
+    "options": [
+      {
+        "id": "a",
+        "text": "A vector database storing embeddings, searched by semantic similarity."
+      },
+      {
+        "id": "b",
+        "text": "A relational table queried by exact ID."
+      },
+      {
+        "id": "c",
+        "text": "The front-end user interface."
+      },
+      {
+        "id": "d",
+        "text": "A symbolic rule engine."
+      }
+    ],
+    "correct": [
+      "a"
+    ],
+    "selectCount": 1,
+    "image": null,
+    "explanation": "Vector databases enable semantic retrieval of related content using embeddings; relational databases hold structured data such as test cases.",
+    "reference": "Syllabus 4.1.1"
+  },
+  {
+    "id": "ch4-q017",
+    "chapter": 4,
+    "section": "4.1.2",
+    "type": "single",
+    "points": 1,
+    "text": "Why are large documents split into chunks (e.g. 256-512 tokens) during RAG preprocessing?",
+    "options": [
+      {
+        "id": "a",
+        "text": "To retrain the LLM."
+      },
+      {
+        "id": "b",
+        "text": "To avoid using a vector database."
+      },
+      {
+        "id": "c",
+        "text": "To enable focused retrieval and compatibility with the model context window."
+      },
+      {
+        "id": "d",
+        "text": "To remove the need for embeddings."
+      }
+    ],
+    "correct": [
+      "c"
+    ],
+    "selectCount": 1,
+    "image": null,
+    "explanation": "Chunking ensures focused retrieval and compatibility with the context window; chunks are then encoded as embeddings and can be stored in vector databases.",
+    "reference": "Syllabus 4.1.2"
+  },
+  {
+    "id": "ch4-q018",
+    "chapter": 4,
+    "section": "4.1.3",
+    "type": "single",
+    "points": 1,
+    "text": "What distinguishes an LLM-powered agent from a traditional AI chatbot?",
+    "options": [
+      {
+        "id": "a",
+        "text": "It does not use an LLM."
+      },
+      {
+        "id": "b",
+        "text": "It can invoke a predefined set of functions (\"tools\") to act on external systems."
+      },
+      {
+        "id": "c",
+        "text": "It never hallucinates."
+      },
+      {
+        "id": "d",
+        "text": "It can only answer questions."
+      }
+    ],
+    "correct": [
+      "b"
+    ],
+    "selectCount": 1,
+    "image": null,
+    "explanation": "Agents can perform tasks by invoking tools. They still suffer from hallucinations, reasoning errors and biases, which can be mitigated by verification or semi-autonomous operation.",
+    "reference": "Syllabus 4.1.3"
+  },
+  {
+    "id": "ch4-q019",
+    "chapter": 4,
+    "section": "4.2.1",
+    "type": "single",
+    "points": 1,
+    "text": "An organization wants test cases generated from user stories in its own format at low compute cost. Which approach is suitable?",
+    "options": [
+      {
+        "id": "a",
+        "text": "Train a new LLM from scratch."
+      },
+      {
+        "id": "b",
+        "text": "Drop the format requirement."
+      },
+      {
+        "id": "c",
+        "text": "Fine-tune on randomly chosen data."
+      },
+      {
+        "id": "d",
+        "text": "Fine-tune an SLM on its user stories and corresponding test cases."
+      }
+    ],
+    "correct": [
+      "d"
+    ],
+    "selectCount": 1,
+    "image": null,
+    "explanation": "Fine-tuning an SLM on organization-specific user stories and test cases aligns it with the format and terminology without the overhead of an LLM. Training data quality matters.",
+    "reference": "Syllabus 4.2.1"
+  },
+  {
+    "id": "ch4-q020",
+    "chapter": 4,
+    "section": "4.2.2",
+    "type": "single",
+    "points": 1,
+    "text": "Which consideration is MOST emphasized when developing a GenAI-based test tool in-house?",
+    "options": [
+      {
+        "id": "a",
+        "text": "Full control of privacy and security, planning of compute, storage and staff training, and processes to validate and maintain the solution."
+      },
+      {
+        "id": "b",
+        "text": "Only the vendor SLA."
+      },
+      {
+        "id": "c",
+        "text": "Only per-seat license cost."
+      },
+      {
+        "id": "d",
+        "text": "No operational planning is needed."
+      }
+    ],
+    "correct": [
+      "a"
+    ],
+    "selectCount": 1,
+    "image": null,
+    "explanation": "In-house development stresses comprehensive control of data privacy and security, AI resource planning, training, and structured validation and maintenance processes.",
+    "reference": "Syllabus 4.2.2"
   }
 ]

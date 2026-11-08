@@ -696,5 +696,104 @@
     "image": null,
     "explanation": "Using the LLM APIs allows maximum use of the LLM by passing the necessary data to and from it. D is wrong because test cases would be stored in the test management system, not in the LLM. A and B are wrong because chatbots are not the most efficient or flexible means of access.",
     "reference": "Syllabus 1.2.2 (ASTQB sample exam Q7)"
+  },
+  {
+    "id": "ch1-q022",
+    "chapter": 1,
+    "section": "1.1.2",
+    "type": "single",
+    "points": 1,
+    "text": "Which statement BEST describes a small language model (SLM)?",
+    "options": [
+      {
+        "id": "a",
+        "text": "A model that cannot be fine-tuned and can only be used in zero-shot mode."
+      },
+      {
+        "id": "b",
+        "text": "A compact model with fewer parameters that can be fine-tuned to deliver focused task performance with less computational overhead than an LLM."
+      },
+      {
+        "id": "c",
+        "text": "An LLM variant that always has a larger context window than standard LLMs."
+      },
+      {
+        "id": "d",
+        "text": "A rule-based symbolic system built for a single test task."
+      }
+    ],
+    "correct": [
+      "b"
+    ],
+    "selectCount": 1,
+    "image": null,
+    "explanation": "SLMs are compact models with fewer parameters, designed for lightweight and focused GenAI solutions. Fine-tuning an SLM can reach high task performance without the computational overhead of an LLM (4.2.1). The other options contradict this.",
+    "reference": "Syllabus 1.1.2"
+  },
+  {
+    "id": "ch1-q023",
+    "chapter": 1,
+    "section": "1.1.3",
+    "type": "single",
+    "points": 1,
+    "text": "A team has two tasks: (1) reformat defect reports into a fixed organizational template; (2) derive a test execution order from risk levels and dependencies between tests. Which model choice is MOST appropriate?",
+    "options": [
+      {
+        "id": "a",
+        "text": "Task 1: instruction-tuned LLM; Task 2: reasoning LLM."
+      },
+      {
+        "id": "b",
+        "text": "A foundation LLM for both tasks."
+      },
+      {
+        "id": "c",
+        "text": "Task 1: foundation LLM; Task 2: instruction-tuned LLM."
+      },
+      {
+        "id": "d",
+        "text": "Task 1: reasoning LLM; Task 2: instruction-tuned LLM."
+      }
+    ],
+    "correct": [
+      "a"
+    ],
+    "selectCount": 1,
+    "image": null,
+    "explanation": "Instruction-tuned LLMs are optimized for task adherence and instruction following (e.g. templates). Reasoning LLMs target multi-step problem solving and suit multi-criteria tasks such as prioritization with dependencies. Foundation models typically need further adaptation.",
+    "reference": "Syllabus 1.1.3"
+  },
+  {
+    "id": "ch1-q024",
+    "chapter": 1,
+    "section": "1.1.4",
+    "type": "single",
+    "points": 1,
+    "text": "A multimodal LLM receives a GUI screenshot together with a user story. Which statement BEST describes how the screenshot is processed?",
+    "options": [
+      {
+        "id": "a",
+        "text": "It is converted to text by OCR only, and the image itself is discarded."
+      },
+      {
+        "id": "b",
+        "text": "It is converted into embeddings by a vision-language model and processed together with the text in the transformer."
+      },
+      {
+        "id": "c",
+        "text": "It is handled by a separate rule engine, and the results are merged by the tester."
+      },
+      {
+        "id": "d",
+        "text": "It must first be converted into test scripts before the LLM can use it."
+      }
+    ],
+    "correct": [
+      "b"
+    ],
+    "selectCount": 1,
+    "image": null,
+    "explanation": "In multimodal LLMs tokenization is adapted per modality: images are converted into embeddings using vision-language models before being processed in the transformer model.",
+    "reference": "Syllabus 1.1.4"
   }
 ]

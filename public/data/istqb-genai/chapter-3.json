@@ -894,5 +894,236 @@
     "image": null,
     "explanation": "The EU AI Act is a legal framework that classifies AI applications by risk level. The NIST AI RMF focuses on managing risk (fairness, transparency, security) but is not a legal framework.",
     "reference": "Syllabus 3.4.1 (ASTQB sample exam Q28)"
+  },
+  {
+    "id": "ch3-q028",
+    "chapter": 3,
+    "section": "3.1.1",
+    "type": "single",
+    "points": 1,
+    "text": "Match each observation to the issue type:\n(i) A generated test verifies a non-existent \"audit export\" acceptance criterion.\n(ii) A plan schedules test T7 before its stated prerequisite T3.\n(iii) Generated user names are almost all English-language names.",
+    "options": [
+      {
+        "id": "a",
+        "text": "(i) reasoning error, (ii) bias, (iii) hallucination"
+      },
+      {
+        "id": "b",
+        "text": "(i) hallucination, (ii) bias, (iii) reasoning error"
+      },
+      {
+        "id": "c",
+        "text": "(i) hallucination, (ii) reasoning error, (iii) bias"
+      },
+      {
+        "id": "d",
+        "text": "(i) bias, (ii) hallucination, (iii) reasoning error"
+      }
+    ],
+    "correct": [
+      "c"
+    ],
+    "selectCount": 1,
+    "image": null,
+    "explanation": "Hallucination: output that is factually incorrect or irrelevant (tests for non-existent criteria). Reasoning error: faulty logic such as ignoring dependencies. Bias: skew inherited from training data, e.g. English-language dominance.",
+    "reference": "Syllabus 3.1.1"
+  },
+  {
+    "id": "ch3-q029",
+    "chapter": 3,
+    "section": "3.1.2",
+    "type": "single",
+    "points": 2,
+    "text": "Match each issue (1-3) with a suitable detection approach (A-C):\n1. Hallucination\n2. Reasoning error\n3. Bias\nA. Run the generated scripts against the test object or perform logical validation.\nB. Cross-verify the output against requirements or consult domain experts.\nC. Review whether the testware reflects the test strategy, including underrepresented non-functional tests.",
+    "options": [
+      {
+        "id": "a",
+        "text": "1B, 2C, 3A"
+      },
+      {
+        "id": "b",
+        "text": "1B, 2A, 3C"
+      },
+      {
+        "id": "c",
+        "text": "1A, 2B, 3C"
+      },
+      {
+        "id": "d",
+        "text": "1C, 2A, 3B"
+      }
+    ],
+    "correct": [
+      "b"
+    ],
+    "selectCount": 1,
+    "image": null,
+    "explanation": "Hallucinations: cross-verification and domain expertise. Reasoning errors: logical validation and output testing. Bias: reviewing whether testware represents the strategy, e.g. underrepresented non-functional tests.",
+    "reference": "Syllabus 3.1.2"
+  },
+  {
+    "id": "ch3-q030",
+    "chapter": 3,
+    "section": "3.1.4",
+    "type": "single",
+    "points": 1,
+    "text": "A tester sets the temperature close to zero for exploratory test-idea generation, and the ideas become repetitive. Why?",
+    "options": [
+      {
+        "id": "a",
+        "text": "Lowering the temperature increases the context window."
+      },
+      {
+        "id": "b",
+        "text": "The model forgets earlier ideas."
+      },
+      {
+        "id": "c",
+        "text": "A low temperature disables embeddings."
+      },
+      {
+        "id": "d",
+        "text": "A lower temperature narrows the probability distribution, reducing randomness but also creativity and diversity."
+      }
+    ],
+    "correct": [
+      "d"
+    ],
+    "selectCount": 1,
+    "image": null,
+    "explanation": "Lowering temperature gives more consistent output but limits creativity and diversity, making outputs repetitive or overly deterministic.",
+    "reference": "Syllabus 3.1.4"
+  },
+  {
+    "id": "ch3-q031",
+    "chapter": 3,
+    "section": "3.2.1",
+    "type": "single",
+    "points": 1,
+    "text": "Match each scenario with the data privacy concern:\n1. A tool outputs another user's phone number.\n2. A vendor stores prompts without giving users control.\n3. A team uses a tool without GDPR safeguards.\nA. Unintentional data exposure\nB. Lack of control over data usage\nC. Compliance risks",
+    "options": [
+      {
+        "id": "a",
+        "text": "1A, 2B, 3C"
+      },
+      {
+        "id": "b",
+        "text": "1B, 2A, 3C"
+      },
+      {
+        "id": "c",
+        "text": "1C, 2B, 3A"
+      },
+      {
+        "id": "d",
+        "text": "1A, 2C, 3B"
+      }
+    ],
+    "correct": [
+      "a"
+    ],
+    "selectCount": 1,
+    "image": null,
+    "explanation": "The syllabus lists unintentional data exposure, lack of control over data usage, and compliance risks (e.g. GDPR) as the main privacy concerns.",
+    "reference": "Syllabus 3.2.1"
+  },
+  {
+    "id": "ch3-q032",
+    "chapter": 3,
+    "section": "3.2.3",
+    "type": "single",
+    "points": 1,
+    "text": "An organization sets security policies for GenAI in testing. Which stakeholders does the syllabus highly recommend involving?",
+    "options": [
+      {
+        "id": "a",
+        "text": "Only the marketing department."
+      },
+      {
+        "id": "b",
+        "text": "The LLM vendor's sales team."
+      },
+      {
+        "id": "c",
+        "text": "Only the testers."
+      },
+      {
+        "id": "d",
+        "text": "Senior security engineers, legal counsel, and the CTO or CISO, if present."
+      }
+    ],
+    "correct": [
+      "d"
+    ],
+    "selectCount": 1,
+    "image": null,
+    "explanation": "Because strategies are complementary and complex, involving senior security engineers, legal counsel, the CTO and/or CISO is highly recommended.",
+    "reference": "Syllabus 3.2.3"
+  },
+  {
+    "id": "ch3-q033",
+    "chapter": 3,
+    "section": "3.3.1",
+    "type": "single",
+    "points": 1,
+    "text": "Which practice BEST reduces the environmental impact of GenAI use in a test team?",
+    "options": [
+      {
+        "id": "a",
+        "text": "Prefer image generation over text generation."
+      },
+      {
+        "id": "b",
+        "text": "Use right-sized models and avoid unnecessary model interactions."
+      },
+      {
+        "id": "c",
+        "text": "Always use the largest available model."
+      },
+      {
+        "id": "d",
+        "text": "Regenerate every output ten times."
+      }
+    ],
+    "correct": [
+      "b"
+    ],
+    "selectCount": 1,
+    "image": null,
+    "explanation": "Energy use rises with task complexity and usage. Limiting unnecessary interactions and selecting right-sized models reduce consumption; image generation costs far more than text.",
+    "reference": "Syllabus 3.3.1"
+  },
+  {
+    "id": "ch3-q034",
+    "chapter": 3,
+    "section": "3.4.1",
+    "type": "single",
+    "points": 1,
+    "text": "Match each item (1-4) with its description (A-D):\n1. ISO/IEC 42001\n2. ISO/IEC 23053\n3. EU AI Act\n4. NIST AI RMF\nA. Legal framework classifying AI applications by risk level.\nB. Requirements for managing AI systems within an organization.\nC. Framework for AI systems using machine learning, covering lifecycle processes, safety and transparency.\nD. Guidelines for managing AI risks, focusing on fairness, transparency and security.",
+    "options": [
+      {
+        "id": "a",
+        "text": "1C, 2B, 3A, 4D"
+      },
+      {
+        "id": "b",
+        "text": "1B, 2C, 3D, 4A"
+      },
+      {
+        "id": "c",
+        "text": "1A, 2B, 3C, 4D"
+      },
+      {
+        "id": "d",
+        "text": "1B, 2C, 3A, 4D"
+      }
+    ],
+    "correct": [
+      "d"
+    ],
+    "selectCount": 1,
+    "image": null,
+    "explanation": "Per the syllabus table: ISO/IEC 42001 = AI management system requirements; ISO/IEC 23053 = AI/ML framework; EU AI Act = risk-based regulation; NIST AI RMF = risk management framework.",
+    "reference": "Syllabus 3.4.1"
   }
 ]
