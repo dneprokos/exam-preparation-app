@@ -592,5 +592,104 @@
     "image": null,
     "explanation": "The test manager usually ensures the team as a whole has these capabilities; individuals remain responsible for keeping their own skills current.",
     "reference": "Syllabus 5.2.3 (ASTQB sample exam Q40)"
+  },
+  {
+    "id": "ch5-q019",
+    "chapter": 5,
+    "section": "5.1.2",
+    "type": "single",
+    "points": 1,
+    "text": "An audit finds that nobody can tell which test cases were AI-generated and that generated testware is not reviewed. Which elements of the GenAI strategy are missing?",
+    "options": [
+      {
+        "id": "a",
+        "text": "Larger context windows."
+      },
+      {
+        "id": "b",
+        "text": "Cheaper models."
+      },
+      {
+        "id": "c",
+        "text": "Transparency obligations and quality gates."
+      },
+      {
+        "id": "d",
+        "text": "Fine-tuning and RAG."
+      }
+    ],
+    "correct": [
+      "c"
+    ],
+    "selectCount": 1,
+    "image": null,
+    "explanation": "Process guidelines should include transparency obligations (what was generated using GenAI) and quality gates with review of generated testware.",
+    "reference": "Syllabus 5.1.2"
+  },
+  {
+    "id": "ch5-q020",
+    "chapter": 5,
+    "section": "5.1.4",
+    "type": "single",
+    "points": 1,
+    "text": "Which statement about the phases of GenAI adoption is CORRECT?",
+    "options": [
+      {
+        "id": "a",
+        "text": "Fear of job displacement is out of scope."
+      },
+      {
+        "id": "b",
+        "text": "Phases can run in parallel for different use cases, and early concerns such as fear of job displacement should be addressed."
+      },
+      {
+        "id": "c",
+        "text": "All use cases must complete Discovery before any starts Initiation."
+      },
+      {
+        "id": "d",
+        "text": "Utilization and iteration come before Discovery."
+      }
+    ],
+    "correct": [
+      "b"
+    ],
+    "selectCount": 1,
+    "image": null,
+    "explanation": "Phases can run in parallel (e.g. report analysis may be ahead of test automation), and concerns like job displacement must be addressed to protect adoption and morale.",
+    "reference": "Syllabus 5.1.4"
+  },
+  {
+    "id": "ch5-q021",
+    "chapter": 5,
+    "section": "5.2.2",
+    "type": "single",
+    "points": 1,
+    "text": "What is a prompt pattern?",
+    "options": [
+      {
+        "id": "a",
+        "text": "A model weight file."
+      },
+      {
+        "id": "b",
+        "text": "A tokenization rule."
+      },
+      {
+        "id": "c",
+        "text": "A type of attack vector."
+      },
+      {
+        "id": "d",
+        "text": "A reusable template for crafting effective prompts that guides GenAI toward consistent, reliable outputs."
+      }
+    ],
+    "correct": [
+      "d"
+    ],
+    "selectCount": 1,
+    "image": null,
+    "explanation": "Prompt patterns are shared via libraries and communities of practice as part of building GenAI capability.",
+    "reference": "Syllabus 5.2.2"
   }
 ]

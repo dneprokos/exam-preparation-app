@@ -1120,5 +1120,401 @@
     "image": null,
     "explanation": "Output analysis examines the recurring issues to determine why they keep occurring, which then guides prompt refinement.",
     "reference": "Syllabus 2.3.2 (ASTQB sample exam Q18)"
+  },
+  {
+    "id": "ch2-q035",
+    "chapter": 2,
+    "section": "2.1.1",
+    "type": "single",
+    "points": 1,
+    "text": "A tester uses this prompt: \"Act as a test analyst. Generate boundary-value test cases for the user story below. [user story text]. Do not generate more than 10 test cases.\" Which structured-prompt components are MISSING?",
+    "options": [
+      {
+        "id": "a",
+        "text": "Instruction and input data."
+      },
+      {
+        "id": "b",
+        "text": "Role and context."
+      },
+      {
+        "id": "c",
+        "text": "Context and output format."
+      },
+      {
+        "id": "d",
+        "text": "Role and constraints."
+      }
+    ],
+    "correct": [
+      "c"
+    ],
+    "selectCount": 1,
+    "image": null,
+    "explanation": "The prompt contains a role (test analyst), an instruction (generate boundary-value test cases), input data (the user story) and a constraint (max 10). It gives no background on the test object (context) and no expected structure of the result (output format).",
+    "reference": "Syllabus 2.1.1"
+  },
+  {
+    "id": "ch2-q036",
+    "chapter": 2,
+    "section": "2.1.2",
+    "type": "single",
+    "points": 1,
+    "text": "Which statement about example-based prompting is CORRECT?",
+    "options": [
+      {
+        "id": "a",
+        "text": "One-shot prompting is the only form of meta prompting."
+      },
+      {
+        "id": "b",
+        "text": "A prompt that contains exactly one worked input-output example is one-shot prompting."
+      },
+      {
+        "id": "c",
+        "text": "A prompt with one example is few-shot prompting, and a prompt with two examples is one-shot prompting."
+      },
+      {
+        "id": "d",
+        "text": "A prompt with no examples relies on examples stored from earlier conversations."
+      }
+    ],
+    "correct": [
+      "b"
+    ],
+    "selectCount": 1,
+    "image": null,
+    "explanation": "Zero-shot prompting contains no example, one-shot prompting provides one example, and few-shot prompting provides more than one example.",
+    "reference": "Syllabus 2.1.2"
+  },
+  {
+    "id": "ch2-q037",
+    "chapter": 2,
+    "section": "2.2.1",
+    "type": "single",
+    "points": 2,
+    "text": "A tester has 12 requirements and 30 test conditions. Which approach BEST uses an LLM for coverage analysis?",
+    "options": [
+      {
+        "id": "a",
+        "text": "Provide both lists, ask for a requirement-to-test-condition mapping table that flags requirements without test conditions, then verify the table."
+      },
+      {
+        "id": "b",
+        "text": "Ask the LLM to keep generating test conditions until it stops."
+      },
+      {
+        "id": "c",
+        "text": "Ask the LLM to calculate statement coverage from the requirements."
+      },
+      {
+        "id": "d",
+        "text": "Ask \"Is coverage 100%?\" and accept the yes/no answer."
+      }
+    ],
+    "correct": [
+      "a"
+    ],
+    "selectCount": 1,
+    "image": null,
+    "explanation": "Mapping requirements and user stories to test conditions lets an LLM support coverage analysis. Because LLMs can make mistakes, the tester must verify the result. A relies on unverified output, C has no coverage criterion, and D confuses requirement coverage with code coverage.",
+    "reference": "Syllabus 2.2.1"
+  },
+  {
+    "id": "ch2-q038",
+    "chapter": 2,
+    "section": "2.2.1",
+    "type": "single",
+    "points": 2,
+    "text": "A tester refines the acceptance criteria of a user story using prompt chaining with human verification. Which sequence follows this approach?",
+    "options": [
+      {
+        "id": "a",
+        "text": "Identify ambiguities, verify/correct; evaluate testability, verify/correct; evaluate completeness, verify/correct."
+      },
+      {
+        "id": "b",
+        "text": "Evaluate completeness first, then ambiguities, then testability, verifying only at the end."
+      },
+      {
+        "id": "c",
+        "text": "Generate test cases, derive criteria from them, then verify."
+      },
+      {
+        "id": "d",
+        "text": "Use one combined prompt for ambiguity, testability and completeness and accept the result."
+      }
+    ],
+    "correct": [
+      "a"
+    ],
+    "selectCount": 1,
+    "image": null,
+    "explanation": "Prompt chaining splits the task into steps (ambiguities, then testability, then completeness). The result of each step is verified and corrected so the next step builds on a clean result.",
+    "reference": "Syllabus 2.2.1"
+  },
+  {
+    "id": "ch2-q039",
+    "chapter": 2,
+    "section": "2.2.2",
+    "type": "single",
+    "points": 2,
+    "text": "A tester needs test data for a payment form, but production data must not be used. Which approach is BEST?",
+    "options": [
+      {
+        "id": "a",
+        "text": "Ask for \"some test data\" without further constraints."
+      },
+      {
+        "id": "b",
+        "text": "Ask the LLM to recall earlier customers' records."
+      },
+      {
+        "id": "c",
+        "text": "Paste a masked production extract into a public chatbot and ask for variations."
+      },
+      {
+        "id": "d",
+        "text": "Prompt for synthetic data with field constraints, including boundary and invalid values and no real customer data, then validate it against the schema."
+      }
+    ],
+    "correct": [
+      "d"
+    ],
+    "selectCount": 1,
+    "image": null,
+    "explanation": "GenAI can create representative, privacy-preserving synthetic test data covering extreme situations. Explicit constraints and validation of the output keep it fit for purpose. A exposes data, C is unspecific, D is a privacy violation.",
+    "reference": "Syllabus 2.2.2"
+  },
+  {
+    "id": "ch2-q040",
+    "chapter": 2,
+    "section": "2.2.2",
+    "type": "single",
+    "points": 2,
+    "text": "Which input BEST supports an LLM when optimizing a test execution schedule?",
+    "options": [
+      {
+        "id": "a",
+        "text": "Only the request \"give me the best order\"."
+      },
+      {
+        "id": "b",
+        "text": "Test cases with their priorities, risks, interdependencies and resource availability, with the proposed schedule verified manually."
+      },
+      {
+        "id": "c",
+        "text": "Only the list of test case titles."
+      },
+      {
+        "id": "d",
+        "text": "Only the pass rate of the last run."
+      }
+    ],
+    "correct": [
+      "b"
+    ],
+    "selectCount": 1,
+    "image": null,
+    "explanation": "Scheduling and prioritization consider priority, risk, resource availability, objectives and interdependencies. This multi-criteria reasoning is error-prone for LLMs, so the result must be verified.",
+    "reference": "Syllabus 2.2.2"
+  },
+  {
+    "id": "ch2-q041",
+    "chapter": 2,
+    "section": "2.2.3",
+    "type": "single",
+    "points": 2,
+    "text": "After a UI refactoring changed element locators, GUI regression scripts fail although the functionality is unchanged. Which GenAI use is MOST appropriate?",
+    "options": [
+      {
+        "id": "a",
+        "text": "Regenerate all expected results from the new UI."
+      },
+      {
+        "id": "b",
+        "text": "Delete the failing tests."
+      },
+      {
+        "id": "c",
+        "text": "Replace the suite with unit tests."
+      },
+      {
+        "id": "d",
+        "text": "Adapt the scripts to the new locators (self-healing) and review the changes."
+      }
+    ],
+    "correct": [
+      "d"
+    ],
+    "selectCount": 1,
+    "image": null,
+    "explanation": "Self-healing and adaptive tests use GenAI to adjust scripts to minor UI or API changes, such as dynamic locators, keeping the suite stable. Generated changes must still be checked.",
+    "reference": "Syllabus 2.2.3"
+  },
+  {
+    "id": "ch2-q042",
+    "chapter": 2,
+    "section": "2.2.3",
+    "type": "single",
+    "points": 2,
+    "text": "In a CI/CD pipeline a developer changed the payment module. How can GenAI BEST focus regression testing?",
+    "options": [
+      {
+        "id": "a",
+        "text": "Run the full suite on every commit and ignore the change."
+      },
+      {
+        "id": "b",
+        "text": "Analyze the code changes to identify high-risk areas and target regression tests there."
+      },
+      {
+        "id": "c",
+        "text": "Remove all payment tests."
+      },
+      {
+        "id": "d",
+        "text": "Let the LLM auto-approve the release."
+      }
+    ],
+    "correct": [
+      "b"
+    ],
+    "selectCount": 1,
+    "image": null,
+    "explanation": "Impact analysis and test optimization: GenAI analyzes code changes to identify the areas most likely to be affected so regression effort is targeted. Output still requires risk-based checking.",
+    "reference": "Syllabus 2.2.3"
+  },
+  {
+    "id": "ch2-q043",
+    "chapter": 2,
+    "section": "2.2.4",
+    "type": "single",
+    "points": 2,
+    "text": "Which is an example of test CONTROL supported by GenAI?",
+    "options": [
+      {
+        "id": "a",
+        "text": "Generating a final test completion report with lessons learned."
+      },
+      {
+        "id": "b",
+        "text": "Building a visual dashboard of defect trends."
+      },
+      {
+        "id": "c",
+        "text": "Writing a natural-language summary of current test progress."
+      },
+      {
+        "id": "d",
+        "text": "Recommending reprioritized tests and reallocated testers based on defect trends."
+      }
+    ],
+    "correct": [
+      "d"
+    ],
+    "selectCount": 1,
+    "image": null,
+    "explanation": "Test control uses insights to reprioritize tests, adjust schedules and reallocate resources. A and D are monitoring/reporting, C is test completion.",
+    "reference": "Syllabus 2.2.4"
+  },
+  {
+    "id": "ch2-q044",
+    "chapter": 2,
+    "section": "2.3.1",
+    "type": "single",
+    "points": 1,
+    "text": "Match each metric (1-4) with its example (A-D):\n1. Precision\n2. Recall\n3. Execution success rate\n4. Relevance and contextual fit\nA. Generated scripts run as-is without syntax errors.\nB. Generated test cases are consistent with the test basis and domain rules.\nC. Generated test cases correctly identify anomalies.\nD. Generated test cases cover valid and invalid equivalence partitions.",
+    "options": [
+      {
+        "id": "a",
+        "text": "1A, 2D, 3C, 4B"
+      },
+      {
+        "id": "b",
+        "text": "1C, 2D, 3A, 4B"
+      },
+      {
+        "id": "c",
+        "text": "1D, 2C, 3A, 4B"
+      },
+      {
+        "id": "d",
+        "text": "1C, 2D, 3B, 4A"
+      }
+    ],
+    "correct": [
+      "b"
+    ],
+    "selectCount": 1,
+    "image": null,
+    "explanation": "Precision: correctness w.r.t. a specific objective (C). Recall: ability to find all relevant instances (D). Execution success rate: share of artefacts executable as-is (A). Relevance and contextual fit: consistency with test basis and domain requirements (B).",
+    "reference": "Syllabus 2.3.1"
+  },
+  {
+    "id": "ch2-q045",
+    "chapter": 2,
+    "section": "2.3.1",
+    "type": "single",
+    "points": 1,
+    "text": "A tester ran prompt A once (90% accuracy) and prompt B once (85%) and concluded A is better. What is the main weakness of this conclusion?",
+    "options": [
+      {
+        "id": "a",
+        "text": "LLM output is non-deterministic, so metrics must be based on statistically relevant data from repeated runs."
+      },
+      {
+        "id": "b",
+        "text": "Prompt B must be longer to be compared."
+      },
+      {
+        "id": "c",
+        "text": "Metrics apply only to reasoning LLMs."
+      },
+      {
+        "id": "d",
+        "text": "Accuracy cannot be measured for test tasks."
+      }
+    ],
+    "correct": [
+      "a"
+    ],
+    "selectCount": 1,
+    "image": null,
+    "explanation": "Given the non-deterministic nature of GenAI, metrics must be based on statistically relevant data, not a single run.",
+    "reference": "Syllabus 2.3.1"
+  },
+  {
+    "id": "ch2-q046",
+    "chapter": 2,
+    "section": "2.3.2",
+    "type": "single",
+    "points": 1,
+    "text": "Testers in a team each write their own prompts, and the quality is inconsistent. What does the syllabus suggest?",
+    "options": [
+      {
+        "id": "a",
+        "text": "Forbid prompt reuse."
+      },
+      {
+        "id": "b",
+        "text": "Organize prompt evaluation and optimization sessions and share a prompt library."
+      },
+      {
+        "id": "c",
+        "text": "Rely only on the default behavior of the LLM."
+      },
+      {
+        "id": "d",
+        "text": "Have each tester fine-tune a model."
+      }
+    ],
+    "correct": [
+      "b"
+    ],
+    "selectCount": 1,
+    "image": null,
+    "explanation": "Prompt evaluation sessions and sharing practices and prompt libraries standardize techniques, maintain quality and promote continuous improvement.",
+    "reference": "Syllabus 2.3.2"
   }
 ]
