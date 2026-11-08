@@ -145,7 +145,8 @@ export function downloadJson(filename: string, data: unknown): void {
   a.href = url;
   a.download = filename;
   a.click();
-  URL.revokeObjectURL(url);
+  // Mobile browsers (iOS Safari) start the download asynchronously; revoking at once can lose the file.
+  setTimeout(() => URL.revokeObjectURL(url), 10_000);
 }
 
 export function failedExportFilename(prefix: string, kind: 'attempt' | 'history', date = new Date()): string {

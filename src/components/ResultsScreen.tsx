@@ -75,7 +75,7 @@ export function ResultsScreen({ result, questions, answers, indexData, passPerce
 
       {/* Per-question review */}
       <div>
-        <div className="flex items-center justify-between mb-3">
+        <div className="flex flex-wrap items-center justify-between gap-2 mb-3">
           <h3 className="text-lg font-semibold">Question Review</h3>
           {cert && failedCount > 0 && (
             <button
