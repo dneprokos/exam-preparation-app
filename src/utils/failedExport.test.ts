@@ -95,12 +95,16 @@ describe('downloadJson / filename', () => {
       .toBe('istqb-tae-failed-history-2024-03-05.json');
   });
 
-  it('triggers an anchor download with given filename', () => {
+  it('triggers an anchor download with given filename and revokes the URL later', () => {
+    vi.useFakeTimers();
     URL.createObjectURL = vi.fn(() => 'blob:x');
     URL.revokeObjectURL = vi.fn();
     const click = vi.spyOn(HTMLAnchorElement.prototype, 'click').mockImplementation(() => {});
     downloadJson('f.json', { a: 1 });
     expect(click).toHaveBeenCalledTimes(1);
+    expect(URL.revokeObjectURL).not.toHaveBeenCalled();
+    vi.advanceTimersByTime(10_000);
     expect(URL.revokeObjectURL).toHaveBeenCalledWith('blob:x');
+    vi.useRealTimers();
   });
 });

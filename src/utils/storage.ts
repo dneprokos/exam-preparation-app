@@ -39,7 +39,7 @@ export function certStorage(prefix: string) {
     a.href = url;
     a.download = `${prefix}-history.json`;
     a.click();
-    URL.revokeObjectURL(url);
+    setTimeout(() => URL.revokeObjectURL(url), 10_000);
   }
 
   function getInProgress(): InProgressAttempt | null {
